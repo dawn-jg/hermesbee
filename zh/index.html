@@ -88,6 +88,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
 .modal-desc{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px;font-size:.9rem;line-height:1.7}
 .modal-features{list-style:none;margin:0;padding:0}
 .modal-features li{padding:5px 0;font-size:.9rem;color:var(--text)}
+.modal-usage{list-style:none;margin:0;padding:0;counter-reset:step}.modal-usage li{padding:5px 0;font-size:.88rem;color:var(--text);counter-increment:step;padding-left:26px;position:relative}.modal-usage li::before{content:counter(step);position:absolute;left:0;top:5px;width:18px;height:18px;background:var(--accent);color:#fff;border-radius:50%;font-size:.7rem;display:flex;align-items:center;justify-content:center;font-weight:700}
 .modal-features li::before{content:"✓ ";color:var(--green);font-weight:700}
 .modal-who{color:var(--muted);font-size:.85rem;margin-top:14px}
 .mcp-card.clickable{cursor:pointer;transition:transform .15s,border-color .15s}
@@ -123,7 +124,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
 <section id="scrapebox" class="section container">
   <h2>ScrapeBox — 本地爬虫工具箱</h2>
   <p style="text-align:center;color:var(--muted);max-width:700px;margin:-30px auto 40px">双击启动，curl 调用。开发者专属的本地 REST 爬虫服务。</p>
-  <div class="product-card data-product="mhxei">
+  <div class="product-card clickable" data-product="mhxei">
     <div class="product-info">
       <h3>ScrapeBox</h3>
       <p>本地运行，传个 URL 返回 HTML/文本/链接/表格。内置隐身浏览引擎，绕过中低等级反爬虫。</p>
@@ -145,7 +146,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
       <p style="color:var(--muted);font-size:.85rem;margin-top:12px">然后 http://localhost:8080</p>
     </div>
   </div>
-  <div class="product-card pro clickable" style="margin-top:24px data-product="xfedun">
+  <div class="product-card pro clickable" style="margin-top:24px" data-product="xfedun">
     <div class="product-info">
       <h3>ScrapeBox Pro <span class="badge badge-popular">推荐</span></h3>
       <p>在 ScrapeBox 基础上，内置高级反爬绕过引擎。高等级 Cloudflare 也能自动绕过，一键搞定。</p>
@@ -173,7 +174,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
   <h2>AI Agent MCP 工具</h2>
   <p style="text-align:center;color:var(--muted);max-width:700px;margin:-30px auto 40px">一次性购买，本地运行。接入 Claude Desktop / Cursor / Cline / Windsurf，让 AI 代理拥有浏览器和爬虫能力。</p>
   <div class="mcp-grid">
-    <div class="mcp-card data-product="vueszs">
+    <div class="mcp-card clickable" data-product="vueszs">
       <div class="icon">🕶️</div>
       <h3>CF Bypass Browser <span class="badge badge-popular">热门</span></h3>
       <p>绕过所有等级 Cloudflare 的完整浏览器，支持点击、输入、截图、滚动。</p>
@@ -181,7 +182,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
       <ul><li>自动绕 Cloudflare</li><li>隐身浏览器引擎</li><li>完整浏览器交互</li><li>适配 Claude/Cursor/Cline</li></ul>
       <a href="https://5044216526512.gumroad.com/l/vueszs" class="btn btn-primary" target="_blank">立即购买</a>
     </div>
-    <div class="mcp-card data-product="jusjsp">
+    <div class="mcp-card clickable" data-product="jusjsp">
       <div class="icon">🕷️</div>
       <h3>Unified Scraper <span class="badge badge-new">新品</span></h3>
       <p>自动绕 Cloudflare 的智能爬虫，传个 URL 返回整页内容或纯文本。</p>
@@ -189,7 +190,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
       <ul><li>Web数据提取</li><li>双引自动切换</li><li>纯文本输出</li><li>适配所有 MCP 客户端</li></ul>
       <a href="https://5044216526512.gumroad.com/l/jusjsp" class="btn btn-primary" target="_blank">立即购买</a>
     </div>
-    <div class="mcp-card data-product="lxuqkk">
+    <div class="mcp-card clickable" data-product="lxuqkk">
       <div class="icon">🔮</div>
       <h3>Stealth Browser</h3>
       <p>隐身浏览器 MCP，绕过中低等级反爬虫检测，支持截图和 Cookie 管理。</p>
@@ -197,7 +198,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
       <ul><li>隐身浏览</li><li>截图 + Cookie</li><li>绕中低 Cloudflare</li><li>轻量快速</li></ul>
       <a href="https://5044216526512.gumroad.com/l/lxuqkk" class="btn btn-outline" target="_blank">立即购买</a>
     </div>
-    <div class="mcp-card data-product="xjggdb">
+    <div class="mcp-card clickable" data-product="xjggdb">
       <div class="icon">🕸️</div>
       <h3>Smart Scraper</h3>
       <p>基础智能爬虫 MCP，传网址即可提取标题、正文、链接、图片。</p>
@@ -205,7 +206,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
       <ul><li>简单易用</li><li>提取多种元素</li><li>无需复杂配置</li><li>适配所有客户端</li></ul>
       <a href="https://5044216526512.gumroad.com/l/xjggdb" class="btn btn-outline" target="_blank">立即购买</a>
     </div>
-    <div class="mcp-card data-product="rxmzx">
+    <div class="mcp-card clickable" data-product="rxmzx">
       <div class="icon">🌐</div>
       <h3>Domain Monitor</h3>
       <p>域名监控 MCP，查询 whois 状态、过期时间、DNS 信息，适合过期域名挖掘。</p>
@@ -213,7 +214,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
       <ul><li>WHOIS 查询</li><li>过期时间监控</li><li>DNS 记录查询</li><li>过期提醒</li></ul>
       <a href="https://5044216526512.gumroad.com/l/rxmzx" class="btn btn-outline" target="_blank">立即购买</a>
     </div>
-    <div class="mcp-card data-product="atwirg">
+    <div class="mcp-card clickable" data-product="atwirg">
       <div class="icon">💰</div>
       <h3>Income Monitor</h3>
       <p>收益监控 MCP，跟踪各种挂机平台收益状况，汇总数据。</p>
@@ -221,7 +222,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
       <ul><li>挂机平台收益</li><li>自动汇总</li><li>历史趋势</li><li>数据可视化</li></ul>
       <a href="https://5044216526512.gumroad.com/l/atwirg" class="btn btn-outline" target="_blank">立即购买</a>
     </div>
-    <div class="mcp-card data-product="oulau">
+    <div class="mcp-card clickable" data-product="oulau">
       <div class="icon">🎯</div>
       <h3>B2B 潜在客户查找 MCP <span class="badge badge-new">新品</span></h3>
       <p>无需登录的 B2B 数据获客。AI 代理直接搜索公司、找决策人。</p>
@@ -229,7 +230,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
       <ul><li>搜索公司</li><li>找决策人</li><li>补充公司数据</li><li>无需登录</li></ul>
       <a href="https://5044216526512.gumroad.com/l/oulau" class="btn btn-primary" target="_blank">立即购买</a>
     </div>
-    <div class="mcp-card data-product="dzkacy">
+    <div class="mcp-card clickable" data-product="dzkacy">
       <div class="icon">🖱️</div>
       <h3>B2B 潜在客户查找器（桌面版）<span class="badge badge-new">新品</span></h3>
       <p>普通用户直接打开就用。无需编程，双击启动，浏览器操作。</p>
@@ -237,7 +238,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
       <ul><li>搜索公司</li><li>生成决策人邮箱</li><li>抓取联系页</li><li>导出 CSV</li></ul>
       <a href="https://5044216526512.gumroad.com/l/dzkacy" class="btn btn-primary" target="_blank">立即购买</a>
     </div>
-    <div class="mcp-card data-product="maekx">
+    <div class="mcp-card clickable" data-product="maekx">
       <div class="icon">🧠</div>
       <h3>LLM Scraper MCP <span class="badge badge-new">新品</span></h3>
       <p>用自然语言从任意网页提取结构化数据。无需写 CSS 选择器。</p>
@@ -245,7 +246,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
       <ul><li>自然语言提取</li><li>自定义 JSON 结构</li><li>提取链接 &amp; 导出CSV</li><li>自动绕过反爬</li></ul>
       <a href="https://5044216526512.gumroad.com/l/maekx" class="btn btn-primary" target="_blank">立即购买</a>
     </div>
-    <div class="mcp-card data-product="vzauzx">
+    <div class="mcp-card clickable" data-product="vzauzx">
       <div class="icon">🤖</div>
       <h3>LLM Scraper 桌面版 <span class="badge badge-new">新品</span></h3>
       <p>输入网址，用自然语言描述要什么数据。中英双语界面。</p>
@@ -295,7 +296,8 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
   </div>
 </div>
 <script>
-const PRODUCTS = {"mhxei": {"name": "ScrapeBox", "price": "$29", "tagline": "本地 REST 爬虫 API。双击启动，curl 调用。", "desc": "ScrapeBox 是在你自己电脑上运行的 HTTP 爬虫服务。启动一次，之后任何脚本或浏览器都能调用它爬取网页。", "features": ["提取 HTML / 文本 / 链接 / 表格", "绕过低/中等级反爬保护", "100% 本地运行 - 数据不出本机", "支持 Windows / macOS / Linux", "无订阅、无月费"], "who": "开发者 · 数据分析师 · AI 代理用户", "url": "https://5044216526512.gumroad.com/l/mhxei"}, "xfedun": {"name": "ScrapeBox Pro", "price": "$39", "tagline": "ScrapeBox 全部功能 + 自动绕过所有等级反爬。", "desc": "ScrapeBox 的尊享版。除全部基础功能外，自动绕过强保护网站（所有等级 Cloudflare、Akamai 等），开箱即用。", "features": ["包含 ScrapeBox 全部功能", "自动绕过所有等级反爬", "轻松访问强保护网站", "一键启动、零配置", "本地运行、数据不出本机"], "who": "开发者 · 域名投资者 · 需要访问被挡网页的 AI 代理", "url": "https://5044216526512.gumroad.com/l/xfedun"}, "vueszs": {"name": "CF Bypass Browser MCP", "price": "$25", "tagline": "AI 代理专属完整浏览器，绕所有 Cloudflare。", "desc": "让 Claude Desktop / Cursor / Cline 拥有能穿过所有等级 Cloudflare 防护的真实浏览器。支持点击、输入、截图、滚动、翻页。", "features": ["绕过所有等级 Cloudflare", "完整浏览器交互（点击/输入/截图/滚动）", "隐身浏览引擎", "适配 Claude/Cursor/Cline/Windsurf", "本地运行"], "who": "AI 代理用户 · 开发者 · 研究人员", "url": "https://5044216526512.gumroad.com/l/vueszs"}, "jusjsp": {"name": "Unified Scraper MCP", "price": "$19", "tagline": "自动绕过反爬的智能爬虫。传 URL 拿内容。", "desc": "智能爬虫 MCP，自动切换引擎获取页面内容或纯文本，即使目标网站有反爬保护也能拿到数据。", "features": ["自动绕过反爬", "网页数据提取", "纯文本输出", "双引擎自动切换", "支持所有 MCP 客户端"], "who": "AI 代理用户 · 数据采集者", "url": "https://5044216526512.gumroad.com/l/jusjsp"}, "lxuqkk": {"name": "Stealth Browser MCP", "price": "$15", "tagline": "AI 代理隐身浏览器。截图 + Cookie。", "desc": "轻量隐身浏览器 MCP。绕过低/中等级反爬检测，支持截图和 Cookie 管理。", "features": ["隐身浏览", "截图 + Cookie", "绕过低/中反爬", "轻量快速", "MCP 即插即用"], "who": "AI 代理用户 · 自动化开发者", "url": "https://5044216526512.gumroad.com/l/lxuqkk"}, "xjggdb": {"name": "Smart Scraper MCP", "price": "$15", "tagline": "基础智能爬虫。提取标题、正文、链接、图片。", "desc": "简单易用的爬虫 MCP。传入任意 URL，无需复杂配置即可提取所需元素。", "features": ["简单易用", "提取多种元素", "无需复杂配置", "支持所有 MCP 客户端"], "who": "新手用户 · 快速数据提取", "url": "https://5044216526512.gumroad.com/l/xjggdb"}, "rxmzx": {"name": "Domain Monitor MCP", "price": "$10", "tagline": "WHOIS 查询、过期跟踪、DNS 记录。", "desc": "专为过期域名猎手打造的域名监控 MCP。查 WHOIS、跟踪过期时间、查询 DNS 记录。", "features": ["WHOIS 查询", "过期监控", "DNS 记录查询", "过期提醒", "过期域名猎手必备"], "who": "域名投资者 · SEO 专家", "url": "https://5044216526512.gumroad.com/l/rxmzx"}, "atwirg": {"name": "Income Monitor MCP", "price": "$10", "tagline": "汇总监控多个挂机平台的收益。", "desc": "一站式汇总监控你所有带宽共享和被动收入平台的收益情况。", "features": ["被动收入跟踪", "自动汇总", "历史趋势", "数据可视化"], "who": "被动收入玩家 · 带宽共享用户", "url": "https://5044216526512.gumroad.com/l/atwirg"}, "oulau": {"name": "B2B Lead Finder MCP", "price": "$29", "tagline": "无需登录的 B2B 线索查找。多源数据智能。", "desc": "AI 代理专用的多源 B2B 公司与联系人情报。搜公司、找决策人、补充数据——全部无需登录任何账号。", "features": ["搜索公司", "找决策人", "补充公司数据（WHOIS + 网页）", "无需登录", "导出线索为 CSV"], "who": "销售团队 · 招聘人员 · 营销人员", "url": "https://5044216526512.gumroad.com/l/oulau"}, "dzkacy": {"name": "B2B Lead Finder 桌面版", "price": "$19", "tagline": "简单的桌面 B2B 找线索工具。无需登录、无需编程。", "desc": "双击启动，浏览器自动打开。搜公司、生成决策人邮箱、抓取联系页、导出 CSV。中英双语界面。", "features": ["搜索公司", "生成决策人邮箱", "抓取联系页", "导出 CSV", "中英双语界面"], "who": "非技术用户 · 小企业主 · 销售人员", "url": "https://5044216526512.gumroad.com/l/dzkacy"}, "maekx": {"name": "LLM Scraper MCP", "price": "$49", "tagline": "自然语言网页数据提取。无需 CSS 选择器、无需编程。", "desc": "用自然语言描述你要什么数据，AI 自动理解页面并提取结构化 JSON。自带 LLM API Key。", "features": ["extract_data: 自然语言 → JSON", "extract_with_schema: 自定义输出结构", "extract_links: 提取所有链接", "export_csv: 导出 CSV", "自动绕过反爬", "支持 DeepSeek/OpenAI/Kimi Key"], "who": "AI 代理用户 · 分析师 · 无代码数据提取", "url": "https://5044216526512.gumroad.com/l/maekx"}, "vzauzx": {"name": "LLM Scraper 桌面版", "price": "$59", "tagline": "人人可用的 AI 网页提取。中英双语界面。", "desc": "输入网址，用自然语言描述要什么数据，拿到结构化结果。首次运行有引导配置页，只需填一次 LLM API Key。", "features": ["无需编程", "中英双语界面", "首次运行引导配置", "导出 JSON / CSV", "自动绕过反爬", "自带 LLM Key"], "who": "数据分析师 · 营销人员 · 电商卖家 · 研究人员", "url": "https://5044216526512.gumroad.com/l/vzauzx"}};
+const PRODUCTS = {"mhxei": {"name": "ScrapeBox", "price": "$29", "tagline": "本地 REST 爬虫 API。双击启动，curl 调用。", "desc": "ScrapeBox 是在你自己电脑上运行的 HTTP 爬虫服务。启动一次，之后任何脚本、工具或浏览器都能调用它抓取和提取网页内容——无需云端、无需 API Key、无订阅。", "features": ["提取任意网页的 HTML / 文本 / 链接 / 表格", "自动绕过低/中等级反爬保护", "100% 本地运行——数据不出本机", "支持 Windows / macOS / Linux", "零云端依赖，安装后可离线使用", "无订阅、无月费，永久使用"], "usage": ["1. 运行 setup.bat（Windows）或 bash setup.sh（Mac/Linux）安装", "2. 双击 start.bat 启动服务", "3. 打开浏览器或终端调用：", "   curl \"http://localhost:8080/status\"", "   curl \"http://localhost:8080/text?url=https://example.com\"", "   curl \"http://localhost:8080/scrape?url=https://example.com\"", "   curl \"http://localhost:8080/links?url=https://example.com\"", "   curl \"http://localhost:8080/tables?url=https://example.com\"", "4. 网页加载慢可加 &timeout=60"], "who": "开发者 · 数据分析师 · AI 代理用户", "url": "https://5044216526512.gumroad.com/l/mhxei"}, "xfedun": {"name": "ScrapeBox Pro", "price": "$39", "tagline": "ScrapeBox 全部功能 + 自动绕过所有等级反爬。", "desc": "ScrapeBox 的尊享版。包含全部基础功能，并内置高级反爬绕过引擎，自动处理强保护网站（所有等级 Cloudflare、Akamai 等），开箱即用、零配置。", "features": ["包含 ScrapeBox 全部功能（HTML/文本/链接/表格）", "自动绕过所有等级反爬——轻松访问强保护网站", "开箱即用访问 Namecheap 等强保护站点", "一键启动、零配置", "本地运行、数据不出本机", "永久授权、免费更新"], "usage": ["1. 运行 setup.bat（Win）或 bash setup.sh（Mac/Linux）", "   （高级绕过引擎需要 Docker Desktop）", "2. 双击 start.bat 启动", "3. 直接爬取强保护网站：", "   curl \"http://localhost:8080/text?url=https://www.namecheap.com/\"", "   curl \"http://localhost:8080/scrape?url=https://example.com\"", "4. 网页加载慢可加 &timeout=60"], "who": "开发者 · 域名投资者 · 需要访问被挡网页的 AI 代理", "url": "https://5044216526512.gumroad.com/l/xfedun"}, "vueszs": {"name": "CF Bypass Browser MCP", "price": "$25", "tagline": "AI 代理专属完整浏览器，绕所有 Cloudflare。", "desc": "让 Claude Desktop、Cursor、Cline 或 Windsurf 拥有一个真实可交互的浏览器，能穿过所有等级 Cloudflare 防护。AI 可以像人一样点击、输入、截图、滚动、翻页——适合需要访问被保护页面的智能体。", "features": ["绕过所有等级 Cloudflare（低/中/高）", "完整浏览器交互：点击/输入/截图/滚动/翻页", "隐身浏览引擎——难以被识别为自动化", "MCP 即插即用：支持 Claude/Cline/Cursor/Windsurf", "本地运行", "一次购买、永久更新"], "usage": ["1. pip install mcp patchright（详见 README）", "2. 配置到你的 MCP 客户端：", "   { \"mcpServers\": { \"cf-bypass-browser\": {", "       \"command\": \"python3\",", "       \"args\": [\"/path/to/cf_bypass_browser.py\"] } } }", "3. 重启 Claude Desktop / Cline / Cursor", "4. 让 AI 打开网页：\"打开 https://example.com 并截图\""], "who": "AI 代理用户 · 开发者 · 研究人员", "url": "https://5044216526512.gumroad.com/l/vueszs"}, "jusjsp": {"name": "Unified Scraper MCP", "price": "$19", "tagline": "自动绕过反爬的智能爬虫。传 URL 拿内容。", "desc": "智能爬虫 MCP，自动在多个引擎间切换获取页面内容或纯文本——即使目标网站有反爬保护也能拿到数据。让 AI 代理零配置获得可靠的网页访问能力。", "features": ["自动绕过反爬（双引擎自动切换）", "提取完整页面内容或纯文本", "支持受保护网站和普通网站", "支持所有 MCP 客户端（Claude/Cline/Cursor/Windsurf）", "轻量、快速配置", "一次购买"], "usage": ["1. pip install mcp patchright", "2. 配置到 MCP 客户端：", "   { \"mcpServers\": { \"unified-scraper\": {", "       \"command\": \"python3\", \"args\": [\"/path/to/unified_scraper_mcp.py\"] } } }", "3. 让 AI 抓取：\"抓取 https://example.com 并总结\""], "who": "AI 代理用户 · 数据采集者", "url": "https://5044216526512.gumroad.com/l/jusjsp"}, "lxuqkk": {"name": "Stealth Browser MCP", "price": "$15", "tagline": "AI 代理隐身浏览器。截图 + Cookie。", "desc": "轻量隐身浏览器 MCP。绕过低/中等级反爬检测，支持截图和 Cookie 管理。适合需要安静浏览并获取视觉证据的智能体。", "features": ["隐身浏览——绕过低/中反爬", "截图取证", "Cookie 管理（保存/加载会话）", "轻量快速", "MCP 即插即用", "一次购买"], "usage": ["1. pip install mcp patchright", "2. 配置到 MCP，让 AI 浏览并截图即可。"], "who": "AI 代理用户 · 自动化开发者", "url": "https://5044216526512.gumroad.com/l/lxuqkk"}, "xjggdb": {"name": "Smart Scraper MCP", "price": "$15", "tagline": "基础智能爬虫。提取标题、正文、链接、图片。", "desc": "简单易用的爬虫 MCP。传入任意 URL，无需复杂配置即可提取标题、正文、链接、图片等元素。适合新手快速开始。", "features": ["简单易用——无需复杂配置", "提取标题/正文/链接/图片", "支持所有 MCP 客户端", "AI 网页访问的入门之选", "一次购买"], "usage": ["1. pip install mcp patchright", "2. 配置到 MCP，让 AI 提取：\"获取 https://example.com 的所有链接\""], "who": "新手用户 · 快速数据提取", "url": "https://5044216526512.gumroad.com/l/xjggdb"}, "rxmzx": {"name": "Domain Monitor MCP", "price": "$10", "tagline": "WHOIS 查询、过期跟踪、DNS 记录。", "desc": "专为过期域名猎手打造的域名监控 MCP。通过 AI 助手查询 WHOIS 数据、跟踪过期日期、查询 DNS 记录。", "features": ["WHOIS 查询（注册商、日期、域名服务器）", "过期日期监控", "DNS 记录查询", "关注域名过期提醒", "过期域名猎手必备", "一次购买"], "usage": ["1. pip install mcp", "2. 配置到 MCP，让 AI 查询：\"查一下 example.com 的 WHOIS\""], "who": "域名投资者 · SEO 专家", "url": "https://5044216526512.gumroad.com/l/rxmzx"}, "atwirg": {"name": "Income Monitor MCP", "price": "$10", "tagline": "汇总监控多个挂机平台的收益。", "desc": "一站式汇总监控你所有带宽共享和被动收入平台的收益。查看趋势、跟踪总额、掌握副业收入情况。", "features": ["多平台被动收入跟踪", "自动汇总", "历史趋势", "数据可视化", "一次购买"], "usage": ["1. pip install mcp", "2. 配置到 MCP，让 AI 汇总：\"显示我的收益汇总\""], "who": "被动收入玩家 · 带宽共享用户", "url": "https://5044216526512.gumroad.com/l/atwirg"}, "oulau": {"name": "B2B Lead Finder MCP", "price": "$29", "tagline": "无需登录的 B2B 线索查找。多源数据智能。", "desc": "AI 代理专用的多源 B2B 公司与联系人情报工具。搜公司、找决策人、补充公司数据（WHOIS + 网页搜索）——全部无需登录任何平台、无需管理 API Key。", "features": ["多源搜索公司公开信息", "找决策人（邮箱模式猜测）", "补充公司数据（WHOIS + 网页聚合）", "抓取联系页提取邮箱电话", "无需登录、无需 API Key", "导出线索为 CSV"], "usage": ["1. pip install mcp patchright", "2. 配置到 MCP，让 AI 执行：", "   \"查找 openai.com 的决策人\"", "   \"搜索公司 Anthropic\"", "   \"补充公司信息 openai.com\""], "who": "销售团队 · 招聘人员 · 营销人员", "url": "https://5044216526512.gumroad.com/l/oulau"}, "dzkacy": {"name": "B2B Lead Finder 桌面版", "price": "$19", "tagline": "简单的桌面 B2B 找线索工具。无需登录、无需编程。", "desc": "免编程的桌面 B2B 找线索工具。双击启动，浏览器自动打开。搜索公司、生成决策人邮箱、抓取联系页、导出 CSV。中英双语界面。", "features": ["搜索公司——获取官网和公开信息", "生成决策人候选邮箱（7 种格式）", "抓取联系页提取邮箱和电话", "一键导出线索为 CSV", "无需登录、无需编程、无需 API Key", "中英双语界面"], "usage": ["1. 双击 setup.bat（Win）或 bash setup.sh（Mac/Linux）", "2. 双击 start.bat——浏览器自动打开", "3. 标签1：输入公司名 → 搜索公司信息", "4. 标签2：输入名字+域名 → 生成候选邮箱 → 导出 CSV", "5. 标签3：粘贴联系页 URL → 抓取邮箱和电话"], "who": "非技术用户 · 小企业主 · 销售人员", "url": "https://5044216526512.gumroad.com/l/dzkacy"}, "maekx": {"name": "LLM Scraper MCP", "price": "$49", "tagline": "自然语言网页数据提取。无需 CSS 选择器、无需编程。", "desc": "用自然语言描述你要什么数据——AI 自动理解页面并提取结构化 JSON。无需 CSS 选择器、无需 XPath、无需编程。自带 LLM API Key（支持 DeepSeek / OpenAI / Kimi）。", "features": ["extract_data：自然语言 → 结构化 JSON", "extract_with_schema：自定义输出结构", "extract_links：提取所有链接及锚文本", "export_csv：结果导出 CSV", "自动绕过反爬保护（所有等级）", "支持 DeepSeek / OpenAI / Kimi API Key", "本地运行——数据不经过第三方服务器"], "usage": ["1. pip install mcp patchright", "2. 配置到 MCP，设置环境变量：", "   LLM_API_KEY=sk-xxx, LLM_API_BASE=https://api.deepseek.com/v1/chat/completions, LLM_MODEL=deepseek-chat", "3. 让 AI 提取：", "   \"提取 https://example.com 的所有产品名称和价格\"", "   \"按结构提取：{name, price}\""], "who": "AI 代理用户 · 分析师 · 无代码数据提取", "url": "https://5044216526512.gumroad.com/l/maekx"}, "vzauzx": {"name": "LLM Scraper 桌面版", "price": "$59", "tagline": "人人可用的 AI 网页提取。中英双语界面。", "desc": "非程序员最轻松的 AI 网页数据提取方式。输入网址，用中文或英文描述要什么数据，就能拿到可导出 CSV 的结构化结果。首次运行有引导配置页，只需填一次 LLM API Key。", "features": ["无需编程——描述即可提取", "中英双语界面（默认英文）", "首次运行引导配置（Key 保存在本地）", "支持 DeepSeek / OpenAI / Kimi Key", "导出 JSON 或 CSV", "自动绕过反爬保护", "推荐 DeepSeek：10 元可用几百次提取"], "usage": ["1. 双击 setup.bat（Win）或 bash setup.sh（Mac/Linux）", "2. 双击 start.bat——浏览器自动打开", "3. 首次运行：配置页 → 选服务商（DeepSeek ★）→ 粘贴 API Key → 保存", "4. 输入网址，描述要提取什么（如\"提取所有产品价格\"）", "5. 点击提取数据 → 查看 JSON → 导出 CSV"], "who": "数据分析师 · 营销人员 · 电商卖家 · 研究人员", "url": "https://5044216526512.gumroad.com/l/vzauzx"}};
+
 function openModal(slug) {
   const p = PRODUCTS[slug];
   if (!p) return;
@@ -306,7 +308,10 @@ function openModal(slug) {
   html += '<h4 style="color:var(--accent2);margin:16px 0 8px">功能特点</h4><ul class="modal-features">';
   p.features.forEach(f => html += '<li>' + f + '</li>');
   html += '</ul>';
-  html += '<p class="modal-who"><strong>适合：</strong>' + p.who + '</p>';
+  html += '<h4 style="color:var(--accent2);margin:16px 0 8px">使用说明</h4><ol class="modal-usage">';
+  p.usage.forEach(u => html += '<li>' + u + '</li>');
+  html += '</ol>';
+  html += '<p class="modal-who"><strong>适合:</strong> ' + p.who + '</p>';
   html += '<a href="' + p.url + '" class="btn btn-primary" style="width:100%;text-align:center;margin-top:16px" target="_blank">立即购买</a>';
   document.getElementById('modalContent').innerHTML = html;
   document.getElementById('productModal').classList.add('show');
