@@ -118,6 +118,24 @@ nav .links a:hover{color:#fff}
 .btn-primary-sm:hover{background:#4f46e5}
 footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--border);margin-top:40px}
 @media(max-width:800px){.product-card{grid-template-columns:1fr}.hero h1{font-size:2rem}}
+
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:1000;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.show{display:flex}
+.modal{background:var(--card);border:1px solid var(--border);border-radius:16px;max-width:560px;width:100%;max-height:85vh;overflow-y:auto;padding:32px;position:relative;animation:modalIn .2s}
+@keyframes modalIn{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+.modal-close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--muted);font-size:1.6rem;cursor:pointer;line-height:1}
+.modal-close:hover{color:#fff}
+.modal-title{font-size:1.4rem;margin-bottom:4px}
+.modal-price{font-size:1.2rem;color:var(--accent2);margin-bottom:10px}
+.modal-tagline{color:var(--muted);font-size:.95rem;margin-bottom:12px}
+.modal-desc{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px;font-size:.9rem;line-height:1.7}
+.modal-features{list-style:none;margin:0;padding:0}
+.modal-features li{padding:5px 0;font-size:.9rem;color:var(--text)}
+.modal-features li::before{content:"✓ ";color:var(--green);font-weight:700}
+.modal-who{color:var(--muted);font-size:.85rem;margin-top:14px}
+.mcp-card.clickable{cursor:pointer;transition:transform .15s,border-color .15s}
+.mcp-card.clickable:hover{transform:translateY(-2px);border-color:var(--accent)}
+
 </style>
 <meta name="google-site-verification" content="n02Q88vOBNEE0r06l6PXprdNFeRzlt2xqqT3l-fS9IA" />
 </head>
@@ -147,7 +165,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
 <section id="scrapebox" class="section container">
   <h2>ScrapeBox — Local Scraper Toolkit</h2>
   <p style="text-align:center;color:var(--muted);max-width:700px;margin:-30px auto 40px">Double-click to start, curl to use. A developer's local REST scraping service.</p>
-  <div class="product-card">
+  <div class="product-card clickable data-product="mhxei">
     <div class="product-info">
       <h3>ScrapeBox</h3>
       <p>Local REST API. Pass a URL, get HTML/text/links/tables back. Built-in stealth browser bypasses low/medium anti-bot protection.</p>
@@ -169,7 +187,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
       <p style="color:var(--muted);font-size:.85rem;margin-top:12px">Then http://localhost:8080</p>
     </div>
   </div>
-  <div class="product-card pro" style="margin-top:24px">
+  <div class="product-card pro" style="margin-top:24px data-product="xfedun">
     <div class="product-info">
       <h3>ScrapeBox Pro <span class="badge badge-popular">POPULAR</span></h3>
       <p>All of ScrapeBox, PLUS advanced anti-bot bypass engine for high-protection websites. Zero config, one-click start.</p>
@@ -197,7 +215,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
   <h2>MCP Servers for AI Agents</h2>
   <p style="text-align:center;color:var(--muted);max-width:700px;margin:-30px auto 40px">One-time purchase, run locally. Integrate with Claude Desktop / Cursor / Cline / Windsurf to give AI agents real browser and scraping capabilities.</p>
   <div class="mcp-grid">
-    <div class="mcp-card">
+    <div class="mcp-card clickable" data-product="vueszs">
       <div class="icon">🕶️</div>
       <h3>CF Bypass Browser <span class="badge badge-popular">POPULAR</span></h3>
       <p>Full browser with ALL Cloudflare bypass. Supports click, type, screenshot, scroll, navigation.</p>
@@ -205,7 +223,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
       <ul><li>Auto bypass Cloudflare</li><li>Stealth browser engine</li><li>Full browser interaction</li><li>Claude/Cursor/Cline ready</li></ul>
       <a href="https://5044216526512.gumroad.com/l/vueszs" class="btn btn-primary" target="_blank">Buy Now</a>
     </div>
-    <div class="mcp-card">
+    <div class="mcp-card clickable" data-product="jusjsp">
       <div class="icon">🕷️</div>
       <h3>Unified Scraper <span class="badge badge-new">NEW</span></h3>
       <p>Auto Cloudflare-bypassing scraper. Pass a URL, get page content or plain text.</p>
@@ -213,7 +231,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
       <ul><li>Web data extraction</li><li>Dual-engine auto-switch</li><li>Plain text output</li><li>All MCP clients supported</li></ul>
       <a href="https://5044216526512.gumroad.com/l/jusjsp" class="btn btn-primary" target="_blank">Buy Now</a>
     </div>
-    <div class="mcp-card">
+    <div class="mcp-card clickable" data-product="lxuqkk">
       <div class="icon">🔮</div>
       <h3>Stealth Browser</h3>
       <p>Stealth browser MCP. Bypasses low/medium anti-bot detection. Supports screenshots and cookie management.</p>
@@ -221,7 +239,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
       <ul><li>Stealth browsing</li><li>Screenshots + Cookies</li><li>Bypass low/medium CF</li><li>Lightweight & fast</li></ul>
       <a href="https://5044216526512.gumroad.com/l/lxuqkk" class="btn btn-outline" target="_blank">Buy Now</a>
     </div>
-    <div class="mcp-card">
+    <div class="mcp-card clickable" data-product="xjggdb">
       <div class="icon">🕸️</div>
       <h3>Smart Scraper</h3>
       <p>Basic intelligent scraper MCP. Extract title, content, links, images from any URL.</p>
@@ -229,7 +247,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
       <ul><li>Simple to use</li><li>Extract multiple elements</li><li>No complex config</li><li>All MCP clients supported</li></ul>
       <a href="https://5044216526512.gumroad.com/l/xjggdb" class="btn btn-outline" target="_blank">Buy Now</a>
     </div>
-    <div class="mcp-card">
+    <div class="mcp-card clickable" data-product="rxmzx">
       <div class="icon">🌐</div>
       <h3>Domain Monitor</h3>
       <p>Domain monitoring MCP. WHOIS lookup, expiry tracking, DNS records. Perfect for expired domain hunting.</p>
@@ -237,7 +255,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
       <ul><li>WHOIS queries</li><li>Expiry monitoring</li><li>DNS record lookup</li><li>Expiry alerts</li></ul>
       <a href="https://5044216526512.gumroad.com/l/rxmzx" class="btn btn-outline" target="_blank">Buy Now</a>
     </div>
-    <div class="mcp-card">
+    <div class="mcp-card clickable" data-product="atwirg">
       <div class="icon">💰</div>
       <h3>Income Monitor</h3>
       <p>Passive income monitoring MCP. Track earnings from multiple platforms, aggregated data.</p>
@@ -245,7 +263,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
       <ul><li>Passive income tracking</li><li>Auto aggregation</li><li>Historical trends</li><li>Data visualization</li></ul>
       <a href="https://5044216526512.gumroad.com/l/atwirg" class="btn btn-outline" target="_blank">Buy Now</a>
     </div>
-    <div class="mcp-card">
+    <div class="mcp-card clickable" data-product="oulau">
       <div class="icon">🎯</div>
       <h3>B2B Lead Finder MCP <span class="badge badge-new">NEW</span></h3>
       <p>Find B2B leads without any login. Multi-source company &amp; contact intelligence for AI agents.</p>
@@ -253,7 +271,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
       <ul><li>Search companies</li><li>Find decision makers</li><li>Enrich company data</li><li>No login required</li></ul>
       <a href="https://5044216526512.gumroad.com/l/oulau" class="btn btn-primary" target="_blank">Buy Now</a>
     </div>
-    <div class="mcp-card">
+    <div class="mcp-card clickable" data-product="dzkacy">
       <div class="icon">🖱️</div>
       <h3>B2B Lead Finder (Desktop) <span class="badge badge-new">NEW</span></h3>
       <p>Simple desktop tool to find B2B leads. No login, no programming. Double-click to start.</p>
@@ -261,7 +279,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
       <ul><li>Search companies</li><li>Guess decision-maker emails</li><li>Scrape contact pages</li><li>Export leads to CSV</li></ul>
       <a href="https://5044216526512.gumroad.com/l/dzkacy" class="btn btn-primary" target="_blank">Buy Now</a>
     </div>
-    <div class="mcp-card">
+    <div class="mcp-card clickable" data-product="maekx">
       <div class="icon">🧠</div>
       <h3>LLM Scraper MCP <span class="badge badge-new">NEW</span></h3>
       <p>Extract structured data from any webpage with natural language. No CSS selectors, no coding.</p>
@@ -269,7 +287,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
       <ul><li>Natural language extraction</li><li>Custom JSON schema</li><li>Extract links &amp; CSV export</li><li>Auto bypass anti-bot</li></ul>
       <a href="https://5044216526512.gumroad.com/l/maekx" class="btn btn-primary" target="_blank">Buy Now</a>
     </div>
-    <div class="mcp-card">
+    <div class="mcp-card clickable" data-product="vzauzx">
       <div class="icon">🤖</div>
       <h3>LLM Scraper Desktop <span class="badge badge-new">NEW</span></h3>
       <p>Type a URL, describe what data you want in plain language. Bilingual EN/中文 interface.</p>
@@ -310,5 +328,41 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
   <p>© 2026 HermesBee. <a href="https://hermesbee.com" style="color:var(--muted)">hermesbee.com</a></p>
 </footer>
 
+
+<!-- Product Detail Modal -->
+<div class="modal-overlay" id="productModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+<script>
+const PRODUCTS = {"mhxei": {"name": "ScrapeBox", "price": "$29", "tagline": "Local REST scraping API. Double-click to start, curl to use.", "desc": "ScrapeBox is a local HTTP scraping service that runs on your own machine. Start it once, then call it from any script or browser.", "features": ["Extract HTML / text / links / tables", "Bypasses low/medium anti-bot protection", "Runs 100% locally - data never leaves your machine", "Windows / macOS / Linux", "No subscription, no monthly fees"], "who": "Developers · Data analysts · AI agent users", "url": "https://5044216526512.gumroad.com/l/mhxei"}, "xfedun": {"name": "ScrapeBox Pro", "price": "$39", "tagline": "All of ScrapeBox + auto-bypasses ALL anti-bot levels.", "desc": "The premium version of ScrapeBox. In addition to all base features, it automatically bypasses high-protection websites (all levels of Cloudflare, Akamai, etc.).", "features": ["Everything in ScrapeBox", "Auto-bypasses ALL anti-bot levels", "Access high-protection sites out of the box", "One-click start, zero config", "Runs locally, data never leaves your machine"], "who": "Developers · Domain investors · AI agents needing blocked pages", "url": "https://5044216526512.gumroad.com/l/xfedun"}, "vueszs": {"name": "CF Bypass Browser MCP", "price": "$25", "tagline": "Full browser for AI agents with ALL Cloudflare bypass.", "desc": "Give Claude Desktop / Cursor / Cline a real browser that can get through ALL levels of Cloudflare protection. Full interaction: click, type, screenshot, scroll, navigate.", "features": ["ALL-level Cloudflare bypass", "Full browser interaction (click/type/screenshot/scroll)", "Stealth browsing engine", "MCP-ready for Claude/Cursor/Cline/Windsurf", "Runs locally"], "who": "AI agent users · Developers · Researchers", "url": "https://5044216526512.gumroad.com/l/vueszs"}, "jusjsp": {"name": "Unified Scraper MCP", "price": "$19", "tagline": "Auto anti-bot-bypassing scraper. Pass a URL, get content.", "desc": "A smart scraper MCP that automatically switches between engines to get you the page content or plain text, even on protected sites.", "features": ["Auto anti-bot bypass", "Web data extraction", "Plain text output", "Dual-engine auto-switch", "All MCP clients supported"], "who": "AI agent users · Data collectors", "url": "https://5044216526512.gumroad.com/l/jusjsp"}, "lxuqkk": {"name": "Stealth Browser MCP", "price": "$15", "tagline": "Stealth browsing for AI agents. Screenshots + cookies.", "desc": "Lightweight stealth browser MCP. Bypasses low/medium anti-bot detection, supports screenshots and cookie management.", "features": ["Stealth browsing", "Screenshots + cookies", "Bypass low/medium anti-bot", "Lightweight & fast", "MCP-ready"], "who": "AI agent users · Automation builders", "url": "https://5044216526512.gumroad.com/l/lxuqkk"}, "xjggdb": {"name": "Smart Scraper MCP", "price": "$15", "tagline": "Basic intelligent scraper. Extract title, content, links, images.", "desc": "Simple-to-use scraper MCP. Pass any URL and extract the elements you need without complex configuration.", "features": ["Simple to use", "Extract multiple elements", "No complex config", "All MCP clients supported"], "who": "Beginners · Quick data extraction", "url": "https://5044216526512.gumroad.com/l/xjggdb"}, "rxmzx": {"name": "Domain Monitor MCP", "price": "$10", "tagline": "WHOIS lookup, expiry tracking, DNS records.", "desc": "Domain monitoring MCP for expired domain hunters. Check WHOIS, track expiry, lookup DNS records.", "features": ["WHOIS queries", "Expiry monitoring", "DNS record lookup", "Expiry alerts", "Perfect for expired domain hunting"], "who": "Domain investors · SEO specialists", "url": "https://5044216526512.gumroad.com/l/rxmzx"}, "atwirg": {"name": "Income Monitor MCP", "price": "$10", "tagline": "Track earnings from multiple passive income platforms.", "desc": "Aggregate and monitor earnings from all your bandwidth-sharing and passive income platforms in one place.", "features": ["Passive income tracking", "Auto aggregation", "Historical trends", "Data visualization"], "who": "Passive income earners · Bandwidth sharers", "url": "https://5044216526512.gumroad.com/l/atwirg"}, "oulau": {"name": "B2B Lead Finder MCP", "price": "$29", "tagline": "Find B2B leads without any login. Multi-source intelligence.", "desc": "Multi-source B2B company & contact intelligence for AI agents. Search companies, find decision makers, enrich data - all without logging into anything.", "features": ["Search companies", "Find decision makers", "Enrich company data (WHOIS + web)", "No login required", "Export leads to CSV"], "who": "Sales teams · Recruiters · Marketers", "url": "https://5044216526512.gumroad.com/l/oulau"}, "dzkacy": {"name": "B2B Lead Finder (Desktop)", "price": "$19", "tagline": "Simple desktop tool to find B2B leads. No login, no programming.", "desc": "Double-click to start, browser opens automatically. Search companies, guess decision-maker emails, scrape contact pages, export leads to CSV. Bilingual EN/中文.", "features": ["Search companies", "Guess decision-maker emails", "Scrape contact pages", "Export leads to CSV", "Bilingual EN/中文 interface"], "who": "Non-technical users · Small business owners · Sales", "url": "https://5044216526512.gumroad.com/l/dzkacy"}, "maekx": {"name": "LLM Scraper MCP", "price": "$49", "tagline": "Natural language web data extraction. No CSS selectors, no coding.", "desc": "Describe what data you want in plain language, the AI understands the page and extracts structured JSON. Bring your own LLM API key.", "features": ["extract_data: natural language → JSON", "extract_with_schema: define output structure", "extract_links: all links with anchor text", "export_csv: results to CSV", "Auto bypasses anti-bot", "Works with DeepSeek/OpenAI/Kimi keys"], "who": "AI agent users · Analysts · No-code data extraction", "url": "https://5044216526512.gumroad.com/l/maekx"}, "vzauzx": {"name": "LLM Scraper (Desktop)", "price": "$59", "tagline": "AI web extraction for everyone. Bilingual EN/中文 interface.", "desc": "Type a URL, describe what you want in plain language, get structured results. First-run setup page asks for your LLM API key once. Perfect for non-programmers.", "features": ["No programming needed", "Bilingual EN/中文 interface", "First-run guided setup", "Export JSON / CSV", "Auto bypasses anti-bot", "Bring your own LLM key"], "who": "Data analysts · Marketers · E-commerce sellers · Researchers", "url": "https://5044216526512.gumroad.com/l/vzauzx"}};
+function openModal(slug) {
+  const p = PRODUCTS[slug];
+  if (!p) return;
+  let html = '<h2 class="modal-title">' + p.name + '</h2>';
+  html += '<div class="modal-price">' + p.price + ' <span style="color:var(--muted);font-size:.85rem">one-time</span></div>';
+  html += '<p class="modal-tagline">' + p.tagline + '</p>';
+  html += '<div class="modal-desc"><p>' + p.desc + '</p></div>';
+  html += '<h4 style="color:var(--accent2);margin:16px 0 8px">Features</h4><ul class="modal-features">';
+  p.features.forEach(f => html += '<li>' + f + '</li>');
+  html += '</ul>';
+  html += '<p class="modal-who"><strong>For:</strong> ' + p.who + '</p>';
+  html += '<a href="' + p.url + '" class="btn btn-primary" style="width:100%;text-align:center;margin-top:16px" target="_blank">Buy Now</a>';
+  document.getElementById('modalContent').innerHTML = html;
+  document.getElementById('productModal').classList.add('show');
+}
+function closeModal() {
+  document.getElementById('productModal').classList.remove('show');
+}
+document.querySelectorAll('.mcp-card.clickable, .product-card.clickable').forEach(card => {{
+  card.addEventListener('click', function(e) {{
+    if (e.target.closest('a')) return;
+    openModal(this.dataset.product);
+  }});
+}});
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+</script>
 </body>
 </html>
