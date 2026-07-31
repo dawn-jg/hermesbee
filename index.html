@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HermesBee - ScrapeBox & MCP Browser Tools | Cloudflare Bypass Web Scraper</title>
+<meta name="description" content="HermesBee offers ScrapeBox local web scraper API and MCP browser tools. Bypass Cloudflare, extract HTML/text/links/tables, one-time purchase, no subscription. For developers and AI agents.">
+<meta name="keywords" content="web scraper, cloudflare bypass, MCP server, MCP browser, scrapebox, local scraping API, web scraping tools, AI agent tools, Claude MCP, Cursor MCP">
+<meta name="robots" content="index, follow">
+<meta name="author" content="HermesBee">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="HermesBee - Web Scraping Tools for Developers & AI Agents">
+<meta property="og:description" content="ScrapeBox local scraper API + MCP servers with Cloudflare bypass. One-time purchase, runs locally, data never leaves your machine.">
+<meta property="og:url" content="https://hermesbee.com/">
+<meta property="og:site_name" content="HermesBee">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HermesBee - Web Scraping Tools for Developers & AI Agents">
+<meta name="twitter:description" content="ScrapeBox + MCP servers with Cloudflare bypass. One-time purchase, runs locally.">
+<!-- Canonical -->
+<link rel="canonical" href="https://hermesbee.com/">
+<link rel="alternate" hreflang="en" href="https://hermesbee.com/">
+<link rel="alternate" hreflang="zh" href="https://hermesbee.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://hermesbee.com/">
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "HermesBee",
+  "url": "https://hermesbee.com",
+  "description": "Web scraping tools for developers and AI agents. Local scraper API and MCP servers with Cloudflare bypass.",
+  "inLanguage": ["en", "zh"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "HermesBee Products",
+  "itemListElement": [
+    {"@type": "Product", "position": 1, "name": "ScrapeBox", "description": "Local REST API web scraper. Extract HTML, text, links, tables.", "offers": {"@type": "Offer", "price": "29", "priceCurrency": "USD", "url": "https://5044216526512.gumroad.com/l/mhxei"}},
+    {"@type": "Product", "position": 2, "name": "ScrapeBox Pro", "description": "Local scraper API with advanced anti-bot bypass for high-protection websites.", "offers": {"@type": "Offer", "price": "39", "priceCurrency": "USD", "url": "https://5044216526512.gumroad.com/l/xfedun"}},
+    {"@type": "Product", "position": 3, "name": "CF Bypass Browser MCP", "description": "Full browser MCP server with all-level Cloudflare bypass for AI agents.", "offers": {"@type": "Offer", "price": "25", "priceCurrency": "USD", "url": "https://5044216526512.gumroad.com/l/vueszs"}},
+    {"@type": "Product", "position": 4, "name": "Unified Scraper MCP", "description": "Auto Cloudflare-bypassing scraper MCP for AI agents.", "offers": {"@type": "Offer", "price": "19", "priceCurrency": "USD", "url": "https://5044216526512.gumroad.com/l/jusjsp"}}
+  ]
+}
+</script>
+<style>
+:root{--bg:#0a0a0f;--card:#14141f;--border:#2a2a3a;--text:#e0e0e8;--muted:#8888a0;--accent:#6366f1;--accent2:#22d3ee;--green:#34d399;--orange:#f59e0b;--red:#ef4444}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--border)}
+nav .logo{font-size:1.4rem;font-weight:700;color:#fff}
+nav .logo span{color:var(--accent)}
+nav .links a{color:var(--muted);text-decoration:none;margin-left:24px;font-size:.9rem}
+nav .links a:hover{color:#fff}
+.lang-btn{display:inline-block;padding:4px 12px;border-radius:6px;border:1px solid var(--border);color:var(--muted);text-decoration:none;font-size:.8rem;margin-left:16px;transition:.2s}
+.lang-btn:hover{border-color:var(--accent);color:var(--accent)}
+.lang-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.hero{text-align:center;padding:90px 0 70px}
+.hero h1{font-size:2.8rem;font-weight:800;margin-bottom:18px;background:linear-gradient(135deg,#fff 30%,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:700px;margin:0 auto 36px}
+.hero .btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 28px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.95rem}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:#4f46e5}
+.btn-outline{border:1px solid var(--border);color:var(--text)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.badge{display:inline-block;padding:4px 10px;border-radius:20px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.badge-new{background:var(--red);color:#fff}
+.badge-popular{background:var(--orange);color:#000}
+.section{padding:70px 0}
+.section h2{text-align:center;font-size:2rem;margin-bottom:50px;color:#fff}
+.product-card{background:linear-gradient(135deg,rgba(99,102,241,.12),rgba(34,211,238,.08));border:1px solid var(--border);border-radius:16px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.product-card.pro{background:linear-gradient(135deg,rgba(245,158,11,.12),rgba(239,68,68,.08));border-color:var(--orange)}
+.product-info h3{font-size:1.6rem;margin-bottom:12px}
+.product-info p{color:var(--muted);margin-bottom:20px}
+.product-info ul{list-style:none;margin:20px 0}
+.product-info li{padding:6px 0;color:var(--text);font-size:.92rem}
+.product-info li::before{content:"✓ ";color:var(--green);font-weight:700}
+.product-pricing{text-align:center}
+.product-price{font-size:3rem;font-weight:800}
+.product-price span{font-size:1rem;color:var(--muted);font-weight:400}
+.product-code{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:left}
+.product-code code{color:#a5b4fc;font-size:.9rem}
+.mcp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.mcp-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:26px;position:relative;transition:.2s}
+.mcp-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.mcp-card .icon{font-size:2.2rem;margin-bottom:14px}
+.mcp-card h3{font-size:1.15rem;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.mcp-card p{color:var(--muted);font-size:.9rem;margin-bottom:16px;min-height:40px}
+.mcp-card .price{font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:14px}
+.mcp-card .price span{font-size:.9rem;color:var(--muted);font-weight:400}
+.mcp-card ul{list-style:none;margin-bottom:18px}
+.mcp-card li{padding:5px 0;font-size:.85rem;color:var(--text)}
+.mcp-card li::before{content:"✓ ";color:var(--green);font-weight:700}
+.mcp-card .btn{width:100%;text-align:center}
+.compare{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:30px}
+.compare h3{text-align:center;margin-bottom:24px;font-size:1.3rem}
+.compare table{width:100%;border-collapse:collapse}
+.compare th,.compare td{padding:12px 14px;border-bottom:1px solid var(--border);text-align:left;font-size:.9rem;vertical-align:middle}
+.compare th{color:var(--muted);font-weight:500;font-size:.85rem;text-transform:uppercase;letter-spacing:.5px}
+.compare td:last-child{text-align:center;width:90px}
+.compare td:nth-child(2){font-weight:600;color:#fff}
+.compare td:nth-child(3){text-align:center;width:80px;color:var(--accent2)}
+.compare tr:hover td{background:rgba(99,102,241,.05)}
+.compare tr.sep td{border-bottom:2px solid var(--border);padding:0;height:4px;background:transparent}
+.icon-small{font-size:1.2rem;margin-right:8px;vertical-align:middle}
+.btn-sm{display:inline-block;padding:6px 16px;border-radius:6px;border:1px solid var(--border);color:var(--text);text-decoration:none;font-size:.8rem;font-weight:600;transition:.2s;white-space:nowrap}
+.btn-sm:hover{border-color:var(--accent);color:var(--accent)}
+.btn-primary-sm{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-primary-sm:hover{background:#4f46e5}
+footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--border);margin-top:40px}
+@media(max-width:800px){.product-card{grid-template-columns:1fr}.hero h1{font-size:2rem}}
+</style>
+<meta name="google-site-verification" content="n02Q88vOBNEE0r06l6PXprdNFeRzlt2xqqT3l-fS9IA" />
+</head>
+<body>
+
+<nav class="container">
+  <div class="logo">Hermes<span>Bee</span></div>
+  <div class="links">
+    <a href="#scrapebox">ScrapeBox</a>
+    <a href="#mcp">MCP Tools</a>
+    <a href="#compare">Compare</a>
+    <a href="/blog/scrapebox-local-scraper-api.html">Blog</a>
+    <a href="/" class="lang-btn active">EN</a>
+    <a href="/zh/" class="lang-btn">中文</a>
+  </div>
+</nav>
+
+<section class="hero container">
+  <h1>Web Scraping Tools That Run on Your Machine</h1>
+  <p>HermesBee offers developer-friendly local scraping tools and AI Agent MCP suites. No subscriptions, no monthly fees, your data never leaves your machine.</p>
+  <div class="btns">
+    <a href="#scrapebox" class="btn btn-primary">ScrapeBox</a>
+    <a href="#mcp" class="btn btn-outline">MCP Tools</a>
+  </div>
+</section>
+
+<section id="scrapebox" class="section container">
+  <h2>ScrapeBox — Local Scraper Toolkit</h2>
+  <p style="text-align:center;color:var(--muted);max-width:700px;margin:-30px auto 40px">Double-click to start, curl to use. A developer's local REST scraping service.</p>
+  <div class="product-card">
+    <div class="product-info">
+      <h3>ScrapeBox</h3>
+      <p>Local REST API. Pass a URL, get HTML/text/links/tables back. Built-in stealth browser bypasses low/medium anti-bot protection.</p>
+      <ul>
+        <li>Runs locally, data never leaves your machine</li>
+        <li>Extract HTML / text / links / tables</li>
+        <li>Bypasses low/medium Cloudflare</li>
+        <li>Windows / macOS / Linux</li>
+      </ul>
+      <a href="https://5044216526512.gumroad.com/l/mhxei" class="btn btn-outline" target="_blank">Buy Now</a>
+    </div>
+    <div class="product-pricing">
+      <div class="product-price">$29<span> one-time</span></div>
+      <p style="color:var(--muted);margin-bottom:16px">No subscriptions, lifetime use</p>
+      <div class="product-code">
+        <code>pip install -r requirements.txt</code><br>
+        <code>python api_server.py</code>
+      </div>
+      <p style="color:var(--muted);font-size:.85rem;margin-top:12px">Then http://localhost:8080</p>
+    </div>
+  </div>
+  <div class="product-card pro" style="margin-top:24px">
+    <div class="product-info">
+      <h3>ScrapeBox Pro <span class="badge badge-popular">POPULAR</span></h3>
+      <p>All of ScrapeBox, PLUS advanced anti-bot bypass engine for high-protection websites. Zero config, one-click start.</p>
+      <ul>
+        <li>All ScrapeBox features included</li>
+        <li>Built-in advanced anti-bot engine</li>
+        <li>One-click start scripts</li>
+        <li>Bypasses ALL levels of Cloudflare</li>
+      </ul>
+      <a href="https://5044216526512.gumroad.com/l/xfedun" class="btn btn-primary" target="_blank">Buy Now</a>
+    </div>
+    <div class="product-pricing">
+      <div class="product-price">$39<span> one-time</span></div>
+      <p style="color:var(--muted);margin-bottom:16px">Recommended | Lifetime use</p>
+      <div class="product-code">
+        <code>bash setup.sh</code><br>
+        <code>bash start.sh</code>
+      </div>
+      <p style="color:var(--muted);font-size:.85rem;margin-top:12px">Auto-starts API + bypass engine</p>
+    </div>
+  </div>
+</section>
+
+<section id="mcp" class="section container">
+  <h2>MCP Servers for AI Agents</h2>
+  <p style="text-align:center;color:var(--muted);max-width:700px;margin:-30px auto 40px">One-time purchase, run locally. Integrate with Claude Desktop / Cursor / Cline / Windsurf to give AI agents real browser and scraping capabilities.</p>
+  <div class="mcp-grid">
+    <div class="mcp-card">
+      <div class="icon">🕶️</div>
+      <h3>CF Bypass Browser <span class="badge badge-popular">POPULAR</span></h3>
+      <p>Full browser with ALL Cloudflare bypass. Supports click, type, screenshot, scroll, navigation.</p>
+      <div class="price">$25<span> one-time</span></div>
+      <ul><li>Auto bypass Cloudflare</li><li>Stealth browser engine</li><li>Full browser interaction</li><li>Claude/Cursor/Cline ready</li></ul>
+      <a href="https://5044216526512.gumroad.com/l/vueszs" class="btn btn-primary" target="_blank">Buy Now</a>
+    </div>
+    <div class="mcp-card">
+      <div class="icon">🕷️</div>
+      <h3>Unified Scraper <span class="badge badge-new">NEW</span></h3>
+      <p>Auto Cloudflare-bypassing scraper. Pass a URL, get page content or plain text.</p>
+      <div class="price">$19<span> one-time</span></div>
+      <ul><li>Web data extraction</li><li>Dual-engine auto-switch</li><li>Plain text output</li><li>All MCP clients supported</li></ul>
+      <a href="https://5044216526512.gumroad.com/l/jusjsp" class="btn btn-primary" target="_blank">Buy Now</a>
+    </div>
+    <div class="mcp-card">
+      <div class="icon">🔮</div>
+      <h3>Stealth Browser</h3>
+      <p>Stealth browser MCP. Bypasses low/medium anti-bot detection. Supports screenshots and cookie management.</p>
+      <div class="price">$15<span> one-time</span></div>
+      <ul><li>Stealth browsing</li><li>Screenshots + Cookies</li><li>Bypass low/medium CF</li><li>Lightweight & fast</li></ul>
+      <a href="https://5044216526512.gumroad.com/l/lxuqkk" class="btn btn-outline" target="_blank">Buy Now</a>
+    </div>
+    <div class="mcp-card">
+      <div class="icon">🕸️</div>
+      <h3>Smart Scraper</h3>
+      <p>Basic intelligent scraper MCP. Extract title, content, links, images from any URL.</p>
+      <div class="price">$15<span> one-time</span></div>
+      <ul><li>Simple to use</li><li>Extract multiple elements</li><li>No complex config</li><li>All MCP clients supported</li></ul>
+      <a href="https://5044216526512.gumroad.com/l/xjggdb" class="btn btn-outline" target="_blank">Buy Now</a>
+    </div>
+    <div class="mcp-card">
+      <div class="icon">🌐</div>
+      <h3>Domain Monitor</h3>
+      <p>Domain monitoring MCP. WHOIS lookup, expiry tracking, DNS records. Perfect for expired domain hunting.</p>
+      <div class="price">$10<span> one-time</span></div>
+      <ul><li>WHOIS queries</li><li>Expiry monitoring</li><li>DNS record lookup</li><li>Expiry alerts</li></ul>
+      <a href="https://5044216526512.gumroad.com/l/rxmzx" class="btn btn-outline" target="_blank">Buy Now</a>
+    </div>
+    <div class="mcp-card">
+      <div class="icon">💰</div>
+      <h3>Income Monitor</h3>
+      <p>Passive income monitoring MCP. Track earnings from multiple platforms, aggregated data.</p>
+      <div class="price">$10<span> one-time</span></div>
+      <ul><li>Passive income tracking</li><li>Auto aggregation</li><li>Historical trends</li><li>Data visualization</li></ul>
+      <a href="https://5044216526512.gumroad.com/l/atwirg" class="btn btn-outline" target="_blank">Buy Now</a>
+    </div>
+  </div>
+</section>
+
+<section id="compare" class="section container">
+  <h2>Choose Your Tool</h2>
+  <p style="text-align:center;color:var(--muted);max-width:700px;margin:-30px auto 40px;font-size:.95rem">Every product is a one-time purchase, runs locally on your machine.</p>
+  <div class="compare">
+    <table>
+      <tr><th>Use Case</th><th>Product</th><th>Price</th><th>Action</th></tr>
+      <tr><td><span class="icon-small">🖥️</span> Local REST API for scraping</td><td>ScrapeBox</td><td><strong>$29</strong></td><td><a href="https://5044216526512.gumroad.com/l/mhxei" class="btn btn-sm" target="_blank">Buy →</a></td></tr>
+      <tr><td><span class="icon-small">🛡️</span> Local API + ALL Cloudflare bypass</td><td><strong>ScrapeBox Pro</strong> <span class="badge badge-popular" style="font-size:.7rem">Best</span></td><td><strong>$39</strong></td><td><a href="https://5044216526512.gumroad.com/l/xfedun" class="btn btn-sm btn-primary-sm" target="_blank">Buy →</a></td></tr>
+      <tr class="sep"><td colspan="4"></td></tr>
+      <tr><td><span class="icon-small">🕶️</span> Full browser + ALL Cloudflare bypass for AI</td><td>CF Bypass Browser MCP</td><td>$25</td><td><a href="https://5044216526512.gumroad.com/l/vueszs" class="btn btn-sm" target="_blank">Buy →</a></td></tr>
+      <tr><td><span class="icon-small">🕷️</span> Auto web scraping for AI agents</td><td>Unified Scraper MCP</td><td>$19</td><td><a href="https://5044216526512.gumroad.com/l/jusjsp" class="btn btn-sm" target="_blank">Buy →</a></td></tr>
+      <tr><td><span class="icon-small">🔮</span> Stealth browser for AI agents</td><td>Stealth Browser MCP</td><td>$15</td><td><a href="https://5044216526512.gumroad.com/l/lxuqkk" class="btn btn-sm" target="_blank">Buy →</a></td></tr>
+      <tr><td><span class="icon-small">🕸️</span> Basic web data extraction</td><td>Smart Scraper MCP</td><td>$15</td><td><a href="https://5044216526512.gumroad.com/l/xjggdb" class="btn btn-sm" target="_blank">Buy →</a></td></tr>
+      <tr class="sep"><td colspan="4"></td></tr>
+      <tr><td><span class="icon-small">🌐</span> Domain WHOIS &amp; expiry monitoring</td><td>Domain Monitor MCP</td><td>$10</td><td><a href="https://5044216526512.gumroad.com/l/rxmzx" class="btn btn-sm" target="_blank">Buy →</a></td></tr>
+      <tr><td><span class="icon-small">💰</span> Passive income tracking</td><td>Income Monitor MCP</td><td>$10</td><td><a href="https://5044216526512.gumroad.com/l/atwirg" class="btn btn-sm" target="_blank">Buy →</a></td></tr>
+    </table>
+  </div>
+</section>
+
+<footer class="container">
+  <p>© 2026 HermesBee. <a href="https://hermesbee.com" style="color:var(--muted)">hermesbee.com</a></p>
+</footer>
+
+</body>
+</html>

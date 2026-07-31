@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HermesBee - ScrapeBox & MCP 浏览器工具 | 本地爬虫与 AI Agent 工具</title>
+<meta name="description" content="HermesBee 提供 ScrapeBox 本地爬虫 API 和 MCP 浏览器工具套件。双击启动，curl 调用，数据不出本机。">
+<link rel="alternate" hreflang="en" href="https://hermesbee.com/">
+<link rel="alternate" hreflang="zh" href="https://hermesbee.com/zh/">
+<style>
+:root{--bg:#0a0a0f;--card:#14141f;--border:#2a2a3a;--text:#e0e0e8;--muted:#8888a0;--accent:#6366f1;--accent2:#22d3ee;--green:#34d399;--orange:#f59e0b;--red:#ef4444}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--border)}
+nav .logo{font-size:1.4rem;font-weight:700;color:#fff}
+nav .logo span{color:var(--accent)}
+nav .links a{color:var(--muted);text-decoration:none;margin-left:24px;font-size:.9rem}
+nav .links a:hover{color:#fff}
+.lang-btn{display:inline-block;padding:4px 12px;border-radius:6px;border:1px solid var(--border);color:var(--muted);text-decoration:none;font-size:.8rem;margin-left:16px;transition:.2s}
+.lang-btn:hover{border-color:var(--accent);color:var(--accent)}
+.lang-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.hero{text-align:center;padding:90px 0 70px}
+.hero h1{font-size:2.8rem;font-weight:800;margin-bottom:18px;background:linear-gradient(135deg,#fff 30%,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:700px;margin:0 auto 36px}
+.hero .btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 28px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.95rem}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:#4f46e5}
+.btn-outline{border:1px solid var(--border);color:var(--text)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.badge{display:inline-block;padding:4px 10px;border-radius:20px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.badge-new{background:var(--red);color:#fff}
+.badge-popular{background:var(--orange);color:#000}
+.section{padding:70px 0}
+.section h2{text-align:center;font-size:2rem;margin-bottom:50px;color:#fff}
+.product-card{background:linear-gradient(135deg,rgba(99,102,241,.12),rgba(34,211,238,.08));border:1px solid var(--border);border-radius:16px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.product-card.pro{background:linear-gradient(135deg,rgba(245,158,11,.12),rgba(239,68,68,.08));border-color:var(--orange)}
+.product-info h3{font-size:1.6rem;margin-bottom:12px}
+.product-info p{color:var(--muted);margin-bottom:20px}
+.product-info ul{list-style:none;margin:20px 0}
+.product-info li{padding:6px 0;color:var(--text);font-size:.92rem}
+.product-info li::before{content:"✓ ";color:var(--green);font-weight:700}
+.product-pricing{text-align:center}
+.product-price{font-size:3rem;font-weight:800}
+.product-price span{font-size:1rem;color:var(--muted);font-weight:400}
+.product-code{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:left}
+.product-code code{color:#a5b4fc;font-size:.9rem}
+.mcp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.mcp-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:26px;position:relative;transition:.2s}
+.mcp-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.mcp-card .icon{font-size:2.2rem;margin-bottom:14px}
+.mcp-card h3{font-size:1.15rem;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.mcp-card p{color:var(--muted);font-size:.9rem;margin-bottom:16px;min-height:40px}
+.mcp-card .price{font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:14px}
+.mcp-card .price span{font-size:.9rem;color:var(--muted);font-weight:400}
+.mcp-card ul{list-style:none;margin-bottom:18px}
+.mcp-card li{padding:5px 0;font-size:.85rem;color:var(--text)}
+.mcp-card li::before{content:"✓ ";color:var(--green);font-weight:700}
+.mcp-card .btn{width:100%;text-align:center}
+.compare{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:30px}
+.compare h3{text-align:center;margin-bottom:24px;font-size:1.3rem}
+.compare table{width:100%;border-collapse:collapse}
+.compare th,.compare td{padding:12px 14px;border-bottom:1px solid var(--border);text-align:left;font-size:.9rem;vertical-align:middle}
+.compare th{color:var(--muted);font-weight:500;font-size:.85rem;text-transform:uppercase;letter-spacing:.5px}
+.compare td:last-child{text-align:center;width:90px}
+.compare td:nth-child(2){font-weight:600;color:#fff}
+.compare td:nth-child(3){text-align:center;width:80px;color:var(--accent2)}
+.compare tr:hover td{background:rgba(99,102,241,.05)}
+.compare tr.sep td{border-bottom:2px solid var(--border);padding:0;height:4px;background:transparent}
+.icon-small{font-size:1.2rem;margin-right:8px;vertical-align:middle}
+.btn-sm{display:inline-block;padding:6px 16px;border-radius:6px;border:1px solid var(--border);color:var(--text);text-decoration:none;font-size:.8rem;font-weight:600;transition:.2s;white-space:nowrap}
+.btn-sm:hover{border-color:var(--accent);color:var(--accent)}
+.btn-primary-sm{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-primary-sm:hover{background:#4f46e5}
+footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--border);margin-top:40px}
+@media(max-width:800px){.product-card{grid-template-columns:1fr}.hero h1{font-size:2rem}}
+</style>
+</head>
+<body>
+
+<nav class="container">
+  <div class="logo">Hermes<span>Bee</span></div>
+  <div class="links">
+    <a href="#scrapebox">ScrapeBox</a>
+    <a href="#mcp">MCP 工具</a>
+    <a href="#compare">对比</a>
+    <a href="/blog/scrapebox-local-scraper-api.html">博客</a>
+    <a href="/" class="lang-btn">EN</a>
+    <a href="/zh/" class="lang-btn active">中文</a>
+  </div>
+</nav>
+
+<section class="hero container">
+  <h1>在你自己电脑上运行的网页爬虫工具</h1>
+  <p>HermesBee 提供开发者友好的本地爬虫 API 和 AI Agent MCP 套件。无订阅、无月费、数据不上传任何云端。</p>
+  <div class="btns">
+    <a href="#scrapebox" class="btn btn-primary">ScrapeBox</a>
+    <a href="#mcp" class="btn btn-outline">MCP 工具</a>
+  </div>
+</section>
+
+<section id="scrapebox" class="section container">
+  <h2>ScrapeBox — 本地爬虫工具箱</h2>
+  <p style="text-align:center;color:var(--muted);max-width:700px;margin:-30px auto 40px">双击启动，curl 调用。开发者专属的本地 REST 爬虫服务。</p>
+  <div class="product-card">
+    <div class="product-info">
+      <h3>ScrapeBox</h3>
+      <p>本地运行，传个 URL 返回 HTML/文本/链接/表格。内置隐身浏览引擎，绕过中低等级反爬虫。</p>
+      <ul>
+        <li>本地运行，数据不出本机</li>
+        <li>提取 HTML / 纯文本 / 链接 / 表格</li>
+        <li>绕过低/中等级 Cloudflare</li>
+        <li>Windows / macOS / Linux 通用</li>
+      </ul>
+      <a href="https://5044216526512.gumroad.com/l/mhxei" class="btn btn-outline" target="_blank">立即购买</a>
+    </div>
+    <div class="product-pricing">
+      <div class="product-price">$29<span> 一次性</span></div>
+      <p style="color:var(--muted);margin-bottom:16px">无月费，永久使用</p>
+      <div class="product-code">
+        <code>pip install -r requirements.txt</code><br>
+        <code>python api_server.py</code>
+      </div>
+      <p style="color:var(--muted);font-size:.85rem;margin-top:12px">然后 http://localhost:8080</p>
+    </div>
+  </div>
+  <div class="product-card pro" style="margin-top:24px">
+    <div class="product-info">
+      <h3>ScrapeBox Pro <span class="badge badge-popular">推荐</span></h3>
+      <p>在 ScrapeBox 基础上，内置高级反爬绕过引擎。高等级 Cloudflare 也能自动绕过，一键搞定。</p>
+      <ul>
+        <li>包含 ScrapeBox 所有功能</li>
+        <li>内置高级反爬绕过引擎</li>
+        <li>一键启动脚本，零配置</li>
+        <li>绕过低/中/高所有等级 Cloudflare</li>
+      </ul>
+      <a href="https://5044216526512.gumroad.com/l/xfedun" class="btn btn-primary" target="_blank">立即购买</a>
+    </div>
+    <div class="product-pricing">
+      <div class="product-price">$39<span> 一次性</span></div>
+      <p style="color:var(--muted);margin-bottom:16px">推荐版 | 无后续费用</p>
+      <div class="product-code">
+        <code>bash setup.sh</code><br>
+        <code>bash start.sh</code>
+      </div>
+      <p style="color:var(--muted);font-size:.85rem;margin-top:12px">一键启动，开箱即用</p>
+    </div>
+  </div>
+</section>
+
+<section id="mcp" class="section container">
+  <h2>AI Agent MCP 工具</h2>
+  <p style="text-align:center;color:var(--muted);max-width:700px;margin:-30px auto 40px">一次性购买，本地运行。接入 Claude Desktop / Cursor / Cline / Windsurf，让 AI 代理拥有浏览器和爬虫能力。</p>
+  <div class="mcp-grid">
+    <div class="mcp-card">
+      <div class="icon">🕶️</div>
+      <h3>CF Bypass Browser <span class="badge badge-popular">热门</span></h3>
+      <p>绕过所有等级 Cloudflare 的完整浏览器，支持点击、输入、截图、滚动。</p>
+      <div class="price">$25<span> 一次性</span></div>
+      <ul><li>自动绕 Cloudflare</li><li>隐身浏览器引擎</li><li>完整浏览器交互</li><li>适配 Claude/Cursor/Cline</li></ul>
+      <a href="https://5044216526512.gumroad.com/l/vueszs" class="btn btn-primary" target="_blank">立即购买</a>
+    </div>
+    <div class="mcp-card">
+      <div class="icon">🕷️</div>
+      <h3>Unified Scraper <span class="badge badge-new">新品</span></h3>
+      <p>自动绕 Cloudflare 的智能爬虫，传个 URL 返回整页内容或纯文本。</p>
+      <div class="price">$19<span> 一次性</span></div>
+      <ul><li>Web数据提取</li><li>双引自动切换</li><li>纯文本输出</li><li>适配所有 MCP 客户端</li></ul>
+      <a href="https://5044216526512.gumroad.com/l/jusjsp" class="btn btn-primary" target="_blank">立即购买</a>
+    </div>
+    <div class="mcp-card">
+      <div class="icon">🔮</div>
+      <h3>Stealth Browser</h3>
+      <p>隐身浏览器 MCP，绕过中低等级反爬虫检测，支持截图和 Cookie 管理。</p>
+      <div class="price">$15<span> 一次性</span></div>
+      <ul><li>隐身浏览</li><li>截图 + Cookie</li><li>绕中低 Cloudflare</li><li>轻量快速</li></ul>
+      <a href="https://5044216526512.gumroad.com/l/lxuqkk" class="btn btn-outline" target="_blank">立即购买</a>
+    </div>
+    <div class="mcp-card">
+      <div class="icon">🕸️</div>
+      <h3>Smart Scraper</h3>
+      <p>基础智能爬虫 MCP，传网址即可提取标题、正文、链接、图片。</p>
+      <div class="price">$15<span> 一次性</span></div>
+      <ul><li>简单易用</li><li>提取多种元素</li><li>无需复杂配置</li><li>适配所有客户端</li></ul>
+      <a href="https://5044216526512.gumroad.com/l/xjggdb" class="btn btn-outline" target="_blank">立即购买</a>
+    </div>
+    <div class="mcp-card">
+      <div class="icon">🌐</div>
+      <h3>Domain Monitor</h3>
+      <p>域名监控 MCP，查询 whois 状态、过期时间、DNS 信息，适合过期域名挖掘。</p>
+      <div class="price">$10<span> 一次性</span></div>
+      <ul><li>WHOIS 查询</li><li>过期时间监控</li><li>DNS 记录查询</li><li>过期提醒</li></ul>
+      <a href="https://5044216526512.gumroad.com/l/rxmzx" class="btn btn-outline" target="_blank">立即购买</a>
+    </div>
+    <div class="mcp-card">
+      <div class="icon">💰</div>
+      <h3>Income Monitor</h3>
+      <p>收益监控 MCP，跟踪各种挂机平台收益状况，汇总数据。</p>
+      <div class="price">$10<span> 一次性</span></div>
+      <ul><li>挂机平台收益</li><li>自动汇总</li><li>历史趋势</li><li>数据可视化</li></ul>
+      <a href="https://5044216526512.gumroad.com/l/atwirg" class="btn btn-outline" target="_blank">立即购买</a>
+    </div>
+  </div>
+</section>
+
+<section id="compare" class="section container">
+  <h2>选择适合你的工具</h2>
+  <p style="text-align:center;color:var(--muted);max-width:700px;margin:-30px auto 40px;font-size:.95rem">所有产品均为一次性购买，在本地运行。</p>
+  <div class="compare">
+    <table>
+      <tr><th>使用场景</th><th>产品</th><th>价格</th><th>购买</th></tr>
+      <tr><td><span class="icon-small">🖥️</span> 本地 REST 爬虫 API</td><td>ScrapeBox</td><td><strong>$29</strong></td><td><a href="https://5044216526512.gumroad.com/l/mhxei" class="btn btn-sm" target="_blank">购买 →</a></td></tr>
+      <tr><td><span class="icon-small">🛡️</span> 本地 API + 绕所有 Cloudflare</td><td><strong>ScrapeBox Pro</strong> <span class="badge badge-popular" style="font-size:.7rem">推荐</span></td><td><strong>$39</strong></td><td><a href="https://5044216526512.gumroad.com/l/xfedun" class="btn btn-sm btn-primary-sm" target="_blank">购买 →</a></td></tr>
+      <tr class="sep"><td colspan="4"></td></tr>
+      <tr><td><span class="icon-small">🕶️</span> 完整浏览器 + 绕所有 Cloudflare</td><td>CF Bypass Browser MCP</td><td>$25</td><td><a href="https://5044216526512.gumroad.com/l/vueszs" class="btn btn-sm" target="_blank">购买 →</a></td></tr>
+      <tr><td><span class="icon-small">🕷️</span> AI 代理自动爬取网页</td><td>Unified Scraper MCP</td><td>$19</td><td><a href="https://5044216526512.gumroad.com/l/jusjsp" class="btn btn-sm" target="_blank">购买 →</a></td></tr>
+      <tr><td><span class="icon-small">🔮</span> AI 代理隐身浏览器</td><td>Stealth Browser MCP</td><td>$15</td><td><a href="https://5044216526512.gumroad.com/l/lxuqkk" class="btn btn-sm" target="_blank">购买 →</a></td></tr>
+      <tr><td><span class="icon-small">🕸️</span> 基础网页数据提取</td><td>Smart Scraper MCP</td><td>$15</td><td><a href="https://5044216526512.gumroad.com/l/xjggdb" class="btn btn-sm" target="_blank">购买 →</a></td></tr>
+      <tr class="sep"><td colspan="4"></td></tr>
+      <tr><td><span class="icon-small">🌐</span> 域名 WHOIS &amp; 过期监控</td><td>Domain Monitor MCP</td><td>$10</td><td><a href="https://5044216526512.gumroad.com/l/rxmzx" class="btn btn-sm" target="_blank">购买 →</a></td></tr>
+      <tr><td><span class="icon-small">💰</span> 挂机收益监控</td><td>Income Monitor MCP</td><td>$10</td><td><a href="https://5044216526512.gumroad.com/l/atwirg" class="btn btn-sm" target="_blank">购买 →</a></td></tr>
+    </table>
+  </div>
+</section>
+
+<footer class="container">
+  <p>© 2026 HermesBee. <a href="https://hermesbee.com" style="color:var(--muted)">hermesbee.com</a></p>
+</footer>
+
+</body>
+</html>
