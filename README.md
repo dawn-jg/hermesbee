@@ -32,14 +32,14 @@
 | [**Smart Scraper**](https://5044216526512.gumroad.com/l/xjggdb) | $15 | Basic extraction: title/content/links/images / 基础数据提取 |
 | [**Domain Monitor**](https://5044216526512.gumroad.com/l/rxmzx) | $10 | WHOIS lookup, expiry tracking / 域名 whois 过期监控 |
 | [**Income Monitor**](https://5044216526512.gumroad.com/l/atwirg) | $10 | Passive income tracking across platforms / 挂机收益汇总监控 |
-| [**B2B Lead Finder MCP**](https://5044216526512.gumroad.com/l/oulau) | $29 | Company & contact intelligence, LinkedIn jobs + GitHub devs, no login / 无需登录的 B2B 线索查找（LinkedIn 职位 + GitHub 开发者） |
+| [**B2B Lead Finder MCP**](https://5044216526512.gumroad.com/l/oulau) | $29 | Company & contact intelligence, LinkedIn jobs + GitHub devs + email verification, no login / 无需登录的 B2B 线索查找（LinkedIn 职位 + GitHub 开发者 + 邮箱验证） |
 | [**LLM Scraper MCP**](https://5044216526512.gumroad.com/l/maekx) | $49 | Natural language web data extraction / 自然语言网页数据提取 |
 
 ### 🖱️ Desktop Tools / 桌面工具（普通用户）
 
 | Product / 产品 | Price | Description / 说明 |
 |------|:-----:|------|
-| [**B2B Lead Finder (Desktop)**](https://5044216526512.gumroad.com/l/dzkacy) | $39 | No-code B2B lead research, LinkedIn jobs + GitHub devs, double-click to start / 免编程 B2B 找线索（LinkedIn 职位 + GitHub 开发者） |
+| [**B2B Lead Finder (Desktop)**](https://5044216526512.gumroad.com/l/dzkacy) | $39 | No-code B2B lead research, LinkedIn jobs + GitHub devs + email verification, double-click to start / 免编程 B2B 找线索（LinkedIn 职位 + GitHub 开发者 + 邮箱验证） |
 | [**LLM Scraper (Desktop)**](https://5044216526512.gumroad.com/l/vzauzx) | $59 | AI web extraction for everyone, bilingual EN/中文 / 人人可用的 AI 网页提取 |
 
 ---
