@@ -641,9 +641,13 @@ function openModal(slug) {
   p.features.forEach(f => html += '<li>' + f + '</li>');
   html += '</ul>';
   html += '<h4 style="color:var(--accent2);margin:16px 0 8px">使用说明</h4><ol class="modal-usage">';
-  p.usage.forEach(u => html += '<li>' + u + '</li>');
+  if (p.usage && p.usage.length) {
+    p.usage.forEach(u => html += '<li>' + u + '</li>');
+  } else {
+    html += '<li>Gumroad 购买并下载</li><li>解压后双击启动</li><li>首次运行在设置里填入 LLM API Key</li>';
+  }
   html += '</ol>';
-  html += '<p class="modal-who"><strong>适合:</strong> ' + p.who + '</p>';
+  html += '<p class="modal-who"><strong>适合:</strong> ' + (p.who || '所有需要这个工具的人') + '</p>';
   html += '<a href="' + p.url + '" class="btn btn-primary" style="width:100%;text-align:center;margin-top:16px" target="_blank">立即购买</a>';
   document.getElementById('modalContent').innerHTML = html;
   document.getElementById('productModal').classList.add('show');
