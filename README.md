@@ -41,6 +41,7 @@
 |------|:-----:|------|
 | [**B2B Lead Finder (Desktop)**](https://5044216526512.gumroad.com/l/dzkacy) | $39 | No-code B2B lead research, LinkedIn jobs + GitHub devs + email verification, double-click to start / 免编程 B2B 找线索（LinkedIn 职位 + GitHub 开发者 + 邮箱验证） |
 | [**LLM Scraper (Desktop)**](https://5044216526512.gumroad.com/l/vzauzx) | $59 | AI web extraction for everyone, bilingual EN/中文 / 人人可用的 AI 网页提取 |
+| [**StudyPal**](https://5044216526512.gumroad.com/l/qnajw) | $19.9 | AI citations (APA/MLA/Chicago/GB-T 7714) + Anki card generator, Win & Mac / 学生 AI 论文格式 + 学习卡片（Win & Mac） |
 
 ---
 
