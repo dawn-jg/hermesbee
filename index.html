@@ -149,7 +149,8 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
   <div class="logo">Hermes<span>Bee</span></div>
   <div class="links">
     <a href="#scrapebox">ScrapeBox</a>
-    <a href="#mcp">MCP Tools</a>
+    <a href="#mcp">MCP Servers</a>
+    <a href="#desktop">Desktop Tools</a>
     <a href="#compare">Compare</a>
     <a href="/blog/scrapebox-local-scraper-api.html">Blog</a>
     <a href="/" class="lang-btn active">EN</a>
@@ -364,7 +365,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
   </div>
 </div>
 <script>
-const PRODUCTS = const PRODUCTS = {
+const PRODUCTS = const PRODUCTS = const PRODUCTS = {
  "mhxei": {
   "name": "ScrapeBox",
   "price": "$29",
@@ -660,9 +661,16 @@ const PRODUCTS = const PRODUCTS = {
    "Windows & macOS, own app window, EN / 中文",
    "One-time purchase, no subscription"
   ],
-  "url": "https://5044216526512.gumroad.com/l/qnajw"
+  "url": "https://5044216526512.gumroad.com/l/qnajw",
+  "usage": [
+   "Buy on Gumroad and download the zip",
+   "Unzip and double-click StudyPal to start",
+   "Enter your LLM API key in Settings (first run)",
+   "Generate citations, check formats, export Anki cards"
+  ],
+  "who": "College & grad students, researchers, medical/law/CS students"
  }
-};;
+};;;
 
 function openModal(slug) {
   const p = PRODUCTS[slug];
@@ -675,9 +683,13 @@ function openModal(slug) {
   p.features.forEach(f => html += '<li>' + f + '</li>');
   html += '</ul>';
   html += '<h4 style="color:var(--accent2);margin:16px 0 8px">How to Use</h4><ol class="modal-usage">';
-  p.usage.forEach(u => html += '<li>' + u + '</li>');
+  if (p.usage && p.usage.length) {
+    p.usage.forEach(u => html += '<li>' + u + '</li>');
+  } else {
+    html += '<li>Buy on Gumroad and download</li><li>Unzip and double-click to start</li><li>Enter your LLM API key in Settings (first run)</li>';
+  }
   html += '</ol>';
-  html += '<p class="modal-who"><strong>For:</strong> ' + p.who + '</p>';
+  html += '<p class="modal-who"><strong>For:</strong> ' + (p.who || 'Everyone who needs this tool') + '</p>';
   html += '<a href="' + p.url + '" class="btn btn-primary" style="width:100%;text-align:center;margin-top:16px" target="_blank">Buy Now</a>';
   document.getElementById('modalContent').innerHTML = html;
   document.getElementById('productModal').classList.add('show');
