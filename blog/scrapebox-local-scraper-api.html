@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScrapeBox：本地爬虫 API，双击启动，curl 调用</title>
+<meta name="description" content="ScrapeBox 是一个在你自己电脑运行的 REST 爬虫 API。无需云服务器，无需月费，数据不出本机。支持 HTML/文本/链接/表格提取。">
+<link rel="canonical" href="https://hermesbee.com/blog/scrapebox-local-scraper-api.html">
+<style>
+:root{--bg:#0a0a0f;--card:#14141f;--border:#2a2a3a;--text:#e0e0e8;--muted:#8888a0;--accent:#6366f1;--accent2:#22d3ee;--green:#34d399}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.8;padding:40px 20px}
+.container{max-width:800px;margin:0 auto}
+h1{font-size:2.2rem;margin-bottom:16px;color:#fff;line-height:1.3}
+h2{font-size:1.4rem;margin:36px 0 16px;color:var(--accent2)}
+h3{font-size:1.1rem;margin:24px 0 12px;color:#fff}
+p,.content li{color:var(--muted);margin-bottom:12px;font-size:1rem}
+a{color:var(--accent2)}
+code{background:var(--card);padding:2px 8px;border-radius:4px;font-size:.9rem;color:#a5b4fc}
+pre{background:var(--card);padding:16px;border-radius:8px;overflow-x:auto;margin:16px 0;border:1px solid var(--border)}
+pre code{background:none;padding:0}
+ul{margin:12px 0 20px 20px}
+li{margin-bottom:8px}
+table{width:100%;border-collapse:collapse;margin:16px 0}
+th,td{padding:10px 14px;border:1px solid var(--border);text-align:left;font-size:.9rem}
+th{color:var(--muted);background:var(--card)}
+.cta{background:linear-gradient(135deg,rgba(99,102,241,.15),rgba(34,211,238,.1));border:1px solid var(--accent);border-radius:12px;padding:30px;text-align:center;margin:40px 0}
+.cta .price{font-size:2.5rem;font-weight:800;color:#fff;margin:12px 0}
+.cta .price span{font-size:1rem;color:var(--muted);font-weight:400}
+.btn{display:inline-block;padding:14px 32px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;margin-top:12px}
+.btn:hover{background:#4f46e5}
+.back{margin-bottom:30px;display:inline-block;color:var(--muted);text-decoration:none}
+.back:hover{color:#fff}
+footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--border);margin-top:60px}
+@media(max-width:600px){h1{font-size:1.6rem}}
+</style>
+<!-- 51.la 网站统计 -->
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"LH2Jlo1laHNcfvYx",ck:"LH2Jlo1laHNcfvYx"})</script>
+</head>
+<body>
+<div class="container">
+
+<a href="https://hermesbee.com" class="back">← 返回首页</a>
+
+<h1>ScrapeBox：本地爬虫 API，双击启动</h1>
+
+<h2>痛点</h2>
+<p>你写了个 Python 爬虫脚本，但遇到这些问题：</p>
+<ul>
+  <li>网站有反爬虫，返回空数据</li>
+  <li>每次要手动启动 Selenium/Playwright</li>
+  <li>云爬虫 API 太贵，每个月交月费</li>
+</ul>
+
+<h2>解决方案：ScrapeBox</h2>
+<p>ScrapeBox 是一个<strong>在本地运行的 REST 爬虫 API</strong>。下载解压，双击 start.bat，就能用 curl 调用。</p>
+
+<pre><code>curl "http://localhost:8080/text?url=https://example.com"</code></pre>
+
+<h2>核心功能</h2>
+<table>
+  <tr><th>接口</th><th>说明</th></tr>
+  <tr><td><code>/scrape?url=...</code></td><td>返回完整 HTML</td></tr>
+  <tr><td><code>/text?url=...</code></td><td>提取纯文本</td></tr>
+  <tr><td><code>/links?url=...</code></td><td>提取所有链接</td></tr>
+  <tr><td><code>/tables?url=...</code></td><td>提取表格数据</td></tr>
+</table>
+
+<h2>为什么选 ScrapeBox？</h2>
+<ul>
+  <li><strong>一次性买断</strong> — $29，不是月费</li>
+  <li><strong>本地运行</strong> — 数据不出你的电脑</li>
+  <li><strong>绕过反爬</strong> — 内置隐身浏览引擎</li>
+  <li><strong>零配置</strong> — setup.bat + start.bat 搞定</li>
+</ul>
+
+<h2>对比</h2>
+<table>
+  <tr><th>方案</th><th>费用</th><th>数据隐私</th><th>部署难度</th></tr>
+  <tr><td><strong>ScrapeBox</strong></td><td><strong>$29 一次性</strong></td><td>✅ 在本地</td><td>✅ 双击启动</td></tr>
+  <tr><td>云 API</td><td>$9-99/月</td><td>❌ 第三方服务器</td><td>✅ HTTP 调用</td></tr>
+  <tr><td>自己写 Playwright</td><td>免费</td><td>✅ 在本地</td><td>❌ 要写代码调试</td></tr>
+</table>
+
+<h2>需要更高级的？</h2>
+<p>如果你要爬取的网站有<strong>高等级 Cloudflare 保护</strong>（如 Namecheap），升级到 <strong>ScrapeBox Pro</strong>（$39），开箱即用，无需额外配置。</p>
+
+<div class="cta">
+  <h3>ScrapeBox</h3>
+  <div class="price">$29<span> 一次性</span></div>
+  <p style="color:var(--muted)">无月费，永久使用</p>
+  <a href="https://5044216526512.gumroad.com/l/mhxei" class="btn" target="_blank">立即购买</a>
+  <p style="margin-top:12px;font-size:.85rem;color:var(--muted)">ScrapeBox Pro <a href="https://5044216526512.gumroad.com/l/xfedun" target="_blank">$39 →</a></p>
+</div>
+
+<footer>
+  <p>© 2026 HermesBee. <a href="https://hermesbee.com">hermesbee.com</a></p>
+</footer>
+
+</div>
+</body>
+</html>
