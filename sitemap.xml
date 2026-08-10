@@ -145,4 +145,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://hermesbee.com/zh/blog/mcp-web-scraping-guide-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://hermesbee.com/zh/blog/mcp-web-scraping-guide-2026"/>
+  </url>
+  <url>
+    <loc>https://hermesbee.com/zh/blog/cloudflare-bypass-scraping-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://hermesbee.com/zh/blog/cloudflare-bypass-scraping-guide"/>
+  </url>
 </urlset>
