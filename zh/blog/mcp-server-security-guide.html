@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCP 服务器安全：2026 年开发者指南 — HermesBee</title>
+<meta name="description" content="MCP 服务器安全指南：提示注入、工具权限过大、密钥泄露、供应链风险，以及 MCP 服务器加固清单。2026 年开发者必读。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://hermesbee.com/zh/blog/mcp-server-security-guide">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "MCP 服务器安全：2026 年开发者指南",
+  "datePublished": "2026-08-10",
+  "author": {"@type": "Organization", "name": "HermesBee"},
+  "publisher": {"@type": "Organization", "name": "HermesBee", "url": "https://hermesbee.com"}
+}
+</script>
+<style>
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;max-width:760px;margin:0 auto;padding:24px;line-height:1.75;color:#1a1a2e;background:#f8fafc}
+a{color:#6366f1}h1{font-size:1.9rem;line-height:1.3}h2{margin-top:36px;font-size:1.3rem}
+.meta{color:#64748b;font-size:.9rem;border-bottom:1px solid #e2e8f0;padding-bottom:12px;margin-bottom:24px}
+code{background:#eef2ff;padding:2px 6px;border-radius:4px;font-size:.9em}
+.back{color:#64748b;text-decoration:none;font-size:.9rem}
+</style>
+</head>
+<body>
+<a class="back" href="https://hermesbee.com/">← HermesBee 首页</a>
+<h1>MCP 服务器安全：2026 年开发者指南</h1>
+<div class="meta">HermesBee · 2026年8月10日 · 7 分钟</div>
+
+<p>MCP（模型上下文协议）给了 AI Agent 超能力——也带来了新的攻击面。近期的安全事件（包括披露后数小时内就被利用的 Agent 框架 CVE）让 MCP 安全成为高管话题。以下是开发者需要知道的。</p>
+
+<h2>为什么 MCP 服务器是攻击目标</h2>
+<p>MCP 服务器带着你的凭据运行，能接触你的文件系统、API 和网络。当 AI Agent 调用它的工具时，被抓取内容中的提示注入可以诱骗 Agent 调用危险工具。MCP 服务器是信任边界——而且往往是最薄弱的环节。</p>
+
+<h2>2026 年最大风险</h2>
+<ul>
+<li><strong>通过工具输出的提示注入</strong>——恶意网页内容指示 Agent 执行 <code>delete_files</code> 或泄露数据。</li>
+<li><strong>工具权限过大</strong>——服务器暴露 <code>execute_shell</code>，而只读抓取就够用了。</li>
+<li><strong>密钥泄露</strong>——API 密钥存在被提交或被错误信息回显的配置文件里。</li>
+<li><strong>供应链</strong>——从不可信来源安装 MCP 服务器（"MCP 生态是新的 npm"问题）。</li>
+</ul>
+
+<h2>加固清单</h2>
+<ol>
+<li><strong>最小权限</strong>：只暴露 Agent 需要的工具。默认只读。</li>
+<li><strong>验证所有输入</strong>：来自 Agent 的 URL、路径和参数都不可信。</li>
+<li><strong>绝不回显密钥</strong>：从错误信息中清除 API 密钥。</li>
+<li><strong>沙箱网络访问</strong>：限制服务器能访问的范围。</li>
+<li><strong>锁定版本</strong>：审计依赖；MCP SDK 迭代很快。</li>
+<li><strong>优先本地服务器</strong>：本地 MCP 服务器让你的数据和凭据留在本机，彻底减少云暴露。</li>
+</ol>
+
+<h2>审计第三方 MCP 服务器</h2>
+<p>连接任何 MCP 服务器之前，读它的源码：检查它注册了什么工具、发出什么网络调用、是否回传数据。像 <a href="https://github.com/NVIDIA/SkillSpector">NVIDIA SkillSpector</a> 和 snyk/agent-scan 这样的工具可以自动化部分审计。抓取需求优先选择有公开源码、无云依赖的成熟本地工具（例如 <a href="https://hermesbee.com/">HermesBee 的 MCP 产品线</a>）。</p>
+
+<h2>总结</h2>
+<p>MCP 服务器强大但需要尊重。应用最小权限工具设计、验证 Agent 输入、审计你安装的内容、让敏感操作留在本地。</p>
+
+<div class="meta" style="border:0;margin-top:32px">© 2026 HermesBee · <a href="https://hermesbee.com/zh/">首页</a> · <a href="https://github.com/dawn-jg">GitHub</a></div>
+</body>
+</html>

@@ -110,7 +110,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
     <a href="#mcp">MCP 服务器</a>
     <a href="#desktop">桌面软件</a>
     <a href="#compare">对比</a>
-    <a href="/blog/scrapebox-local-scraper-api.html">博客</a>
+    <a href="/zh/blog/">博客</a>
     <a href="/" class="lang-btn">EN</a>
     <a href="/zh/" class="lang-btn active">中文</a>
   </div>
@@ -762,6 +762,24 @@ document.querySelectorAll('.mcp-card.clickable, .product-card.clickable').forEac
   });
 });
 document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+</script>
+
+<!-- GEO: FAQPage Schema 中文 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "HermesBee 是什么？", "acceptedAnswer": {"@type": "Answer", "text": "HermesBee 出售一次性买断的开发者工具：AI Agent 用的 MCP 服务器和桌面应用。所有工具 100% 本地运行，无订阅、无云依赖。"}},
+    {"@type": "Question", "name": "ScrapeBox 能绕过 Cloudflare 吗？", "acceptedAnswer": {"@type": "Answer", "text": "能。ScrapeBox 自动绕过低/中等级 Cloudflare 保护。ScrapeBox Pro 内置高级反爬引擎，绕过全部级别（Cloudflare、Akamai 等）。"}},
+    {"@type": "Question", "name": "HermesBee 的 MCP 服务器支持哪些客户端？", "acceptedAnswer": {"@type": "Answer", "text": "所有 HermesBee MCP 服务器支持 Claude Desktop、Cursor、Cline、Windsurf 及任何 MCP 兼容客户端，通过 stdio 本地运行。"}},
+    {"@type": "Question", "name": "HermesBee 产品是订阅制吗？", "acceptedAnswer": {"@type": "Answer", "text": "不是。所有 HermesBee 产品均为一次性买断，终身使用、免费更新，无月费无订阅。"}},
+    {"@type": "Question", "name": "HermesBee 工具需要 API Key 吗？", "acceptedAnswer": {"@type": "Answer", "text": "大部分工具无需 API Key 或账号。LLM Scraper 系列自带 Key（支持 DeepSeek/OpenAI/Kimi）。LitSearch 和 PatentSearch 使用免费官方 API，无需 Key。"}},
+    {"@type": "Question", "name": "我的数据会上传到云端吗？", "acceptedAnswer": {"@type": "Answer", "text": "不会。所有 HermesBee 工具都在你的电脑本地运行，抓取的网页、搜索的专利、生成的引用都不会离开你的电脑。"}},
+    {"@type": "Question", "name": "支持哪些操作系统？", "acceptedAnswer": {"@type": "Answer", "text": "全产品线支持 Windows、macOS 和 Linux。桌面应用提供 Windows 和 macOS 原生安装包。"}},
+    {"@type": "Question", "name": "如何安装 HermesBee 的 MCP 服务器？", "acceptedAnswer": {"@type": "Answer", "text": "先用 pip 安装 Python 依赖，然后在 MCP 客户端配置（JSON）中指向提供的 Python 脚本。每个产品都附有分步使用说明。"}}
+  ]
+}
 </script>
 </body>
 </html>
