@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCP Server Security: The 2026 Developer's Guide — HermesBee Blog</title>
+<meta name="description" content="Security guide for MCP servers: prompt injection, tool permissions, secret handling, and how to audit the MCP servers you connect to AI agents.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://hermesbee.com/blog/mcp-server-security-guide-2026">
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:760px;margin:0 auto;padding:24px;line-height:1.75;color:#1a1a2e;background:#f8fafc}
+a{color:#6366f1}h1{font-size:1.9rem;line-height:1.3}h2{margin-top:36px;font-size:1.3rem}
+.meta{color:#64748b;font-size:.9rem;border-bottom:1px solid #e2e8f0;padding-bottom:12px;margin-bottom:24px}
+code{background:#eef2ff;padding:2px 6px;border-radius:4px;font-size:.9em}
+.back{color:#64748b;text-decoration:none;font-size:.9rem}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "MCP Server Security: The 2026 Developer's Guide",
+  "datePublished": "August 10, 2026",
+  "author": {"@type": "Organization", "name": "HermesBee"},
+  "publisher": {"@type": "Organization", "name": "HermesBee", "url": "https://hermesbee.com"}
+}
+</script>
+</head>
+<body>
+<a class="back" href="https://hermesbee.com/">← HermesBee Home</a>
+<h1>MCP Server Security: The 2026 Developer's Guide</h1>
+<div class="meta">HermesBee · August 10, 2026 · 6 min read</div>
+<p>MCP (Model Context Protocol) gives AI agents superpowers — and with them, new attack surface. Recent incidents (including exploited CVEs in agent frameworks exploited within hours of disclosure) made MCP security a board-level topic. Here's what developers need to know.</p>
+<h2>Why MCP servers are a security target</h2>
+<p>An MCP server runs with your credentials and can touch your filesystem, APIs, and network. When an AI agent calls its tools, prompt injection in scraped content can trick the agent into invoking dangerous tools. The MCP server is the trust boundary — and it's often the weakest link.</p>
+<h2>Top risks in 2026</h2>
+<ul>
+<li><strong>Prompt injection via tool outputs</strong> — malicious web content instructs the agent to run <code>delete_files</code> or exfiltrate data.</li>
+<li><strong>Over-broad tool permissions</strong> — servers exposing <code>execute_shell</code> when a read-only fetch would do.</li>
+<li><strong>Secret leakage</strong> — API keys stored in config files that get committed or echoed in errors.</li>
+<li><strong>Supply chain</strong> — installing MCP servers from untrusted sources (the "MCP ecosystem is the new npm" problem).</li>
+</ul>
+<h2>Hardening checklist</h2>
+<ol>
+<li><strong>Least privilege</strong>: expose only the tools the agent needs. Read-only by default.</li>
+<li><strong>Validate all inputs</strong>: URLs, paths, and arguments from the agent are untrusted.</li>
+<li><strong>Never echo secrets</strong>: scrub API keys from error messages and logs.</li>
+<li><strong>Sandbox network access</strong>: restrict what the server can reach.</li>
+<li><strong>Pin versions</strong>: audit dependencies; MCP SDKs move fast.</li>
+<li><strong>Prefer local servers</strong>: a local MCP server keeps your data and credentials on your machine, cutting cloud exposure entirely.</li>
+</ol>
+<h2>Auditing third-party MCP servers</h2>
+<p>Before connecting any MCP server, read its source: check what tools it registers, what network calls it makes, and whether it phones home. Tools like <a href="https://github.com/NVIDIA/SkillSpector">NVIDIA SkillSpector</a> and snyk/agent-scan automate parts of this audit. For scraping needs, prefer established local tools (e.g. <a href="https://hermesbee.com/">HermesBee's MCP line</a>) with public source and no cloud dependency.</p>
+<h2>Summary</h2>
+<p>MCP servers are powerful but demand respect. Apply least-privilege tool design, validate agent inputs, audit what you install, and keep sensitive operations local.</p>
+<div class="meta" style="border:0;margin-top:32px">© 2026 HermesBee · <a href="https://hermesbee.com/">Home</a> · <a href="https://github.com/dawn-jg">GitHub</a></div>
+</body>
+</html>

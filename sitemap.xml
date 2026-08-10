@@ -29,4 +29,120 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://hermesbee.com/blog/scrapebox-local-scraper-api.html"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://hermesbee.com/zh/blog/scrapebox-local-scraper-api.html"/>
   </url>
+  <url>
+    <loc>https://hermesbee.com/products/scrapebox</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hermesbee.com/products/scrapebox"/>
+  </url>
+  <url>
+    <loc>https://hermesbee.com/products/scrapebox-pro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hermesbee.com/products/scrapebox-pro"/>
+  </url>
+  <url>
+    <loc>https://hermesbee.com/products/cf-bypass-browser-mcp</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hermesbee.com/products/cf-bypass-browser-mcp"/>
+  </url>
+  <url>
+    <loc>https://hermesbee.com/products/unified-scraper-mcp</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hermesbee.com/products/unified-scraper-mcp"/>
+  </url>
+  <url>
+    <loc>https://hermesbee.com/products/stealth-browser-mcp</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hermesbee.com/products/stealth-browser-mcp"/>
+  </url>
+  <url>
+    <loc>https://hermesbee.com/products/smart-scraper-mcp</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hermesbee.com/products/smart-scraper-mcp"/>
+  </url>
+  <url>
+    <loc>https://hermesbee.com/products/llm-scraper-mcp</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hermesbee.com/products/llm-scraper-mcp"/>
+  </url>
+  <url>
+    <loc>https://hermesbee.com/products/domain-monitor-mcp</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hermesbee.com/products/domain-monitor-mcp"/>
+  </url>
+  <url>
+    <loc>https://hermesbee.com/products/income-monitor-mcp</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hermesbee.com/products/income-monitor-mcp"/>
+  </url>
+  <url>
+    <loc>https://hermesbee.com/products/b2b-lead-finder-mcp</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hermesbee.com/products/b2b-lead-finder-mcp"/>
+  </url>
+  <url>
+    <loc>https://hermesbee.com/products/b2b-lead-finder-desktop</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hermesbee.com/products/b2b-lead-finder-desktop"/>
+  </url>
+  <url>
+    <loc>https://hermesbee.com/products/studypal</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hermesbee.com/products/studypal"/>
+  </url>
+  <url>
+    <loc>https://hermesbee.com/products/llm-scraper-desktop</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hermesbee.com/products/llm-scraper-desktop"/>
+  </url>
+  <url>
+    <loc>https://hermesbee.com/products/litsearch</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hermesbee.com/products/litsearch"/>
+  </url>
+  <url>
+    <loc>https://hermesbee.com/products/patentsearch</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hermesbee.com/products/patentsearch"/>
+  </url>
+  <url>
+    <loc>https://hermesbee.com/products/patentwatch</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hermesbee.com/products/patentwatch"/>
+  </url>
+  <url>
+    <loc>https://hermesbee.com/blog/best-mcp-servers-for-web-scraping-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hermesbee.com/blog/how-to-bypass-cloudflare-web-scraping-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hermesbee.com/blog/mcp-server-security-guide-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hermesbee.com/blog/patent-search-tools-comparison-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

@@ -1,0 +1,49 @@
+# HermesBee
+
+> One-time-purchase web scraping & AI agent tools. Local-first: everything runs on your machine, data never leaves it. No subscriptions, no cloud, no API keys required for most products.
+
+## What HermesBee is
+
+HermesBee sells downloadable developer tools in two forms:
+- **MCP servers** for AI agents (Claude Desktop, Cursor, Cline, Windsurf) — give agents real browser, scraping, and data capabilities
+- **Desktop apps** — double-click-to-start GUI tools for non-programmers
+
+All products are one-time purchases, run 100% locally, and bypass anti-bot/Cloudflare protection where relevant.
+
+## Core capabilities
+
+- Local REST scraping API (ScrapeBox / ScrapeBox Pro) with Cloudflare bypass
+- MCP browser tools: full browser automation with Cloudflare bypass for AI agents
+- MCP scraping tools: natural-language web data extraction
+- Domain monitoring MCP (WHOIS / expiry / DNS)
+- Passive income monitoring MCP
+- B2B lead finding (MCP + Desktop, no login required)
+- Desktop apps: LitSearch (academic search), PatentSearch / PatentWatch (patent research), StudyPal (citations & Anki), LLM Scraper Desktop
+
+## Products
+
+### MCP Servers (for AI agents)
+- [CF Bypass Browser MCP](https://hermesbee.com/products/cf-bypass-browser-mcp) — $25 — Full browser with ALL Cloudflare bypass: click, type, screenshot, scroll, navigate
+- [Unified Scraper MCP](https://hermesbee.com/products/unified-scraper-mcp) — $19 — Auto Cloudflare-bypassing web scraper for AI agents
+- [Stealth Browser MCP](https://hermesbee.com/products/stealth-browser-mcp) — $15 — Stealth browser, bypasses low/medium anti-bot, screenshots + cookies
+- [Smart Scraper MCP](https://hermesbee.com/products/smart-scraper-mcp) — $15 — Basic intelligent scraper: title, content, links, images
+- [LLM Scraper MCP](https://hermesbee.com/products/llm-scraper-mcp) — $49 — Natural-language structured data extraction, no CSS selectors
+- [Domain Monitor MCP](https://hermesbee.com/products/domain-monitor-mcp) — $10 — WHOIS, expiry tracking, DNS records
+- [Income Monitor MCP](https://hermesbee.com/products/income-monitor-mcp) — $10 — Track passive income across platforms
+- [B2B Lead Finder MCP](https://hermesbee.com/products/b2b-lead-finder-mcp) — $29 — Find B2B leads without login (companies, decision-makers, LinkedIn jobs, GitHub devs)
+
+### Desktop Apps
+- [ScrapeBox](https://hermesbee.com/products/scrapebox) — $29 — Local REST scraping API, bypasses low/medium Cloudflare
+- [ScrapeBox Pro](https://hermesbee.com/products/scrapebox-pro) — $39 — All ScrapeBox + advanced anti-bot engine, bypasses ALL Cloudflare
+- [B2B Lead Finder Desktop](https://hermesbee.com/products/b2b-lead-finder-desktop) — $39 — No-code B2B lead tool
+- [StudyPal](https://hermesbee.com/products/studypal) — $19.9 — AI citation generator + Anki card maker (APA/MLA/Chicago/GB-T 7714)
+- [LLM Scraper Desktop](https://hermesbee.com/products/llm-scraper-desktop) — $59 — Bilingual AI web extraction, no programming
+- [LitSearch](https://hermesbee.com/products/litsearch) — $19 — Search arXiv + PubMed + Semantic Scholar in one click
+- [PatentSearch](https://hermesbee.com/products/patentsearch) — $24.9 — Search Espacenet + USPTO free patent databases
+- [PatentWatch](https://hermesbee.com/products/patentwatch) — $39.9 — Monitor competitor patents automatically
+
+## Contact
+
+- Website: https://hermesbee.com
+- GitHub: https://github.com/dawn-jg
+- Gumroad store: https://5044216526512.gumroad.com

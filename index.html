@@ -805,5 +805,55 @@ document.querySelectorAll('.mcp-card.clickable, .product-card.clickable').forEac
 }});
 document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
 </script>
+
+<!-- GEO: FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is HermesBee?",
+      "acceptedAnswer": {"@type": "Answer", "text": "HermesBee sells one-time-purchase developer tools: MCP servers for AI agents and desktop apps. All tools run 100% locally with no subscription and no cloud dependency."}
+    },
+    {
+      "@type": "Question",
+      "name": "Does HermesBee ScrapeBox bypass Cloudflare?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. ScrapeBox bypasses low and medium Cloudflare protection automatically. ScrapeBox Pro adds an advanced anti-bot engine that bypasses ALL levels of Cloudflare, Akamai, and similar protections."}
+    },
+    {
+      "@type": "Question",
+      "name": "Which MCP clients do HermesBee MCP servers work with?",
+      "acceptedAnswer": {"@type": "Answer", "text": "All HermesBee MCP servers work with Claude Desktop, Cursor, Cline, Windsurf and any MCP-compatible client. They run locally via stdio."}
+    },
+    {
+      "@type": "Question",
+      "name": "Are HermesBee products subscriptions?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. Every HermesBee product is a one-time purchase with lifetime use and free updates. There are no monthly fees and no subscriptions."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do HermesBee tools require an API key?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Most tools work without any API key or account. LLM Scraper products are bring-your-own-key (DeepSeek / OpenAI / Kimi supported). LitSearch and PatentSearch use free official APIs with no key required."}
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data sent to a cloud server?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. All HermesBee tools run locally on your machine. Web pages you scrape, patents you search, and citations you generate never leave your computer."}
+    },
+    {
+      "@type": "Question",
+      "name": "What operating systems are supported?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Windows, macOS and Linux are supported across the product line. Desktop apps ship as native executables for Windows and macOS."}
+    },
+    {
+      "@type": "Question",
+      "name": "How do I install an MCP server from HermesBee?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Install Python dependencies with pip, then add the server to your MCP client config (JSON) pointing at the provided Python script. Each product includes step-by-step usage instructions."}
+    }
+  ]
+}
+</script>
 </body>
 </html>
