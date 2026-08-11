@@ -267,4 +267,14 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="zh" href="https://hermesbee.com/zh/products/patentwatch"/>
   </url>
+  <url>
+    <loc>https://hermesbee.com/products/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hermesbee.com/zh/products/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
