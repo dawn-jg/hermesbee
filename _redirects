@@ -7,9 +7,5 @@
 /products/*.html /products/:splat 301
 /zh/products/*.html /zh/products/:splat 301
 
-# 测试规则（验证 _redirects 是否被 Pages 读取）
-/seo-redirect-test https://hermesbee.com/ 302
 
 
-https://www.hermesbee.com/* https://hermesbee.com/:splat 301
-https://www.hermesbee.com/ https://hermesbee.com/ 301
