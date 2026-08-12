@@ -24,11 +24,14 @@ code{background:#eef2ff;padding:2px 6px;border-radius:4px;font-size:.9em}
   "publisher": {"@type": "Organization", "name": "HermesBee", "url": "https://hermesbee.com"}
 }
 </script>
+<link rel="alternate" hreflang="en" href="https://hermesbee.com/blog/mcp-server-security-guide-2026">
+<link rel="alternate" hreflang="zh" href="https://hermesbee.com/zh/blog/mcp-server-security-guide">
+<link rel="alternate" hreflang="x-default" href="https://hermesbee.com/blog/mcp-server-security-guide-2026">
 </head>
 <body>
 <a class="back" href="https://hermesbee.com/">← HermesBee Home</a>
 <h1>MCP Server Security: The 2026 Developer's Guide</h1>
-<div class="meta">HermesBee · August 10, 2026 · 6 min read</div>
+<div class="meta">By <strong>HermesBee Team</strong> · Developer Tools · August 10, 2026 · 6 min read</div>
 <p>MCP (Model Context Protocol) gives AI agents superpowers — and with them, new attack surface. Recent incidents (including exploited CVEs in agent frameworks exploited within hours of disclosure) made MCP security a board-level topic. Here's what developers need to know.</p>
 <h2>Why MCP servers are a security target</h2>
 <p>An MCP server runs with your credentials and can touch your filesystem, APIs, and network. When an AI agent calls its tools, prompt injection in scraped content can trick the agent into invoking dangerous tools. The MCP server is the trust boundary — and it's often the weakest link.</p>

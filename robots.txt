@@ -1,9 +1,24 @@
 User-agent: *
 Allow: /
 
+# GEO: AI 引擎（放开主流 AI 爬虫 —— 开发者工具站被 AI 引用是潜在客户来源）
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://hermesbee.com/sitemap.xml
 
-
-# GEO: AI 引擎
+# GEO: AI 引擎摘要文件
 Allow: /llms.txt
 Allow: /llms-full.txt

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Examples — ScrapeBox API Python & Node.js Examples | HermesBee</title>
+<meta name="description" content="ScrapeBox API code examples: extract HTML, text, links and tables from any page with Python and Node.js. Local REST API, no cloud, no API key.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://hermesbee.com/code-examples">
+<link rel="alternate" hreflang="en" href="https://hermesbee.com/code-examples">
+<link rel="alternate" hreflang="zh" href="https://hermesbee.com/zh/code-examples">
+<link rel="alternate" hreflang="x-default" href="https://hermesbee.com/code-examples">
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:780px;margin:0 auto;padding:24px;line-height:1.7;color:#1a1a2e;background:#f8fafc}
+a{color:#6366f1}h1{font-size:2rem}h2{margin-top:32px}pre{background:#0f172a;color:#e2e8f0;padding:16px;border-radius:8px;overflow-x:auto;font-size:.85rem}
+code{font-family:Consolas,Menlo,monospace}.back{color:#64748b;text-decoration:none;font-size:.9rem}
+.note{background:#eef2ff;border-left:3px solid #6366f1;padding:10px 14px;border-radius:4px;margin:16px 0}
+</style>
+</head>
+<body>
+<a class="back" href="https://hermesbee.com/">← HermesBee Home</a>
+<h1>ScrapeBox API — Code Examples</h1>
+<p>ScrapeBox runs as a local REST API: <code>http://localhost:8080</code>. No API key, no cloud, data stays on your machine. Below are ready-to-run examples in Python and Node.js.</p>
+
+<div class="note"><strong>Start ScrapeBox first:</strong> run <code>start.bat</code> (Windows) or <code>bash start.sh</code> (Mac/Linux), then try the examples.</div>
+
+<h2>Python — extract page text</h2>
+<pre><code>import requests
+
+r = requests.get("http://localhost:8080/text",
+                 params={"url": "https://example.com"})
+print(r.json()["data"])  # clean page text</code></pre>
+
+<h2>Python — extract links &amp; tables</h2>
+<pre><code>import requests
+
+# All links on a page
+links = requests.get("http://localhost:8080/links",
+                     params={"url": "https://example.com"}).json()
+for link in links["data"]:
+    print(link["text"], "->", link["href"])
+
+# All tables (as list of rows)
+tables = requests.get("http://localhost:8080/tables",
+                      params={"url": "https://example.com"}).json()
+for row in tables["data"][0]:
+    print(row)  # row = [cell1, cell2, ...]</code></pre>
+
+<h2>Python — handle slow pages</h2>
+<pre><code>import requests
+
+r = requests.get("http://localhost:8080/scrape",
+                 params={"url": "https://example.com", "timeout": 60})
+html = r.json()["data"]["html"]</code></pre>
+
+<h2>Node.js — extract page text</h2>
+<pre><code>const res = await fetch(
+  "http://localhost:8080/text?url=https://example.com"
+);
+const { data } = await res.json();
+console.log(data); // clean page text</code></pre>
+
+<h2>Node.js — scrape with headers</h2>
+<pre><code>const res = await fetch(
+  "http://localhost:8080/scrape?url=https://example.com&timeout=30"
+);
+const { data } = await res.json();
+console.log(data.html, data.title);</code></pre>
+
+<h2>Integrate with AI agents</h2>
+<p>ScrapeBox pairs perfectly with MCP browser tools for AI agents. See the <a href="https://hermesbee.com/blog/best-mcp-servers-for-web-scraping-2026">MCP scraping guide</a> for recommended agent setups.</p>
+
+<div class="meta" style="color:#64748b;font-size:.9rem;border-top:1px solid #e2e8f0;margin-top:36px;padding-top:16px">© 2026 HermesBee · <a href="https://hermesbee.com/products/scrapebox">Buy ScrapeBox</a> · <a href="https://hermesbee.com/zh/code-examples">中文版</a> · <a href="https://github.com/dawn-jg">GitHub</a></div>
+</body>
+</html>

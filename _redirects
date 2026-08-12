@@ -1,0 +1,9 @@
+# Cloudflare Pages Redirects
+# P0-3: www → non-www 301（权重统一，防重复内容）
+https://www.hermesbee.com/* https://hermesbee.com/:splat 301
+
+# 404 治理: 旧版 .html 后缀 → 新版无后缀（Cloudflare Pages 自动，但显式 301 更稳）
+/blog/*.html /blog/:splat 301
+/zh/blog/*.html /zh/blog/:splat 301
+/products/*.html /products/:splat 301
+/zh/products/*.html /zh/products/:splat 301

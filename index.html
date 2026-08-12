@@ -380,7 +380,7 @@ footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.9rem;borde
 <footer class="container">
   <p>© 2026 HermesBee. <a href="https://hermesbee.com" style="color:var(--muted)">hermesbee.com</a></p>
   <p style="margin-top:10px;font-size:.9rem">
-    <a href="/about.html" style="color:var(--muted)">About</a> ·
+    <a href="/changelog" style="color:var(--muted)">Changelog</a> · <a href="/about.html" style="color:var(--muted)">About</a> ·
     <a href="/contact.html" style="color:var(--muted)">Contact</a> ·
     <a href="/privacy.html" style="color:var(--muted)">Privacy</a> ·
     <a href="/terms.html" style="color:var(--muted)">Terms</a>
@@ -813,6 +813,16 @@ document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is it legal to use HermesBee scraping tools?",
+      "acceptedAnswer": {"@type": "Answer", "text": "HermesBee tools are designed for legitimate use: scraping pages you own or have permission to access, and browser automation for research and development. Always respect the target website's Terms of Service and robots.txt, and comply with applicable laws. Scraping public data for personal or research use is generally acceptable; misusing tools for unauthorized access is not."}
+    },
+    {
+      "@type": "Question",
+      "name": "Does ScrapeBox work with Cloudflare-protected sites?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. ScrapeBox bypasses low and medium Cloudflare protection automatically. ScrapeBox Pro adds an advanced anti-bot engine that bypasses ALL levels of Cloudflare, Akamai, and similar protections."}
+    },
     {
       "@type": "Question",
       "name": "What is HermesBee?",

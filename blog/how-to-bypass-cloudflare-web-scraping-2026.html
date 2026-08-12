@@ -24,11 +24,14 @@ code{background:#eef2ff;padding:2px 6px;border-radius:4px;font-size:.9em}
   "publisher": {"@type": "Organization", "name": "HermesBee", "url": "https://hermesbee.com"}
 }
 </script>
+<link rel="alternate" hreflang="en" href="https://hermesbee.com/blog/how-to-bypass-cloudflare-web-scraping-2026">
+<link rel="alternate" hreflang="zh" href="https://hermesbee.com/zh/blog/cloudflare-bypass-scraping-guide">
+<link rel="alternate" hreflang="x-default" href="https://hermesbee.com/blog/how-to-bypass-cloudflare-web-scraping-2026">
 </head>
 <body>
 <a class="back" href="https://hermesbee.com/">← HermesBee Home</a>
 <h1>How to Bypass Cloudflare for Web Scraping in 2026</h1>
-<div class="meta">HermesBee · August 10, 2026 · 6 min read</div>
+<div class="meta">By <strong>HermesBee Team</strong> · Developer Tools · August 10, 2026 · 6 min read</div>
 <p>Cloudflare protects over 20% of the web, and its anti-bot system (managed challenge, Turnstile, TLS fingerprinting) blocks most automated requests. If your scraper keeps hitting "Just a moment..." pages, this guide explains why and how to get past it — legally and reliably.</p>
 <h2>Why Cloudflare blocks scrapers</h2>
 <p>Cloudflare's bot management inspects TLS fingerprints, HTTP/2 characteristics, browser behaviors (headless detection), and IP reputation. Plain <code>requests</code> libraries fail instantly. Even Playwright in default headless mode gets flagged because of detectable automation markers.</p>

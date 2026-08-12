@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>代码示例 — ScrapeBox API Python 与 Node.js 调用示例 | HermesBee</title>
+<meta name="description" content="ScrapeBox API 代码示例：用 Python 和 Node.js 从任意页面提取 HTML、文本、链接和表格。本地 REST API，无云依赖，无需 API Key。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://hermesbee.com/zh/code-examples">
+<link rel="alternate" hreflang="en" href="https://hermesbee.com/code-examples">
+<link rel="alternate" hreflang="zh" href="https://hermesbee.com/zh/code-examples">
+<link rel="alternate" hreflang="x-default" href="https://hermesbee.com/code-examples">
+<style>
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;max-width:780px;margin:0 auto;padding:24px;line-height:1.7;color:#1a1a2e;background:#f8fafc}
+a{color:#6366f1}h1{font-size:2rem}h2{margin-top:32px}pre{background:#0f172a;color:#e2e8f0;padding:16px;border-radius:8px;overflow-x:auto;font-size:.85rem}
+code{font-family:Consolas,Menlo,monospace}.back{color:#64748b;text-decoration:none;font-size:.9rem}
+.note{background:#eef2ff;border-left:3px solid #6366f1;padding:10px 14px;border-radius:4px;margin:16px 0}
+</style>
+</head>
+<body>
+<a class="back" href="https://hermesbee.com/zh/">← HermesBee 首页</a>
+<h1>ScrapeBox API — 代码示例</h1>
+<p>ScrapeBox 作为本地 REST API 运行：<code>http://localhost:8080</code>。无需 API Key、无云依赖，数据留在本机。以下是 Python 和 Node.js 的开箱即用示例。</p>
+
+<div class="note"><strong>先启动 ScrapeBox：</strong>运行 <code>start.bat</code>（Windows）或 <code>bash start.sh</code>（Mac/Linux），然后执行示例。</div>
+
+<h2>Python — 提取页面文本</h2>
+<pre><code>import requests
+
+r = requests.get("http://localhost:8080/text",
+                 params={"url": "https://example.com"})
+print(r.json()["data"])  # 干净的页面文本</code></pre>
+
+<h2>Python — 提取链接与表格</h2>
+<pre><code>import requests
+
+# 页面所有链接
+links = requests.get("http://localhost:8080/links",
+                     params={"url": "https://example.com"}).json()
+for link in links["data"]:
+    print(link["text"], "->", link["href"])
+
+# 所有表格（行列表）
+tables = requests.get("http://localhost:8080/tables",
+                      params={"url": "https://example.com"}).json()
+for row in tables["data"][0]:
+    print(row)  # row = [cell1, cell2, ...]</code></pre>
+
+<h2>Node.js — 提取页面文本</h2>
+<pre><code>const res = await fetch(
+  "http://localhost:8080/text?url=https://example.com"
+);
+const { data } = await res.json();
+console.log(data); // 干净的页面文本</code></pre>
+
+<h2>与 AI Agent 集成</h2>
+<p>ScrapeBox 与 MCP 浏览器工具搭配效果最佳。参见 <a href="https://hermesbee.com/zh/blog/mcp-web-scraping-guide-2026">MCP 抓取指南</a> 了解推荐组合。</p>
+
+<div class="meta" style="color:#64748b;font-size:.9rem;border-top:1px solid #e2e8f0;margin-top:36px;padding-top:16px">© 2026 HermesBee · <a href="https://hermesbee.com/zh/products/scrapebox">购买 ScrapeBox</a> · <a href="https://hermesbee.com/code-examples">English</a> · <a href="https://github.com/dawn-jg">GitHub</a></div>
+</body>
+</html>
