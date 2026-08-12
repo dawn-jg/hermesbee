@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCP 生态周报：本周值得关注的新 MCP 服务器（2026年8月16日）| HermesBee</title>
+<meta name="description" content="2026年8月16日 MCP 生态周报：短信验证码接收、桌面自动化、Agent 成本监控等本周新 MCP 服务器盘点，以及中文开发者仍可切入的供给空白。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://hermesbee.com/zh/blog/weekly-mcp-roundup-2026-08-16">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "MCP 生态周报：本周值得关注的新 MCP 服务器（2026年8月16日）",
+  "datePublished": "2026-08-16",
+  "author": {"@type": "Organization", "name": "HermesBee Team"},
+  "publisher": {"@type": "Organization", "name": "HermesBee", "url": "https://hermesbee.com"}
+}
+</script>
+<style>
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;max-width:760px;margin:0 auto;padding:24px;line-height:1.75;color:#1a1a2e;background:#f8fafc}
+a{color:#6366f1}h1{font-size:1.9rem;line-height:1.3}h2{margin-top:36px;font-size:1.3rem}
+.meta{color:#64748b;font-size:.9rem;border-bottom:1px solid #e2e8f0;padding-bottom:12px;margin-bottom:24px}
+code{background:#eef2ff;padding:2px 6px;border-radius:4px;font-size:.9em}
+table{border-collapse:collapse;width:100%;margin:16px 0}th,td{border:1px solid #e2e8f0;padding:8px 12px;text-align:left;font-size:.9rem}
+th{background:#eef2ff}.back{color:#64748b;text-decoration:none;font-size:.9rem}
+</style>
+<link rel="alternate" hreflang="en" href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-08-16">
+<link rel="alternate" hreflang="zh" href="https://hermesbee.com/zh/blog/weekly-mcp-roundup-2026-08-16">
+<link rel="alternate" hreflang="x-default" href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-08-16">
+</head>
+<body>
+<a class="back" href="https://hermesbee.com/">← HermesBee 首页</a>
+<h1>MCP 生态周报：本周值得关注的新 MCP 服务器（2026年8月16日）</h1>
+<div class="meta">By <strong>HermesBee Team</strong> · Developer Tools · 2026年8月16日 · 6 分钟</div>
+
+<p>MCP（模型上下文协议）生态的扩张速度已经很难用"增长"来形容了：官方 Registry 服务器数量突破 <strong>12,000+</strong>，CData 预测今年约 <strong>30% 的企业应用厂商</strong>会推出自家的 MCP server。每周都会冒出一批新项目，告诉你 Agent 工具链正在往哪走。这篇周报梳理本周值得关注的 MCP 项目、背后的需求信号，以及还能抢的供给空白。</p>
+
+<h2>本周值得关注的 MCP 服务器</h2>
+<p>本周有四个项目值得注意，各自验证了 MCP 市场的不同切片：</p>
+<ul>
+<li><strong>短信验证码 MCP</strong>（sv-number/mcp-server，约 605★）：官方 MCP server，覆盖 200+ 国家的虚拟号码 + SMS 验证码读取。两天内从约 535★ 涨到 605★，是本周涨势最快的项目——"收个验证码"确实是 Agent 场景里最硬核、最通用的痛点。</li>
+<li><strong>Agent 成本监控</strong>（agentacct，约 583★）：查看你的 coding agent 干了什么、花了多少钱。Token 预算已经是 Agent 团队的第一运维痛点，成本可见性工具正在成为标配。</li>
+<li><strong>桌面自动化 MCP</strong>：Open Computer Use 继续坐实"桌面操控事实标准"的地位（Codex / Claude Code / opencode 跨三客户端），OpenOwl（macOS）、UI-TARS（Windows，本地 GPU）等活跃项目也在跟进。</li>
+<li><strong>模型路由桥</strong>（codex-chatgpt-web，约 847★）：用 ChatGPT Web 会话（含 Pro）当 Codex 的原生模型。严格说不是 MCP server，但指向同一个趋势：Agent 正在变得模型无关。</li>
+</ul>
+<p>完整数据来自我们每天的 GitHub / HN / PH 扫描，本周共 30 个候选项目，详见工具发现笔记。</p>
+
+<h2>信号背后的需求</h2>
+<p>本周在 Product Hunt、Hacker News 和 GitHub 上反复出现的需求聚成三个方向：</p>
+<ul>
+<li><strong>手机与设备操控</strong>：phone-harness（约 1,480★）通过 iPhone Mirroring 窗口驱动真机——OCR 当眼、CGEvents 当手，无越狱无 Xcode；PH 榜首 Gotcha 则主打 Android AI Copilot。设备操控是当下最热的 Agent 品类。</li>
+<li><strong>本地优先自动化</strong>：Meta 的 Muse Glimmer 30B（Apache 2.0）专为 always-on 本地 Agent 设计，Docker 官方 Sandboxes 给 Agent 提供一次性隔离执行环境。免 API Key、纯本地跑的 MCP 服务器正好嵌入这套技术栈。</li>
+<li><strong>"省 Token" 是最硬的付费理由</strong>：从 Paritok 宣称的会话成本降 85%，到 agentacct 的花费面板，成本控制作为购买触发点已经压过功能清单——国内 V2EX 上对 Codex 状态重置的吐槽（162 回帖）也是同一类痛点。</li>
+</ul>
+
+<h2>还能切入的供给空白</h2>
+<p>对比"本周上线了什么"和"还缺什么"，三个利基仍然空着：</p>
+<ul>
+<li><strong>中文短信验证码 MCP</strong>：头部验证码 MCP 面向国际号码；国内运营商号码 + 中文文档 + 中文定价的本地化版本仍是空白（英文站 sv-number 两日 +72★ 已验证需求）。</li>
+<li><strong>Windows 桌面操控 MCP</strong>：桌面自动化 Agent 大多先做 macOS；配合 UI-TARS 式本地模型的 Windows 原生 MCP 供给不足。</li>
+<li><strong>内容 / 技能型 MCP</strong>：shuohao-skills（约 830★，AI 短剧制作 skill 包）证明"内容工作流打包卖"成立，但打包成 MCP 形态的好产品还很少。</li>
+</ul>
+
+<h2>我们怎么评估一个 MCP 服务器</h2>
+<p>测试新 MCP 服务器时，我们只问三个问题：</p>
+<ul>
+<li><strong>能不能搞定那 30% 的脏活？</strong> 简单的 70% 目标任何服务器都能跑，分水岭是反爬、动态页面和登录态——代价有多大，见我们的 <a href="https://hermesbee.com/zh/blog/cloudflare-bypass-scraping-guide">Cloudflare 绕过抓取指南</a>。</li>
+<li><strong>本地跑还是按次计费？</strong> 本地服务器数据不出本机、可离线；按页付费的 API 给一次性任务加上持续成本。</li>
+<li><strong>返回结构还是返回 HTML？</strong> 干净的 JSON / 文本永远优于原始标签——理由详见 <a href="https://hermesbee.com/zh/blog/mcp-web-scraping-guide-2026">MCP 网页抓取服务器指南</a>。</li>
+</ul>
+
+<h2>HermesBee 的看法</h2>
+<p>本周信号强化了我们从第一天就坚持的判断：能赢的 MCP 服务器是<strong>本地优先、一次买断、足够专精</strong>的。我们自己的产品线——<a href="https://hermesbee.com/products/unified-scraper-mcp">Unified Scraper MCP</a>、<a href="https://hermesbee.com/products/cf-bypass-browser-mcp">CF Bypass Browser MCP</a>、<a href="https://hermesbee.com/products/b2b-lead-finder-mcp">B2B Lead Finder MCP</a> 等<a href="https://hermesbee.com/products/">全部产品</a>——就是这个模式：本地运行、无需 API Key、一次性买断、更新永久免费。给 Agent 团队的实操建议：MCP 栈保持小而精、本地化、可度量，生态奖励专注而不是堆数量。任何要接触你数据的服务器接入 Agent 之前，先翻一遍我们的 <a href="https://hermesbee.com/zh/blog/mcp-server-security-guide">MCP 服务器安全指南</a>。</p>
+
+<h2>总结</h2>
+<p>MCP 生态的发展速度已经超出任何单个团队的追踪能力。本周关键词：短信验证码、桌面操控、Agent 成本监控；还有三个仍然便宜的空白——中文验证码 MCP、Windows 桌面 MCP、打包的内容工作流。我们每周出一期这样的周报，欢迎持续关注。</p>
+
+<div class="meta" style="border:0;margin-top:32px">© 2026 HermesBee · <a href="https://hermesbee.com/">首页</a> · <a href="https://hermesbee.com/products/">产品</a> · <a href="https://github.com/dawn-jg">GitHub</a> · <a href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-08-16">English</a></div>
+</body>
+</html>

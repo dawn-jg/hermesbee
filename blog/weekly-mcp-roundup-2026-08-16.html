@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly MCP Roundup: New MCP Servers Worth Watching (Aug 16, 2026) | HermesBee</title>
+<meta name="description" content="Weekly MCP roundup for August 16, 2026: new MCP servers worth watching — SMS verification, desktop automation, agent cost monitoring — plus the supply gaps agent builders should target.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-08-16">
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:760px;margin:0 auto;padding:24px;line-height:1.75;color:#1a1a2e;background:#f8fafc}
+a{color:#6366f1}h1{font-size:1.9rem;line-height:1.3}h2{margin-top:36px;font-size:1.3rem}
+.meta{color:#64748b;font-size:.9rem;border-bottom:1px solid #e2e8f0;padding-bottom:12px;margin-bottom:24px}
+code{background:#eef2ff;padding:2px 6px;border-radius:4px;font-size:.9em}
+table{border-collapse:collapse;width:100%;margin:16px 0}th,td{border:1px solid #e2e8f0;padding:8px 12px;text-align:left;font-size:.95rem}
+th{background:#eef2ff}.back{color:#64748b;text-decoration:none;font-size:.9rem}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Weekly MCP Roundup: New MCP Servers Worth Watching (Aug 16, 2026)",
+  "datePublished": "2026-08-16",
+  "author": {"@type": "Organization", "name": "HermesBee Team"},
+  "publisher": {"@type": "Organization", "name": "HermesBee", "url": "https://hermesbee.com"}
+}
+</script>
+<link rel="alternate" hreflang="en" href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-08-16">
+<link rel="alternate" hreflang="zh" href="https://hermesbee.com/zh/blog/weekly-mcp-roundup-2026-08-16">
+<link rel="alternate" hreflang="x-default" href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-08-16">
+</head>
+<body>
+<a class="back" href="https://hermesbee.com/">← HermesBee Home</a>
+<h1>Weekly MCP Roundup: New MCP Servers Worth Watching (Aug 16, 2026)</h1>
+<div class="meta">By <strong>HermesBee Team</strong> · Developer Tools · August 16, 2026 · 6 min read</div>
+
+<p>The Model Context Protocol ecosystem keeps compounding. The registry now passes <strong>12,000+ servers</strong>, and CData predicts roughly <strong>30% of enterprise application vendors</strong> will ship their own MCP server this year. Every week brings a fresh batch of servers that tell you where agent tooling is heading. This roundup covers the MCP projects that stood out this week, the demand signals behind them, and the gaps agent builders can still claim.</p>
+
+<h2>This week's MCP servers worth watching</h2>
+<p>Four projects earned attention this week, each validating a different slice of the MCP market:</p>
+<ul>
+<li><strong>SMS verification MCP</strong> (sv-number/mcp-server, ~605★): official MCP server for virtual numbers in 200+ countries with SMS verification-code reading. It grew from ~535★ to 605★ in two days — the fastest riser of the week, and proof that "receiving a code" is a hard, universal agent problem.</li>
+<li><strong>Agent cost visibility</strong> (agentacct, ~583★): watch what your coding agent did and how much it spent. Token budgets are the #1 operational concern for agent teams; tools that expose spend are becoming table stakes.</li>
+<li><strong>Desktop automation MCP</strong>: Open Computer Use keeps expanding as the de-facto standard for desktop control across Codex, Claude Code and opencode clients, alongside active projects like OpenOwl (macOS) and UI-TARS (Windows, local GPU).</li>
+<li><strong>Model-routing bridges</strong> (codex-chatgpt-web, ~847★): use a ChatGPT Web session — including Pro — as the native model behind Codex. Not strictly an MCP server, but it points at the same trend: agents are becoming model-agnostic.</li>
+</ul>
+<p>Full data comes from our daily GitHub/HN/PH scans; see this week's tool discovery notes for the complete list of 30 projects.</p>
+
+<h2>Demand signals behind the wave</h2>
+<p>Three demand clusters kept surfacing across Product Hunt, Hacker News and GitHub this week:</p>
+<ul>
+<li><strong>Phone and device control</strong>: phone-harness (~1,480★) drives a real iPhone through the iPhone Mirroring window — OCR as eyes, CGEvents as hands, no jailbreak — while Gotcha (PH #1) pitches an Android AI copilot. Device control is the hottest agent category right now.</li>
+<li><strong>Local-first automation</strong>: Meta's Muse Glimmer 30B (Apache 2.0) is built for always-on local agents, and Docker's official sandboxes give agents disposable execution environments. MCP servers that run locally without API keys fit directly into this stack.</li>
+<li><strong>"Save tokens" is the strongest paid-for reason</strong>: from Paritok's claim of 85% lower session costs to agentacct's spend dashboards, cost control keeps beating feature checklists as a buying trigger for developer tools.</li>
+</ul>
+
+<h2>Supply gaps agent builders can still claim</h2>
+<p>Looking at what shipped this week versus what's missing, three niches remain open:</p>
+<ul>
+<li><strong>Chinese-language SMS verification MCP</strong> — the leading verification MCP targets international numbers; a Chinese-localized version (domestic carriers, Chinese docs, CN pricing) is still empty.</li>
+<li><strong>Windows desktop control MCP</strong> — most desktop-automation agents target macOS; a Windows-native MCP backed by UI-TARS-style local models is underserved.</li>
+<li><strong>Content/skill-type MCP servers</strong> — the success of skill packs like shuohao-skills (~830★, AI short-drama production) shows "content workflow as a package" sells; few good MCP-packaged versions exist yet.</li>
+</ul>
+
+<h2>How we evaluate MCP servers</h2>
+<p>When we test a new MCP server before recommending it, three questions decide:</p>
+<ul>
+<li><strong>Does it handle the messy 30%?</strong> The easy 70% of targets work with any server. The difference is anti-bot protection, dynamic pages and auth flows — see our <a href="https://hermesbee.com/blog/how-to-bypass-cloudflare-web-scraping-2026">Cloudflare bypass guide</a> for what that costs.</li>
+<li><strong>Is it local or per-call billed?</strong> Local servers keep your data on your machine and work offline; per-page APIs add recurring cost to one-off tasks.</li>
+<li><strong>Does it return structure, not HTML?</strong> Clean JSON/text output beats raw markup every time — the reasoning is in our <a href="https://hermesbee.com/blog/best-mcp-servers-for-web-scraping-2026">MCP scraping server guide</a>.</li>
+</ul>
+
+<h2>HermesBee's take</h2>
+<p>This week's signal strengthens the bet we made at launch: the winning MCP servers are <strong>local-first, buy-once, and specialized</strong>. Our own line — <a href="https://hermesbee.com/products/unified-scraper-mcp">Unified Scraper MCP</a>, <a href="https://hermesbee.com/products/cf-bypass-browser-mcp">CF Bypass Browser MCP</a>, <a href="https://hermesbee.com/products/b2b-lead-finder-mcp">B2B Lead Finder MCP</a> and the rest of the <a href="https://hermesbee.com/products/">product line</a> — follows exactly that pattern: run locally, no API key, one-time purchase, updates free. For agent teams, the practical takeaway from this week is to keep your MCP stack small, local and measurable — the ecosystem rewards focus, not breadth. And before wiring anything that touches your data into an agent, skim our <a href="https://hermesbee.com/blog/mcp-server-security-guide-2026">MCP server security guide</a>.</p>
+
+<h2>Summary</h2>
+<p>The MCP ecosystem is growing faster than any single team can track. This week's standout: SMS verification, desktop control, and agent cost visibility — plus three open gaps (Chinese verification MCP, Windows desktop MCP, packaged content workflows) that are still cheap to claim. Watch this space: we publish a roundup like this every week.</p>
+
+<div class="meta" style="border:0;margin-top:32px">© 2026 HermesBee · <a href="https://hermesbee.com/">Home</a> · <a href="https://hermesbee.com/products/">Products</a> · <a href="https://github.com/dawn-jg">GitHub</a> · <a href="https://hermesbee.com/zh/blog/weekly-mcp-roundup-2026-08-16">中文版</a></div>
+</body>
+</html>
