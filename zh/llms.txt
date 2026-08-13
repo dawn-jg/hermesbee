@@ -1,5 +1,7 @@
 # HermesBee（中文）
 
+> 完整内容索引: https://hermesbee.com/llms-full.txt
+
 > 一次性买断的网页抓取与 AI Agent 工具。本地优先：所有工具都在你自己的电脑上运行，数据不出本机。无订阅、无云依赖，大部分产品无需 API Key。
 
 ## HermesBee 是什么

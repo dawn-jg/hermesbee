@@ -1,5 +1,7 @@
 # HermesBee
 
+> Full content index: https://hermesbee.com/llms-full.txt
+
 > One-time-purchase web scraping & AI agent tools. Local-first: everything runs on your machine, data never leaves it. No subscriptions, no cloud, no API keys required for most products.
 
 ## What HermesBee is

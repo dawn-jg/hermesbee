@@ -1,0 +1,61 @@
+# HermesBee — Full Content Index (llms-full.txt)
+
+> One-time-purchase web scraping & AI agent tools. Local-first: everything runs on your machine, data never leaves it. No subscriptions, no cloud, no API keys required for most products.
+> This is the full-content companion to /llms.txt. It lists every product page, blog post and legal page with a one-line summary each, so LLMs can browse the site's complete structure.
+
+## Products — MCP Servers (for AI agents)
+
+- [CF Bypass Browser MCP](https://hermesbee.com/products/cf-bypass-browser-mcp) — $25 — Full browser with ALL Cloudflare bypass: click, type, screenshot, scroll, navigate. Works with Claude Desktop, Cursor, Cline, Windsurf.
+- [Unified Scraper MCP](https://hermesbee.com/products/unified-scraper-mcp) — $19 — Auto Cloudflare-bypassing web scraper. Pass a URL, get page content or plain text.
+- [Stealth Browser MCP](https://hermesbee.com/products/stealth-browser-mcp) — $15 — Stealth browsing for AI agents. Screenshots + cookie management.
+- [Smart Scraper MCP](https://hermesbee.com/products/smart-scraper-mcp) — $15 — Basic intelligent scraper: extract title, content, links, images.
+- [LLM Scraper MCP](https://hermesbee.com/products/llm-scraper-mcp) — $49 — Natural-language structured data extraction. No CSS selectors, no coding.
+- [Domain Monitor MCP](https://hermesbee.com/products/domain-monitor-mcp) — $10 — WHOIS, expiry tracking, DNS records for expired domain hunting.
+- [Income Monitor MCP](https://hermesbee.com/products/income-monitor-mcp) — $10 — Track passive income across platforms, aggregated data.
+- [B2B Lead Finder MCP](https://hermesbee.com/products/b2b-lead-finder-mcp) — $29 — Find B2B leads without login: companies, decision-makers, LinkedIn jobs, GitHub devs.
+
+## Products — Desktop Apps
+
+- [ScrapeBox](https://hermesbee.com/products/scrapebox) — $29 — Local REST scraping API. Double-click to start, curl to use. HTML/text/links/tables extraction.
+- [ScrapeBox Pro](https://hermesbee.com/products/scrapebox-pro) — $39 — All ScrapeBox + advanced anti-bot engine. Bypasses ALL levels of Cloudflare.
+- [B2B Lead Finder Desktop](https://hermesbee.com/products/b2b-lead-finder-desktop) — $39 — No-code B2B lead tool: companies, emails, LinkedIn jobs & GitHub devs.
+- [StudyPal](https://hermesbee.com/products/studypal) — $19.9 — AI citation generator + Anki card maker. APA/MLA/Chicago/GB-T 7714.
+- [LLM Scraper Desktop](https://hermesbee.com/products/llm-scraper-desktop) — $59 — Bilingual (EN/中文) AI web extraction. No programming needed.
+- [LitSearch](https://hermesbee.com/products/litsearch) — $19 — Search arXiv + PubMed + Semantic Scholar in one click. No API key.
+- [PatentSearch](https://hermesbee.com/products/patentsearch) — $24.9 — Search Espacenet + USPTO free patent databases.
+- [PatentWatch](https://hermesbee.com/products/patentwatch) — $39.9 — Monitor competitor patents automatically with alerts.
+
+## Blog — English
+
+- [Best MCP Servers for Web Scraping in 2026](https://hermesbee.com/blog/best-mcp-servers-for-web-scraping-2026) — MCP scraping landscape: browser automation, Cloudflare handling, local vs cloud, buy-once vs subscribe.
+- [How to Bypass Cloudflare for Web Scraping in 2026](https://hermesbee.com/blog/how-to-bypass-cloudflare-web-scraping-2026) — Why Cloudflare blocks scrapers and how legitimate tools handle protected pages: stealth browsers, fingerprint spoofing, challenge solving.
+- [MCP Server Security: The 2026 Developer's Guide](https://hermesbee.com/blog/mcp-server-security-guide-2026) — Prompt injection, tool permissions, secret leakage, supply chain, hardening checklist.
+- [Patent Search Tools Compared](https://hermesbee.com/blog/patent-search-tools-comparison-2026) — Espacenet OPS, USPTO ODP, Google Patents vs desktop alternatives.
+- [Weekly MCP Roundup: New MCP Servers Worth Watching](https://hermesbee.com/blog/weekly-mcp-roundup-2026-08-16) — Weekly curated list of notable new MCP servers.
+
+## Blog — 中文
+
+- [2026 年 MCP 网页抓取服务器指南](https://hermesbee.com/zh/blog/mcp-web-scraping-guide-2026) — MCP 抓取格局：浏览器自动化、Cloudflare 处理、本地优先、买断 vs 订阅。
+- [2026 年网页抓取如何绕过 Cloudflare：实战指南](https://hermesbee.com/zh/blog/cloudflare-bypass-scraping-guide) — 为什么 Cloudflare 拦截爬虫、合法工具如何处理受保护页面。
+- [MCP 服务器安全：2026 年开发者指南](https://hermesbee.com/zh/blog/mcp-server-security-guide) — 提示注入、权限、密钥泄露、供应链与加固清单。
+- [专利搜索工具对比](https://hermesbee.com/zh/blog/patent-search-tools-comparison) — Espacenet OPS、USPTO ODP、Google Patents 与桌面替代方案。
+
+## Docs & Code Examples
+
+- [Code Examples — ScrapeBox API Python & Node.js](https://hermesbee.com/code-examples) — Ready-to-run Python and Node.js examples for the local ScrapeBox REST API.
+- [Changelog](https://hermesbee.com/changelog) — Version history across all products. Updates free forever.
+
+## Legal & Company
+
+- [About](https://hermesbee.com/about) — HermesBee overview.
+- [Contact](https://hermesbee.com/contact) — admin@hermesbee.com.
+- [Privacy](https://hermesbee.com/privacy) — Privacy policy.
+- [Terms](https://hermesbee.com/terms) — Terms of service (refunds follow Gumroad policy).
+
+## Sitemap
+
+- Full URL list: https://hermesbee.com/sitemap.xml
+
+## Usage boundary
+
+HermesBee tools are designed for legitimate use: scraping pages you own or have permission to access, and browser automation for research and development. Always respect target websites' Terms of Service and robots.txt.
