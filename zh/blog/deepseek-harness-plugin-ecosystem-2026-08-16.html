@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeepSeek Harness 插件生态：3 天 11.3 万星，开发者该关注什么 | HermesBee</title>
+<meta name="description" content="DeepSeek Harness（DSH）3 天狂揽 11.3 万 GitHub Star。插件优先的 Agent 框架，重现 MCP 生态早期的爆发曲线——对开发者和 MCP 产品开发者意味着什么？">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://hermesbee.com/zh/blog/deepseek-harness-plugin-ecosystem-2026-08-16">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "DeepSeek Harness 插件生态：3 天 11.3 万星",
+  "datePublished": "2026-08-16",
+  "author": {"@type": "Organization", "name": "HermesBee"},
+  "publisher": {"@type": "Organization", "name": "HermesBee", "url": "https://hermesbee.com"}
+}
+</script>
+<style>
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;max-width:760px;margin:0 auto;padding:24px;line-height:1.75;color:#1a1a2e;background:#f8fafc}
+a{color:#6366f1}h1{font-size:1.9rem;line-height:1.3}h2{margin-top:36px;font-size:1.3rem}
+.meta{color:#64748b;font-size:.9rem;border-bottom:1px solid #e2e8f0;padding-bottom:12px;margin-bottom:24px}
+code{background:#eef2ff;padding:2px 6px;border-radius:4px;font-size:.9em}
+table{border-collapse:collapse;width:100%;margin:16px 0}th,td{border:1px solid #e2e8f0;padding:8px 12px;text-align:left;font-size:.9rem}
+th{background:#eef2ff}.back{color:#64748b;text-decoration:none;font-size:.9rem}
+</style>
+<link rel="alternate" hreflang="en" href="https://hermesbee.com/blog/deepseek-harness-plugin-ecosystem-2026-08-16">
+<link rel="alternate" hreflang="zh" href="https://hermesbee.com/zh/blog/deepseek-harness-plugin-ecosystem-2026-08-16">
+<link rel="alternate" hreflang="x-default" href="https://hermesbee.com/blog/deepseek-harness-plugin-ecosystem-2026-08-16">
+</head>
+<body>
+<a class="back" href="https://hermesbee.com/">← HermesBee 首页</a>
+<h1>DeepSeek Harness 插件生态：3 天 11.3 万星，开发者该关注什么</h1>
+<div class="meta">By <strong>HermesBee Team</strong> · Developer Tools · 2026年8月16日 · 6 分钟</div>
+
+<p>8 月 13 日，DeepSeek 官方发布了 Agent 框架 <strong>DeepSeek Harness（DSH）</strong>。三天之后，它的 GitHub Star 数突破 <strong>11.3 万</strong>——这是本周 Agent 工具圈最大的事件，也可能是今年涨星最快的 Agent 项目。它的口号只有一句："一切皆插件（Everything is a Plugin）。"</p>
+
+<p>对开发者来说，DSH 的价值不只是星数。围绕它正在形成的插件市场，和 MCP 生态早期非常像——而当年在 MCP 上奏效的打法，正在这里以更快的速度重演。</p>
+
+<h2>DSH 是什么</h2>
+<p>DSH 是基于 Cordis 插件架构的本地优先 Agent 框架。一条命令即可安装，立刻得到一个完整的 Agent 环境：</p>
+<pre><code>npx @deepseek-ai/dsh web</code></pre>
+<p>启动后在 <code>127.0.0.1:3080</code> 打开 Web UI——不需要云账号、不需要 API 网关、没有厂商锁定。官方同时提供桌面端、Web UI 和 TUI 三种形态，架构上把每个能力（工具、界面面板、路由、记忆）都做成可插拔模块，而不是写死的功能。</p>
+
+<h2>三天长出的生态</h2>
+<p>短短三天，一个完整的卫星生态已经成型。下面这些项目全部创建于 8 月 13 至 16 日：</p>
+<table>
+<tr><th>组件</th><th>Stars</th><th>定位</th></tr>
+<tr><td>deepseek-harness（核心）</td><td>113,000+</td><td>官方 Agent 框架，MIT 协议</td></tr>
+<tr><td>deepseek-harness-desktop</td><td>5,600+</td><td>桌面 GUI 客户端</td></tr>
+<tr><td>dsh-web-ui</td><td>2,700+</td><td>浏览器端界面</td></tr>
+<tr><td>awesome-dsh-plugin</td><td>2,900+</td><td>插件精选列表</td></tr>
+<tr><td>dsh-TUI</td><td>1,200+</td><td>终端界面</td></tr>
+<tr><td>routing-suite</td><td>1,600+</td><td>多模型路由插件</td></tr>
+</table>
+<p>一次发布，不到一周催生 6 个千星以上项目。这正是 2025 年 MCP 生态里的"插件淘金热"模式——只是从几个月压缩到了几天。</p>
+
+<h2>为什么插件优先的架构会赢</h2>
+<p>Agent 框架市场经历了三个阶段：先是功能全捆绑的单一 Agent；然后是 MCP 把<em>工具</em>接口标准化，但框架本身依然封闭；DSH 代表第三阶段——框架自身模块化，每个扩展点（工具、面板、路由、记忆、皮肤）都是可以安装、发布甚至出售的插件。</p>
+<p>对 MCP 开发者来说，这个形态很熟悉。DSH 插件不是要取代 MCP，而是架设在 Agent 基础设施之上的互补层。眼前的机会很直接：把现有 MCP 服务器包装成 DSH 插件，趁插件市场还在早期，抢先进入 <code>awesome-dsh-plugin</code> 列表。</p>
+
+<h2>增长信号对 MCP 产品开发者的含义</h2>
+<ul>
+<li><strong>插件市场就是新的分发渠道。</strong> DSH 插件商店还没成熟，核心项目已经 11.3 万星。当年早期进入 Claude/Cursor/OpenCode 生态的 MCP 服务器吃到了巨大的流量红利；DSH 插件现在正处于同样的窗口期。</li>
+<li><strong>本地优先再次被验证。</strong> 同一周，HN 最大的讨论是 Meta 的 Muse Glimmer 30B（always-on 本地 Agent）和 Needle2（14MB 端侧 agentic LLM）。本地运行、一次买断、无订阅的工具模式——也是 HermesBee 全系产品遵循的模式——持续获得市场认可。</li>
+<li><strong>爬虫和数据工具依然是杀手级应用。</strong> 碰不到网页的 Agent 只是玩具。无论哪个框架胜出，给 Agent 可靠网页访问能力的工具都不会缺需求——这也是浏览器、抓取、提取类 MCP 服务器始终是最强品类的原因。</li>
+</ul>
+
+<h2>先别急着上生产</h2>
+<p>DSH 目前处于 developer preview 阶段，破坏性变更频繁，暂时不建议生产环境依赖。把它当作 2025 年中的 MCP 生态看待：可以动手构建、实验、尽早发布——但保持接口薄，等 API 稳定后再加深绑定。</p>
+
+<h2>本周就可以动手</h2>
+<p>想无成本探索这个生态？</p>
+<ol>
+<li>运行 <code>npx @deepseek-ai/dsh web</code>，体验默认插件集。</li>
+<li>翻一遍 <code>awesome-dsh-plugin</code>，看清哪些品类已经拥挤、哪些还是空白。</li>
+<li>检查你现有的 MCP 服务器（抓取、找线索、监控类）有没有天然的 DSH 插件映射。</li>
+</ol>
+<p>就网页数据而言，我们的 <a href="https://hermesbee.com/products/unified-scraper-mcp">Unified Scraper MCP</a> 和 <a href="https://hermesbee.com/products/b2b-lead-finder-mcp">B2B Lead Finder MCP</a> 覆盖了 Agent 技术栈里抓取那一环——我们 <a href="/zh/blog/mcp-web-scraping-guide-2026">MCP 抓取指南</a> 里的选型原则，接入任何框架（包括 DSH）都适用。</p>
+
+<h2>总结</h2>
+<p>DSH 的 11.3 万星一周，是"插件优先的 Agent 基础设施是方向"的最强信号。对开发者的实操建议和当年 MCP 一样：找空白利基、小步快发、构建在留有余地的接口之上。这个生态才三天——地板还是空的。</p>
+
+<div class="meta" style="border:0;margin-top:32px">© 2026 HermesBee · <a href="https://hermesbee.com/">首页</a> · <a href="https://github.com/dawn-jg">GitHub</a></div>
+</body>
+</html>
