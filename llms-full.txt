@@ -5,8 +5,8 @@
 
 ## Products — MCP Servers (for AI agents)
 
-- [CF Bypass Browser MCP](https://hermesbee.com/products/cf-bypass-browser-mcp) — $25 — Full browser with ALL Cloudflare bypass: click, type, screenshot, scroll, navigate. Works with Claude Desktop, Cursor, Cline, Windsurf.
-- [Unified Scraper MCP](https://hermesbee.com/products/unified-scraper-mcp) — $19 — Auto Cloudflare-bypassing web scraper. Pass a URL, get page content or plain text.
+- [CF Bypass Browser MCP](https://hermesbee.com/products/cf-bypass-browser-mcp) — $25 — Full browser with full Cloudflare compatibility: click, type, screenshot, scroll, navigate. Works with Claude Desktop, Cursor, Cline, Windsurf.
+- [Unified Scraper MCP](https://hermesbee.com/products/unified-scraper-mcp) — $19 — Cloudflare-Ready web scraper. Pass a URL, get page content or plain text.
 - [Stealth Browser MCP](https://hermesbee.com/products/stealth-browser-mcp) — $15 — Stealth browsing for AI agents. Screenshots + cookie management.
 - [Smart Scraper MCP](https://hermesbee.com/products/smart-scraper-mcp) — $15 — Basic intelligent scraper: extract title, content, links, images.
 - [LLM Scraper MCP](https://hermesbee.com/products/llm-scraper-mcp) — $49 — Natural-language structured data extraction. No CSS selectors, no coding.
@@ -17,7 +17,7 @@
 ## Products — Desktop Apps
 
 - [ScrapeBox](https://hermesbee.com/products/scrapebox) — $29 — Local REST scraping API. Double-click to start, curl to use. HTML/text/links/tables extraction.
-- [ScrapeBox Pro](https://hermesbee.com/products/scrapebox-pro) — $39 — All ScrapeBox + advanced anti-bot engine. Bypasses ALL levels of Cloudflare.
+- [ScrapeBox Pro](https://hermesbee.com/products/scrapebox-pro) — $39 — All ScrapeBox + advanced anti-bot engine. Compatible with all levels of Cloudflare-protected sites you are authorized to access.
 - [B2B Lead Finder Desktop](https://hermesbee.com/products/b2b-lead-finder-desktop) — $39 — No-code B2B lead tool: companies, emails, LinkedIn jobs & GitHub devs.
 - [StudyPal](https://hermesbee.com/products/studypal) — $19.9 — AI citation generator + Anki card maker. APA/MLA/Chicago/GB-T 7714.
 - [LLM Scraper Desktop](https://hermesbee.com/products/llm-scraper-desktop) — $59 — Bilingual (EN/中文) AI web extraction. No programming needed.

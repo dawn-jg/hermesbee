@@ -10,12 +10,12 @@ HermesBee 出售两种形态的可下载开发者工具：
 - **MCP 服务器**（给 AI Agent 用：Claude Desktop、Cursor、Cline、Windsurf）——让 Agent 拥有真实的浏览器、抓取和数据能力
 - **桌面应用**——双击即用的 GUI 工具，无需编程
 
-所有产品一次性买断、100% 本地运行，相关产品自动绕过反爬/Cloudflare 保护。
+所有产品一次性买断、100% 本地运行，相关产品自动处理反爬/Cloudflare 保护（限自有或授权站点）。
 
 ## 核心能力
 
-- 本地 REST 抓取 API（ScrapeBox / ScrapeBox Pro）带 Cloudflare 绕过
-- MCP 浏览器工具：AI Agent 用完整浏览器自动化 + Cloudflare 绕过
+- 本地 REST 抓取 API（ScrapeBox / ScrapeBox Pro）带 Cloudflare-Ready 抓取能力
+- MCP 浏览器工具：AI Agent 用完整浏览器自动化 + Cloudflare-Ready 抓取能力
 - MCP 抓取工具：自然语言网页数据提取
 - 域名监控 MCP（WHOIS / 到期 / DNS）
 - 被动收入监控 MCP
@@ -25,7 +25,7 @@ HermesBee 出售两种形态的可下载开发者工具：
 ## 产品
 
 ### MCP 服务器（AI Agent 用）
-- [CF Bypass Browser MCP](https://hermesbee.com/products/cf-bypass-browser-mcp) — $25 — 完整浏览器 + 全级别 Cloudflare 绕过
+- [CF Bypass Browser MCP](https://hermesbee.com/products/cf-bypass-browser-mcp) — $25 — 完整浏览器 + 全级别 Cloudflare 兼容
 - [Unified Scraper MCP](https://hermesbee.com/products/unified-scraper-mcp) — $19 — 自动反爬抓取器
 - [Stealth Browser MCP](https://hermesbee.com/products/stealth-browser-mcp) — $15 — 隐身浏览器，截图 + Cookie
 - [Smart Scraper MCP](https://hermesbee.com/products/smart-scraper-mcp) — $15 — 基础智能抓取
@@ -36,7 +36,7 @@ HermesBee 出售两种形态的可下载开发者工具：
 
 ### 桌面应用
 - [ScrapeBox](https://hermesbee.com/products/scrapebox) — $29 — 本地 REST 抓取 API
-- [ScrapeBox Pro](https://hermesbee.com/products/scrapebox-pro) — $39 — 全级别反爬绕过
+- [ScrapeBox Pro](https://hermesbee.com/products/scrapebox-pro) — $39 — 全级别反爬兼容
 - [B2B Lead Finder Desktop](https://hermesbee.com/products/b2b-lead-finder-desktop) — $39 — 免代码 B2B 线索工具
 - [StudyPal](https://hermesbee.com/products/studypal) — $19.9 — AI 引用生成 + Anki 卡片（APA/MLA/Chicago/GB-T 7714）
 - [LLM Scraper Desktop](https://hermesbee.com/products/llm-scraper-desktop) — $59 — 中英双语 AI 网页提取
