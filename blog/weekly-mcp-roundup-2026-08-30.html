@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly MCP Roundup: New MCP Servers Worth Watching (Aug 30, 2026) | HermesBee</title>
+<meta name="description" content="Weekly MCP roundup (Aug 30, 2026): new MCP servers worth watching — debugger MCP, agent memory, paper search, shopping agents — and the supply gaps to claim.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-08-30">
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:760px;margin:0 auto;padding:24px;line-height:1.75;color:#1a1a2e;background:#f8fafc}
+a{color:#6366f1}h1{font-size:1.9rem;line-height:1.3}h2{margin-top:36px;font-size:1.3rem}
+.meta{color:#64748b;font-size:.9rem;border-bottom:1px solid #e2e8f0;padding-bottom:12px;margin-bottom:24px}
+code{background:#eef2ff;padding:2px 6px;border-radius:4px;font-size:.9em}
+table{border-collapse:collapse;width:100%;margin:16px 0}th,td{border:1px solid #e2e8f0;padding:8px 12px;text-align:left;font-size:.95rem}
+th{background:#eef2ff}.back{color:#64748b;text-decoration:none;font-size:.9rem}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Weekly MCP Roundup: New MCP Servers Worth Watching (Aug 30, 2026)",
+  "datePublished": "2026-08-30",
+  "author": {"@type": "Organization", "name": "HermesBee Team"},
+  "publisher": {"@type": "Organization", "name": "HermesBee", "url": "https://hermesbee.com"}
+}
+</script>
+<link rel="alternate" hreflang="en" href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-08-30">
+<link rel="alternate" hreflang="zh" href="https://hermesbee.com/zh/blog/weekly-mcp-roundup-2026-08-30">
+<link rel="alternate" hreflang="x-default" href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-08-30">
+</head>
+<body>
+<a class="back" href="https://hermesbee.com/">← HermesBee Home</a>
+<h1>Weekly MCP Roundup: New MCP Servers Worth Watching (Aug 30, 2026)</h1>
+<div class="meta">By <strong>HermesBee Team</strong> · Developer Tools · August 30, 2026 · 6 min read</div>
+
+<p>The Model Context Protocol ecosystem keeps compounding — and this week it clearly expanded beyond its original turf. The standout projects are no longer just "call an API for the agent"; they drive debuggers, manage agent memory, search 220 million papers, and referee shopping decisions. Based on our daily GitHub, Hacker News and Product Hunt scans, here are the MCP servers worth your attention this week, the pattern behind them, and the gaps still open for builders.</p>
+
+<h2>This week's MCP servers worth watching</h2>
+<ul>
+<li><strong>x64dbg MCP server</strong> (~1,727★): the highest-star new MCP project of the week. It lets an agent drive the x64dbg debugger — set breakpoints, step through code, read memory — turning reverse engineering and dynamic analysis into an agent workflow. Security research is joining the "agent does the clicking" movement, and it is rising fast.</li>
+<li><strong>Northcinder</strong> (~1,217★): a buyer-confirmed shopping comparison MCP. The interesting design choice: the agent compares prices and options, but the final purchase confirmation always goes back to the human. Governance-aware commerce agents are a healthier template than fully autonomous buying.</li>
+<li><strong>Lemmalog</strong> (127★): agent memory built on a Datalog engine, with layered rules and provenance-traceable facts. Instead of an opaque vector store, every remembered fact can be audited — exactly what teams burned by this month's agent incidents are asking for.</li>
+<li><strong>Consensus MCP</strong> (24★): search across 220M+ scholarly papers from your agent client. Young and small, but it rides the same wave as academic desktop tools — our own <a href="https://hermesbee.com/products/litsearch">LitSearch</a> serves the same need locally.</li>
+<li><strong>Mediagen</strong> (56★) and <strong>Cove Book Forge MCP</strong> (30★): image/video generation and PDF/EPUB→Obsidian note conversion, shipped as MCP server <em>plus</em> agent skill pack. The dual "MCP + skill" release format is quietly becoming the standard distribution model.</li>
+</ul>
+
+<h2>The pattern: MCP is eating specialized workflows</h2>
+<p>Step back from the individual projects and three demand clusters emerge from this week's data:</p>
+<ul>
+<li><strong>Agent infrastructure, not just tools.</strong> Memory engines (lemmalog), screen understanding (uisight, ~99★ and climbing), agent email infrastructure (sentio, ~222★) — the ecosystem is building the layers <em>under</em> agents, not only the tools agents call.</li>
+<li><strong>Local-first is a feature, not a limitation.</strong> The fastest-rising agent observability tools this week — zoetrope (~662★) and agenttrail (~422★) — are read-only, bind to 127.0.0.1, and touch zero external services. Developers increasingly treat "your data never leaves the machine" as a buying trigger, the same principle behind local MCP servers.</li>
+<li><strong>Vertical data beats general search.</strong> Salary-transparent job data (swissdevjobs, ~92★), 220M-paper search, China inbound-travel data (china-travel-kit, ~21★) — narrow, structured datasets wrapped as MCP keep winning over "just scrape it yourself."</li>
+</ul>
+
+<h2>Supply gaps agent builders can still claim</h2>
+<p>Comparing what shipped this week against what developers are asking for, three niches remain wide open:</p>
+<ul>
+<li><strong>Virtual device / phone-control MCP.</strong> Two independent projects broke out this week — darwin-vm (~518★, iOS/macOS in QEMU) and vphone-cli (Hacker News front page, ~360 points) — but neither ships an MCP server. A "phone automation MCP" would be first to market.</li>
+<li><strong>Expired-domain monitoring MCP.</strong> Domain drop-catching is a proven scraper workload, and a productized MCP in the $29–39 range has no incumbent — the monitoring pipeline is straightforward to build (our own <a href="https://hermesbee.com/products/domain-monitor-mcp">Domain Monitor MCP</a> covers the tracking side).</li>
+<li><strong>Chinese-ecosystem data MCPs.</strong> Zhihu, WeChat and job-board data still have no 500★+ MCP project. Same for a Chinese-localized academic search server. Whoever ships with proper localization and docs takes the niche.</li>
+</ul>
+
+<h2>How we evaluate MCP servers</h2>
+<p>When we test a new MCP server before recommending it, three questions decide:</p>
+<ul>
+<li><strong>Does it handle the messy 30%?</strong> The easy 70% of targets work with any server; anti-bot protection and dynamic pages are the real test — see our <a href="https://hermesbee.com/blog/how-to-bypass-cloudflare-web-scraping-2026">Cloudflare scraping guide</a> for what that costs.</li>
+<li><strong>Is it local or per-call billed?</strong> Local servers keep data on your machine and work offline; per-page APIs add recurring cost to one-off tasks.</li>
+<li><strong>Does it return structure, not HTML?</strong> Clean JSON beats raw markup every time — the full reasoning is in our <a href="https://hermesbee.com/blog/best-mcp-servers-for-web-scraping-2026">MCP scraping server guide</a>.</li>
+</ul>
+
+<h2>HermesBee's take</h2>
+<p>This week strengthens the bet we made at launch: winning MCP servers are <strong>local-first, buy-once, and specialized</strong>. Our line — <a href="https://hermesbee.com/products/unified-scraper-mcp">Unified Scraper MCP</a>, <a href="https://hermesbee.com/products/cf-bypass-browser-mcp">CF Bypass Browser MCP</a>, <a href="https://hermesbee.com/products/llm-scraper-mcp">LLM Scraper MCP</a> and the rest of the <a href="https://hermesbee.com/products/">product line</a> — runs locally, needs no API key, and is a one-time purchase with free updates. The practical takeaway from this week: keep your MCP stack small and measurable, prefer auditable components (memory with provenance, observability that stays on localhost), and before wiring anything that touches your data into an agent, skim our <a href="https://hermesbee.com/blog/mcp-server-security-guide-2026">MCP server security guide</a>. For last week's edition, see the <a href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-08-16">Aug 16 MCP roundup</a>.</p>
+
+<h2>Summary</h2>
+<p>This week's MCP story: agents moved into reverse engineering, auditable memory, scholarly search and governance-aware shopping — while local-first distribution ("MCP + skill" packs, localhost-only observability) became the default expectation. Three gaps (phone-control MCP, domain monitoring MCP, Chinese-ecosystem data MCPs) are still cheap to claim. We publish a roundup like this every week.</p>
+
+<div class="meta" style="border:0;margin-top:32px">© 2026 HermesBee · <a href="https://hermesbee.com/">Home</a> · <a href="https://hermesbee.com/products/">Products</a> · <a href="https://github.com/dawn-jg">GitHub</a> · <a href="https://hermesbee.com/zh/blog/weekly-mcp-roundup-2026-08-30">中文版</a></div>
+</body>
+</html>
