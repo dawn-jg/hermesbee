@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCP 生态周报：防幻觉验证、定理图谱与 WordPress MCP（2026年9月6日）| HermesBee</title>
+<meta name="description" content="MCP 生态周报（2026年9月6日）：防幻觉验证 MCP（920★）、arXiv 定理依赖图、入境游数据三形态分发、WordPress MCP 进官方插件库，以及 SEO 数据、CMS 治理等三个供给空白。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://hermesbee.com/zh/blog/weekly-mcp-roundup-2026-09-06">
+<style>
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;max-width:760px;margin:0 auto;padding:24px;line-height:1.85;color:#1a1a2e;background:#f8fafc}
+a{color:#6366f1}h1{font-size:1.7rem;line-height:1.4}h2{margin-top:36px;font-size:1.3rem}
+.meta{color:#64748b;font-size:.9rem;border-bottom:1px solid #e2e8f0;padding-bottom:12px;margin-bottom:24px}
+code{background:#eef2ff;padding:2px 6px;border-radius:4px;font-size:.9em}
+table{border-collapse:collapse;width:100%;margin:16px 0}th,td{border:1px solid #e2e8f0;padding:8px 12px;text-align:left;font-size:.95rem}
+th{background:#eef2ff}.back{color:#64748b;text-decoration:none;font-size:.9rem}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "MCP 生态周报：防幻觉验证、定理图谱与 WordPress MCP（2026年9月6日）",
+  "datePublished": "2026-09-06",
+  "author": {"@type": "Organization", "name": "HermesBee Team"},
+  "publisher": {"@type": "Organization", "name": "HermesBee", "url": "https://hermesbee.com"}
+}
+</script>
+<link rel="alternate" hreflang="en" href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-09-06">
+<link rel="alternate" hreflang="zh" href="https://hermesbee.com/zh/blog/weekly-mcp-roundup-2026-09-06">
+<link rel="alternate" hreflang="x-default" href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-09-06">
+</head>
+<body>
+<a class="back" href="https://hermesbee.com/zh/">← HermesBee 首页</a>
+<h1>MCP 生态周报：防幻觉验证、定理图谱与 WordPress MCP（2026年9月6日）</h1>
+<div class="meta">作者 <strong>HermesBee Team</strong> · 开发者工具 · 2026年9月6日 · 6 分钟阅读</div>
+
+<p>上周的 MCP 生态关键词是"专业化"，本周的关键词换成了"可信"。涨得最快的项目不再给 Agent 加新能力，而是反过来查它的作业。同周还有：把数学论文变成定理依赖图的 MCP、把入境游数据做成三形态分发的样板，以及 WordPress 正式迈入 MCP 世界。基于我们每天对 GitHub、Hacker News、Product Hunt 的扫描，下面是本周值得关注的项目，和还没人占的空白。</p>
+
+<h2>本周值得关注的新 MCP</h2>
+<ul>
+<li><strong>reverify（约 920★）</strong>：本周乃至近两周扫描的榜首。思路很简单：LLM 对二进制文件（DLL、驱动、系统文件）下判断时，由确定性工具裁决，而不是信模型。它的公开基准里，AI 对 Windows 系统二进制的判断大面积答错，且逐个被工具抓出。"防幻觉"基建以 pip + CLI + MCP 三形态分发，正是严肃团队想要的形状。</li>
+<li><strong>papergraph-mcp（76★）</strong>：把 arXiv 和 LaTeX 数学论文解析成定理依赖图，Agent 可以沿着"这个证明建立在哪些定理之上"走图。星数不大，想法很大。它与本地学术检索是同一波需求——我们的 <a href="https://hermesbee.com/products/litsearch">LitSearch</a> 在检索侧解决同一问题。</li>
+<li><strong>china-travel-kit（124★）</strong>：入境游数据做成 source-aware 的 CLI + API + MCP 三形态。比题材更值得学的是打包方式：一套数据开三扇门，每类 Agent 平台都有原生入口。</li>
+<li><strong>IDA-instances-MCP（111★）与 jmeter-mcp（64★）</strong>：逆向工程和压力测试加入 Agent 技术栈。继两周前的 x64dbg MCP 之后，安全与 QA 工具已经稳定地 MCP 优先。</li>
+<li><strong>shim-mcp（47★）</strong>：星数不高但节点意义强——它把 WordPress MCP 送进了官方插件目录。CMS 平台正式 MCP 化。同期 Product Hunt 上线的 TrackMCP 专门追踪 MCP 服务器：发现与监控本身成了独立赛道。</li>
+<li><strong>同周动态</strong>：上周报道过的可审计记忆引擎 lemmalog 从 127★ 翻倍到约 283★，"可信记忆"的需求在持续兑现；Anthropic 官方购物 Agent 蓝图 commerce-agents（约 2037★）把"分阶段写入 + 人工确认"立为商业 Agent 的参考范式。</li>
+</ul>
+
+<h2>大趋势：从"能力"到"问责"</h2>
+<p>把本周的项目放在一起看，生态正在补一层<strong>验证层</strong>：reverify 用确定性工具查证 AI 的断言，lemmalog 让每条被记住的事实可审计，commerce-agents 把人放回购买闭环。这与 Hacker News 本周"Did Claude increase bugs in rsync？"（300+ 分）的焦虑完全同频。"Agent 提案、工具裁决"正在从可选项变成默认架构。</p>
+<p>还有两个安静但重要的趋势。一是<strong>多形态分发</strong>成为标配：reverify 是 pip+CLI+MCP，china-travel-kit 是 CLI+API+MCP，本周爆火的本地微信情报工具（362★）则是只读 CLI + Agent Skill。Agent 会从哪扇门进来，就开哪扇门。二是<strong>发现渠道饱和</strong>：mcpservers.org 收录已超 9800 个服务器，"进目录"只是及格线，窄而垂直的定位才能真的被找到。</p>
+
+<h2>开发者还能切入的供给空白</h2>
+<ul>
+<li><strong>SEO / 关键词数据 MCP</strong>：本周一个 local-first 关键词研究工具冲到 200★——但只有桌面形态。需求已验证，MCP 侧还没有强势玩家。关键词与排名数据封装成 MCP 仍是空位。</li>
+<li><strong>CMS 治理 MCP</strong>：WordPress 本周正式 MCP 化，但审计、预览、发布审批类工作流几乎空白。"让 Agent 改你的站，而且改得安全"有先发窗口。</li>
+<li><strong>源码验证 MCP</strong>：二进制侧已被 reverify 覆盖，源代码侧的对应层——确定性核查代码生成 Agent 的断言——还没人做，而 rsync 帖说明焦虑是真实的。</li>
+</ul>
+
+<h2>我们如何评估 MCP 服务器</h2>
+<p>推荐任何 MCP 服务器之前，我们只问三个问题：能否搞定最难的 30%——反爬墙和动态页（方法见 <a href="https://hermesbee.com/blog/how-to-bypass-cloudflare-web-scraping-2026">Cloudflare 绕过指南</a>）；是否本地运行、一次性买断而非按次计费（经济账见 <a href="https://hermesbee.com/blog/best-mcp-servers-for-web-scraping-2026">MCP 抓取服务器指南</a>）；返回的是结构化数据还是原始 HTML。凡是要碰你数据的组件，先过一遍安全审查——见 <a href="https://hermesbee.com/blog/mcp-server-security-guide-2026">MCP 服务器安全指南</a>。</p>
+
+<h2>HermesBee 的判断</h2>
+<p>本周再次验证了我们上线时的三个判断：能赢的 MCP 工具<strong>本地优先、一次性买断、垂直专精</strong>。我们的产品线——<a href="https://hermesbee.com/products/unified-scraper-mcp">Unified Scraper MCP</a>、<a href="https://hermesbee.com/products/cf-bypass-browser-mcp">CF Bypass Browser MCP</a>、<a href="https://hermesbee.com/products/llm-scraper-mcp">LLM Scraper MCP</a> 及全部<a href="https://hermesbee.com/products/">产品列表</a>——全部本地运行，无 API Key、无订阅。本周的启示：优先选择能自我证明的组件——验证服务器、可审计记忆、确定性裁决；对任何接入 Agent 的工具，"相信我"三个字本身就是红旗。上周一期见 <a href="https://hermesbee.com/zh/blog/weekly-mcp-roundup-2026-08-30">8 月 30 日 MCP 周报</a>。</p>
+
+<h2>总结</h2>
+<p>本周 MCP 生态补上了验证层：确定性工具裁决 AI 断言、可审计记忆翻倍增长、人工确认成为商业 Agent 官方范式。垂直数据服务器持续跑赢通用搜索，WordPress 正式 MCP 化，而 SEO 数据、CMS 治理、源码验证三个空白仍待认领。我们每周发布一篇这样的周报。</p>
+
+<div class="meta" style="border:0;margin-top:32px">© 2026 HermesBee · <a href="https://hermesbee.com/zh/">首页</a> · <a href="https://hermesbee.com/products/">产品</a> · <a href="https://github.com/dawn-jg">GitHub</a> · <a href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-09-06">English</a></div>
+</body>
+</html>

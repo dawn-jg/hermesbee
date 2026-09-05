@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly MCP Roundup: New MCP Servers Worth Watching (Sep 6, 2026) | HermesBee</title>
+<meta name="description" content="Weekly MCP roundup (Sep 6, 2026): new MCP servers worth watching — anti-hallucination verification, theorem graphs, travel data, WordPress MCP — plus gaps to claim.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-09-06">
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:760px;margin:0 auto;padding:24px;line-height:1.75;color:#1a1a2e;background:#f8fafc}
+a{color:#6366f1}h1{font-size:1.9rem;line-height:1.3}h2{margin-top:36px;font-size:1.3rem}
+.meta{color:#64748b;font-size:.9rem;border-bottom:1px solid #e2e8f0;padding-bottom:12px;margin-bottom:24px}
+code{background:#eef2ff;padding:2px 6px;border-radius:4px;font-size:.9em}
+table{border-collapse:collapse;width:100%;margin:16px 0}th,td{border:1px solid #e2e8f0;padding:8px 12px;text-align:left;font-size:.95rem}
+th{background:#eef2ff}.back{color:#64748b;text-decoration:none;font-size:.9rem}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Weekly MCP Roundup: New MCP Servers Worth Watching (Sep 6, 2026)",
+  "datePublished": "2026-09-06",
+  "author": {"@type": "Organization", "name": "HermesBee Team"},
+  "publisher": {"@type": "Organization", "name": "HermesBee", "url": "https://hermesbee.com"}
+}
+</script>
+<link rel="alternate" hreflang="en" href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-09-06">
+<link rel="alternate" hreflang="zh" href="https://hermesbee.com/zh/blog/weekly-mcp-roundup-2026-09-06">
+<link rel="alternate" hreflang="x-default" href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-09-06">
+</head>
+<body>
+<a class="back" href="https://hermesbee.com/">← HermesBee Home</a>
+<h1>Weekly MCP Roundup: New MCP Servers Worth Watching (Sep 6, 2026)</h1>
+<div class="meta">By <strong>HermesBee Team</strong> · Developer Tools · September 6, 2026 · 6 min read</div>
+
+<p>If last week's MCP story was about specialized workflows, this week's is about <strong>trust</strong>. The fastest-rising project in our scans doesn't give agents a new capability — it checks their work. Alongside it: a theorem-graph server for math papers, travel data done right, and WordPress officially entering the MCP world. Based on our daily GitHub, Hacker News and Product Hunt scans, here is what deserves your attention this week — and the gaps still open for builders.</p>
+
+<h2>This week's MCP servers worth watching</h2>
+<ul>
+<li><strong>reverify</strong> (~920★): the standout of the week, and of our last two scans. Its premise: when an LLM claims something about a binary — a DLL, a driver, a system file — a deterministic tool adjudicates instead of trusting the model. In its published benchmark, AI answers about Windows system binaries were wrong on the vast majority of files, and the tool caught every one. Anti-hallucination infrastructure shipping as pip + CLI + MCP is exactly the shape serious teams want.</li>
+<li><strong>papergraph-mcp</strong> (76★): turns arXiv and LaTeX math papers into theorem dependency graphs an agent can walk — "what does this proof build on?" Small stars, big idea. It rides the same wave as local academic search; our own <a href="https://hermesbee.com/products/litsearch">LitSearch</a> serves the retrieval side of the same need.</li>
+<li><strong>china-travel-kit</strong> (124★): inbound-travel data delivered as a source-aware CLI + API + MCP. Worth studying less for the topic than for the packaging — one dataset, three doors, each agent platform served natively.</li>
+<li><strong>IDA-instances-MCP</strong> (111★) and <strong>jmeter-mcp</strong> (64★): reverse engineering and load testing join the agent stack. Following x64dbg MCP from two weeks ago, security and QA tooling are now reliably MCP-first.</li>
+<li><strong>shim-mcp</strong> (47★): small, but historically interesting — it put a WordPress MCP into the official plugin directory. CMS platforms are officially MCP-aware now. Meanwhile TrackMCP (a Product Hunt launch) tracks MCP servers themselves: discovery and monitoring have become their own niche.</li>
+<li><strong>Also this week:</strong> lemmalog, the auditable-memory engine we covered at 127★ last week, doubled to ~283★ — trust in memory is sticking. And Anthropic's official <strong>commerce-agents</strong> blueprint (~2,037★) shows staged, human-confirmed write operations becoming the reference pattern for commercial agents.</li>
+</ul>
+
+<h2>The pattern: from capability to accountability</h2>
+<p>Read together, this week's releases describe an ecosystem adding a <strong>verification layer</strong>. reverify checks binary claims with deterministic tools; lemmalog makes every remembered fact auditable; commerce-agents puts a human in the purchase loop. This mirrors developer anxiety on Hacker News — "Did Claude increase bugs in rsync?" drew over 300 points this week. Agents that propose and tools that adjudicate is becoming the default architecture, not a paranoia option.</p>
+<p>Two quieter trends: first, <strong>multi-form distribution</strong> is now standard — reverify ships pip+CLI+MCP, china-travel-kit ships CLI+API+MCP, and this week's breakout local-WeChat intelligence tool (362★) ships a read-only CLI plus an agent skill. Ship every door an agent might enter through. Second, <strong>discovery is saturating</strong>: mcpservers.org now lists 9,800+ servers. Being in a directory is table stakes; narrow vertical positioning is what actually gets found.</p>
+
+<h2>Supply gaps agent builders can still claim</h2>
+<ul>
+<li><strong>SEO / keyword-data MCP.</strong> A local-first keyword research tool hit 200★ this week — in desktop form only. Demand is validated; no dominant MCP server serves it yet. Keyword and rank data wrapped as MCP is still an open niche.</li>
+<li><strong>CMS governance MCP.</strong> WordPress is officially MCP-aware as of this week, but audit, staging and publish-approval workflows barely exist. Anyone building "agent edits your site, safely" has a first-mover window.</li>
+<li><strong>Source-code verification MCP.</strong> Binaries are now covered (reverify). The equivalent layer for source code — deterministically checking what a code-gen agent claims — is still unclaimed, and the rsync thread shows the anxiety is real.</li>
+</ul>
+
+<h2>How we evaluate MCP servers</h2>
+<p>Before we recommend any MCP server, three questions decide: Does it handle the messy 30% — anti-bot walls and dynamic pages (see our <a href="https://hermesbee.com/blog/how-to-bypass-cloudflare-web-scraping-2026">Cloudflare bypass guide</a>)? Is it local and buy-once rather than per-call billed (the economics are in our <a href="https://hermesbee.com/blog/best-mcp-servers-for-web-scraping-2026">MCP scraping guide</a>)? And does it return structure, not raw HTML? Anything that touches your data should also pass a security review first — see our <a href="https://hermesbee.com/blog/mcp-server-security-guide-2026">MCP server security guide</a>.</p>
+
+<h2>HermesBee's take</h2>
+<p>This week validated the three bets we made at launch: winning MCP tools are <strong>local-first, buy-once, and specialized</strong>. Our line — <a href="https://hermesbee.com/products/unified-scraper-mcp">Unified Scraper MCP</a>, <a href="https://hermesbee.com/products/cf-bypass-browser-mcp">CF Bypass Browser MCP</a>, <a href="https://hermesbee.com/products/llm-scraper-mcp">LLM Scraper MCP</a> and the rest of the <a href="https://hermesbee.com/products/">product line</a> — runs locally with no API key and no subscription. The takeaway from this week: prefer components that can <em>prove</em> themselves — verification servers, auditable memory, deterministic adjudication — and treat "trust me" as a red flag in anything wired into your agent. For last week's edition, see the <a href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-08-30">Aug 30 MCP roundup</a>.</p>
+
+<h2>Summary</h2>
+<p>This week's MCP ecosystem added a verification layer: deterministic tools adjudicating AI claims, auditable memory doubling down, and human-confirmed commerce becoming the official pattern. Vertical data servers keep winning, WordPress went officially MCP-aware, and three gaps — SEO data, CMS governance, source-code verification — remain cheap to claim. We publish a roundup like this every week.</p>
+
+<div class="meta" style="border:0;margin-top:32px">© 2026 HermesBee · <a href="https://hermesbee.com/">Home</a> · <a href="https://hermesbee.com/products/">Products</a> · <a href="https://github.com/dawn-jg">GitHub</a> · <a href="https://hermesbee.com/zh/blog/weekly-mcp-roundup-2026-09-06">中文版</a></div>
+</body>
+</html>
