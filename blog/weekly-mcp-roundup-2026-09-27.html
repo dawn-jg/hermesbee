@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly MCP Roundup: MCP Security Audits, Distribution Reality and the Local-First Shift (Sep 27, 2026) | HermesBee</title>
+<meta name="description" content="Weekly MCP roundup (Sep 27, 2026): 97M monthly SDK downloads vs under 5% monetized, MCP config audits, tool-poisoning test data, zero-trust gateways and the local-first shift.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-09-27">
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:760px;margin:0 auto;padding:24px;line-height:1.75;color:#1a1a2e;background:#f8fafc}
+a{color:#6366f1}h1{font-size:1.9rem;line-height:1.3}h2{margin-top:36px;font-size:1.3rem}
+.meta{color:#64748b;font-size:.9rem;border-bottom:1px solid #e2e8f0;padding-bottom:12px;margin-bottom:24px}
+code{background:#eef2ff;padding:2px 6px;border-radius:4px;font-size:.9em}
+table{border-collapse:collapse;width:100%;margin:16px 0}th,td{border:1px solid #e2e8f0;padding:8px 12px;text-align:left;font-size:.95rem}
+th{background:#eef2ff}.back{color:#64748b;text-decoration:none;font-size:.9rem}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Weekly MCP Roundup: MCP Security Audits, Distribution Reality and the Local-First Shift (Sep 27, 2026)",
+  "datePublished": "2026-09-27",
+  "author": {"@type": "Organization", "name": "HermesBee Team"},
+  "publisher": {"@type": "Organization", "name": "HermesBee", "url": "https://hermesbee.com"}
+}
+</script>
+<link rel="alternate" hreflang="en" href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-09-27">
+<link rel="alternate" hreflang="zh" href="https://hermesbee.com/zh/blog/weekly-mcp-roundup-2026-09-27">
+<link rel="alternate" hreflang="x-default" href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-09-27">
+</head>
+<body>
+<a class="back" href="https://hermesbee.com/">← HermesBee Home</a>
+<h1>Weekly MCP Roundup: MCP Security Audits, Distribution Reality and the Local-First Shift (Sep 27, 2026)</h1>
+<div class="meta">By <strong>HermesBee Team</strong> · Developer Tools · September 27, 2026 · 6 min read</div>
+
+<p>This week the MCP ecosystem published its own scoreboard, and it is uncomfortable in a useful way. The protocol now sees roughly <strong>97 million SDK downloads a month</strong> (up from ~100,000 in late 2024) across <strong>10,000+ active public servers</strong> and <strong>15,900+ GitHub repos</strong>. Independent analyses of the monetization side agree: <strong>fewer than 5% of those servers earn anything</strong>. Meanwhile the week's most substantive engineering news was not a new server but <strong>auditing and containment</strong> — config scanners, zero-trust gateways, and hard data on how badly naive injection filters fail against tool poisoning.</p>
+
+<h2>The MCP supply side, in numbers</h2>
+<table>
+<tr><th>Metric</th><th>Value</th></tr>
+<tr><td>MCP SDK downloads / month</td><td>~100K (Nov 2024) → <strong>~97M</strong> (Mar 2026) — roughly 970×</td></tr>
+<tr><td>Active public MCP servers</td><td><strong>10,000+</strong></td></tr>
+<tr><td>Largest directory listings</td><td>mcp.so ~19,800 · Glama ~20,000 · Smithery 7,000–8,000</td></tr>
+<tr><td>Servers with any revenue</td><td><strong>&lt; 5%</strong></td></tr>
+</table>
+<p>Read those rows together and the conclusion writes itself: the bottleneck moved from <em>building</em> a server to <em>distributing</em> one. Community measurements put the gap at roughly <strong>10× install volume</strong> for a server listed in five or more directories (npm, Glama, PulseMCP, mcp.so, Smithery, the official Registry) versus one published once. If you already have a working server, the highest-return hour this week is a listing pass, not another feature.</p>
+
+<h2>The audit wave: what a config scanner actually finds</h2>
+<p>The sharpest new tool of the week is <strong>mcp-audit-tool</strong> (MIT, ~68★): a static scanner for the MCP configuration files of Claude Desktop, Cursor, Windsurf, Cline, Zed and VS Code. It ships 12 rules mapped to the OWASP MCP Top 10 and returns a 0–100 score with an A+→F grade plus JSON/SARIF for CI. We ran it against a deliberately broken three-server config: <strong>0/100, grade F, six findings (2 critical, 3 high, 1 medium)</strong>. The scanner works — and everything it caught is trivial to fix and almost impossible to spot by eye. Before an agent starts calling tools, check:</p>
+<ul>
+<li><strong>Hardcoded credentials</strong> in config files that get committed or synced.</li>
+<li><strong>Unpinned <code>npx -y</code> installs</strong> — the rug-pull vector.</li>
+<li><strong>Filesystem root grants</strong> when the server needs one directory.</li>
+<li><strong>Tool descriptions that instruct the agent</strong> (tool poisoning).</li>
+<li><strong>Unauthenticated remote endpoints</strong> — an open door, not a feature.</li>
+</ul>
+
+<h2>Tool poisoning is not a regex problem</h2>
+<p>A new public test set of <strong>629 real AgentDojo injections</strong> embedded in tool output measured the popular defenses: <strong>regex blocking caught 0%</strong>, and Meta's Prompt Guard 2 classifier caught <strong>about 1%</strong>. Any plan that relies on keyword matching over scraped text is dead on arrival. The defenses that map to the threat are structural — least-privilege tool surfaces, read-only defaults, human confirmation on destructive calls, and containment at the boundary. That is the job of the new <strong>zero-trust MCP gateways</strong> (e.g. MCPBastion, Rust): narrow each server's capability scope, redact secrets in both directions, and cap rate and quota per tool so a hijacked agent cannot exfiltrate in bulk. Scan configs before install, gate them after; design principles are in our <a href="https://hermesbee.com/blog/mcp-server-security-guide-2026">MCP server security guide</a>.</p>
+
+<h2>Local-first is now a position, not a preference</h2>
+<p>Three signals converged. A curated list of applications that <em>run inside your own Cloudflare account instead of a SaaS</em> passed 1,000★, turning self-hosting into a directory-level movement. The technical framing hardened too: local-first treats your device as the primary copy and the server as optional, paying off on privacy, cost, longevity and capability at once. And the buy-once economics keep showing up in public — a developer shipping a <strong>$49 one-time desktop app</strong> (Electron + SQLite, fully offline) reported 1,200 users in week one with no subscription and no VC, the same shape as our <a href="https://hermesbee.com/products/">product line</a>. One caveat: the "lifetime deal" label is being polluted by inflated revenue claims, so honest one-time vendors now have to show verifiable proof to be believed.</p>
+
+<h2>Protocol note and remaining supply gaps</h2>
+<p>The July 2026 spec makes the protocol <strong>stateless</strong> (session state replaced by headers), overhauled OAuth (RFC 9207) and promoted <strong>MCP Apps</strong> — servers that render their own UI — to first-class status. Statelessness favours lean self-hosted servers; MCP Apps is the strategic one to watch, because a server with its own UI starts to overlap with packaged desktop products. Gaps still open:</p>
+<ul>
+<li><strong>Security and compliance tooling</strong> — enterprise teams name MCP poisoning their top fear, yet the best audit tool is under 100★.</li>
+<li><strong>CI/CD and test infrastructure</strong> — almost nothing runs your test suite or opens a fix PR.</li>
+<li><strong>No-login B2B data sources</strong> — incumbents are all OAuth-gated; a direct fit for <a href="https://hermesbee.com/products/b2b-lead-finder-mcp">lead-generation tooling</a>.</li>
+<li><strong>Agent cost governance</strong> — nobody exposes per-tool, per-call cost attribution.</li>
+</ul>
+
+<h2>How we evaluate MCP servers</h2>
+<p>Unchanged, and this week reinforced it: does it handle the messy 30% — anti-bot walls and dynamic pages (see our <a href="https://hermesbee.com/blog/how-to-bypass-cloudflare-web-scraping-2026">Cloudflare guide</a>)? Does it run locally and bill once rather than meter every call? Does it return structure instead of raw HTML, since raw HTML is a context tax paid on every call (see the <a href="https://hermesbee.com/blog/best-mcp-servers-for-web-scraping-2026">MCP scraping guide</a>)? And does it pass a security review before touching your data? Last week's edition: <a href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-09-20">Sep 20 MCP roundup</a>.</p>
+
+<h2>HermesBee's take</h2>
+<p>The ecosystem's real problem in September 2026 is not supply but trust and distribution: 97 million monthly downloads with fewer than one in twenty servers earning anything describes a market where discoverability and verifiability are the scarce goods. That is why our line stays <strong>local, buy-once and auditable</strong> — <a href="https://hermesbee.com/products/unified-scraper-mcp">Unified Scraper MCP</a>, <a href="https://hermesbee.com/products/cf-bypass-browser-mcp">CF Bypass Browser MCP</a>, <a href="https://hermesbee.com/products/llm-scraper-mcp">LLM Scraper MCP</a> and the rest of the <a href="https://hermesbee.com/products/">catalog</a> run on your machine with no account, no cloud dependency and no per-call meter. When the audit tools tell you to pin versions and keep data local, that is the architecture we shipped from day one.</p>
+
+<h2>Summary</h2>
+<p>This week in MCP: SDK downloads hit ~97M/month while under 5% of servers monetize, so distribution beats another feature; config scanning arrived and our test config scored a fitting 0/100; a 629-attack set showed regex filters catching 0% of tool-poisoning injections; local-first crossed 1,000★ as a movement; and the July 2026 spec went stateless with server-rendered MCP Apps. We publish a roundup like this every week.</p>
+
+<div class="meta" style="border:0;margin-top:32px">© 2026 HermesBee · <a href="https://hermesbee.com/">Home</a> · <a href="https://hermesbee.com/products/">Products</a> · <a href="https://github.com/dawn-jg">GitHub</a> · <a href="https://hermesbee.com/zh/blog/weekly-mcp-roundup-2026-09-27">中文版</a></div>
+</body>
+</html>

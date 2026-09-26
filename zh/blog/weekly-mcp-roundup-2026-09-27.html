@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCP 生态周报：9700 万次月下载与不足 5% 变现——配置审计、分发现实与本地优先（2026年9月27日）| HermesBee</title>
+<meta name="description" content="MCP 生态周报（2026年9月27日）：SDK 月下载 9700 万但不足 5% 服务器有收入，MCP 配置审计工具实跑 0/100，629 条注入攻击实测正则拦截 0%，零信任网关与本地优先成主线。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://hermesbee.com/zh/blog/weekly-mcp-roundup-2026-09-27">
+<style>
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;max-width:760px;margin:0 auto;padding:24px;line-height:1.85;color:#1a1a2e;background:#f8fafc}
+a{color:#6366f1}h1{font-size:1.7rem;line-height:1.4}h2{margin-top:36px;font-size:1.3rem}
+.meta{color:#64748b;font-size:.9rem;border-bottom:1px solid #e2e8f0;padding-bottom:12px;margin-bottom:24px}
+code{background:#eef2ff;padding:2px 6px;border-radius:4px;font-size:.9em}
+table{border-collapse:collapse;width:100%;margin:16px 0}th,td{border:1px solid #e2e8f0;padding:8px 12px;text-align:left;font-size:.95rem}
+th{background:#eef2ff}.back{color:#64748b;text-decoration:none;font-size:.9rem}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "MCP 生态周报：9700 万次月下载与不足 5% 变现——配置审计、分发现实与本地优先（2026年9月27日）",
+  "datePublished": "2026-09-27",
+  "author": {"@type": "Organization", "name": "HermesBee Team"},
+  "publisher": {"@type": "Organization", "name": "HermesBee", "url": "https://hermesbee.com"}
+}
+</script>
+<link rel="alternate" hreflang="en" href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-09-27">
+<link rel="alternate" hreflang="zh" href="https://hermesbee.com/zh/blog/weekly-mcp-roundup-2026-09-27">
+<link rel="alternate" hreflang="x-default" href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-09-27">
+</head>
+<body>
+<a class="back" href="https://hermesbee.com/zh/">← HermesBee 首页</a>
+<h1>MCP 生态周报：9700 万次月下载与不足 5% 变现——配置审计、分发现实与本地优先（2026年9月27日）</h1>
+<div class="meta">作者 <strong>HermesBee Team</strong> · 开发者工具 · 2026年9月27日 · 6 分钟阅读</div>
+
+<p>本周 MCP 生态终于有了自己的成绩单，难看得很有价值。协议用量早已进入主流：<strong>SDK 月下载约 9700 万次</strong>（2024 年底还是 10 万量级），公共活跃服务器<strong>超过 1 万个</strong>，GitHub 上打 <code>mcp-server</code> 标签的仓库<strong>超过 15900 个</strong>。但多份独立分析对变现侧的结论一致：<strong>有收入的服务器不足 5%</strong>。同时，本周真正有分量的技术新闻不是新服务器，而是<strong>审计与收容</strong>——配置扫描工具、零信任网关，以及一组"朴素注入过滤到底有多不灵"的硬数据。</p>
+
+<h2>供给侧的真实数字</h2>
+<table>
+<tr><th>指标</th><th>数值</th></tr>
+<tr><td>SDK 月下载量</td><td>约 10 万（2024-11）→ <strong>约 9700 万</strong>（2026-03），约 970 倍</td></tr>
+<tr><td>公共活跃服务器</td><td><strong>1 万+</strong></td></tr>
+<tr><td>主要目录收录量</td><td>mcp.so 约 1.98 万 · Glama 约 2 万 · Smithery 7000–8000</td></tr>
+<tr><td>有收入的服务器占比</td><td><strong>不足 5%</strong></td></tr>
+</table>
+<p>把这几行放在一起，结论不用猜：瓶颈已从"<em>做出来</em>"移到"<em>被看见</em>"。社区口径的量化结果是——在 5 家以上目录（npm、Glama、PulseMCP、mcp.so、Smithery、官方 Registry）上架的服务器，安装量大约是只发一次的 <strong>10 倍</strong>。如果你手上已经有一个能跑的服务器，本周回报最高的一小时不是加功能，而是把上架清单一次性铺完。</p>
+
+<h2>审计潮：配置扫描器能扫出什么</h2>
+<p>本周最锋利的新工具是 <strong>mcp-audit-tool</strong>（MIT，约 68★）：静态扫描 Claude Desktop、Cursor、Windsurf、Cline、Zed、VS Code 的 MCP 配置文件，内置 12 条规则对齐 OWASP MCP Top 10，输出 0–100 分 + A+→F 等级，并能吐 JSON/SARIF 直接进 CI。我们拿一份"故意做坏"的三服务器配置去跑，结果是 <strong>0/100 分、F 级、6 条发现（2 条 CRITICAL、3 条 HIGH、1 条 MEDIUM）</strong>——工具有效，而它抓到的问题几乎全是"修起来很简单、靠眼睛发现不了"。在让 Agent 真正调用工具前，至少过这五项：</p>
+<ul>
+<li><strong>配置文件里的硬编码密钥</strong>——会被提交或被同步带走。</li>
+<li><strong>未锁版本的 <code>npx -y</code> 安装</strong>——典型的 rug pull 入口。</li>
+<li><strong>文件系统根目录授权</strong>——只需要一个目录却拿到盘符根。</li>
+<li><strong>会"指挥"Agent 的工具描述</strong>（工具投毒）。</li>
+<li><strong>没有认证的远端端点</strong>——不是功能，是敞开的门。</li>
+</ul>
+
+<h2>工具投毒不是正则能解决的问题</h2>
+<p>一组新的公开测试集给出了不太好听的数据：在 <strong>629 条真实 AgentDojo 注入攻击</strong>（嵌在工具输出里）上，<strong>正则拦截率 0%</strong>，Meta 的 Prompt Guard 2 只拦下<strong>约 1%</strong>。也就是说，"用关键词匹配过滤抓来的网页文本"这条路一上来就输了。真正对得上威胁的是结构性手段——最小权限的工具面、默认只读、破坏性调用人工确认、在边界处收容。这正是新一代<strong>零信任 MCP 网关</strong>（如 Rust 写的 MCPBastion）的用途：收窄每个服务器的能力范围、进出双向脱敏、按工具限速与限额，被劫持的 Agent 就没法批量外带数据。装之前静态扫配置、装之后运行时过网关，两半才算盖住；设计侧原则见我们的 <a href="https://hermesbee.com/blog/mcp-server-security-guide-2026">MCP 服务器安全指南</a>。</p>
+
+<h2>本地优先已经从"偏好"变成"立场"</h2>
+<p>三条互相独立的信号指向同一结论。"<em>在你自己账号里跑、替代 SaaS</em>"的开源应用清单破千星，把自托管从论点变成目录级运动。技术叙述也硬了：本地优先主张"数据与处理的主副本就在你手上的设备里，服务器是可选项"，在隐私、成本、寿命、能力四项上同时获益。产品实物也在持续出现——一位独立开发者上线 <strong>$49 一次性买断</strong>的完全离线桌面应用（Electron + SQLite），首周 1200 名用户，不订阅、不融资，形态和我们<a href="https://hermesbee.com/products/">自己的产品线</a>一致。一条必须正视：因为"终身授权"被虚报收入的人污染了，老实做买断的人现在得主动出示可验证凭据才有人信。</p>
+
+<h2>协议提示与剩下的供给空位</h2>
+<p>2026 年 7 月版规范把协议转为<strong>无状态</strong>（会话被请求头取代），OAuth 走 RFC 9207 大改，并让 <strong>MCP Apps</strong>（服务器自带 UI）成为一等公民。无状态对轻量自托管服务器是利好；MCP Apps 才是战略变量——自带 UI 的服务器开始和成品桌面软件重叠。仍空着的几个位置：</p>
+<ul>
+<li><strong>安全与合规工具</strong>——企业把头号担忧定为 MCP 投毒，而最好的审计工具还不到 100 星。</li>
+<li><strong>CI/CD 与测试基建</strong>——几乎没人做"跑测试、读失败日志、提修复 PR"。</li>
+<li><strong>无需登录的 B2B 数据源</strong>——头部全是 OAuth 门控，与已有的<a href="https://hermesbee.com/products/b2b-lead-finder-mcp">线索挖掘工具</a>天然衔接。</li>
+<li><strong>Agent 成本治理</strong>——没人暴露"按工具、按调用"的成本归属。</li>
+</ul>
+
+<h2>我们如何评估 MCP 服务器</h2>
+<p>标准没变，而且本周把它钉得更实：能不能搞定最难的 30%——反爬墙与动态页（见 <a href="https://hermesbee.com/blog/how-to-bypass-cloudflare-web-scraping-2026">Cloudflare 绕过指南</a>）？是否本地运行、一次性买断而不是每次调用计费？返回结构化数据还是原始 HTML——原始 HTML 是每次调用都要付的"上下文税"（见 <a href="https://hermesbee.com/blog/best-mcp-servers-for-web-scraping-2026">MCP 抓取服务器指南</a>）？以及在碰你的数据之前能不能过一遍安全审查？上一期见 <a href="https://hermesbee.com/zh/blog/weekly-mcp-roundup-2026-09-20">9 月 20 日 MCP 周报</a>。</p>
+
+<h2>HermesBee 的判断</h2>
+<p>2026 年 9 月，这个生态的真问题不是供给，而是信任与分发。9700 万次月下载、二十个服务器里不足一个赚到钱——这描述的正是"可发现性"与"可验证性"成为稀缺品的市场。所以我们把产品线钉在<strong>本地、买断、可审计</strong>三件事上：<a href="https://hermesbee.com/products/unified-scraper-mcp">Unified Scraper MCP</a>、<a href="https://hermesbee.com/products/cf-bypass-browser-mcp">CF Bypass Browser MCP</a>、<a href="https://hermesbee.com/products/llm-scraper-mcp">LLM Scraper MCP</a> 及全部<a href="https://hermesbee.com/products/">产品列表</a>，都跑在你自己机器上——无账号、无云依赖、无按次计费。当审计工具告诉你"锁版本、把数据留在本地"时，那正是我们从第一天交付的架构。</p>
+
+<h2>总结</h2>
+<p>本周 MCP：SDK 月下载约 9700 万，而不足 5% 的服务器有收入——分发比再加一个功能更值钱；配置扫描工具落地，我们那份故意做坏的配置拿到"名正言顺"的 0/100 分；629 条注入实测显示正则拦截率为 0%；本地优先以目录运动形态破千星；7 月版规范走向无状态，并让"服务器自带 UI"成为一等公民。我们每周发布一篇这样的周报。</p>
+
+<div class="meta" style="border:0;margin-top:32px">© 2026 HermesBee · <a href="https://hermesbee.com/zh/">首页</a> · <a href="https://hermesbee.com/products/">产品</a> · <a href="https://github.com/dawn-jg">GitHub</a> · <a href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-09-27">English</a></div>
+</body>
+</html>
