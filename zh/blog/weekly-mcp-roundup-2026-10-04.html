@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCP 生态周报：Agent Skills 成为协议扩展、无状态规范正式落地、OpenAI 开放 ChatGPT 插件 SDK（2026年10月4日）| HermesBee</title>
+<meta name="description" content="MCP 生态周报（2026年10月4日）：Agent Skills 经 SEP-2640 成为协议级扩展，无状态架构于 9 月 28 日定稿，OpenAI 官方发布 ChatGPT MCP 插件 SDK，另有变现现实与仍空着的供给位。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://hermesbee.com/zh/blog/weekly-mcp-roundup-2026-10-04">
+<style>
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;max-width:760px;margin:0 auto;padding:24px;line-height:1.85;color:#1a1a2e;background:#f8fafc}
+a{color:#6366f1}h1{font-size:1.7rem;line-height:1.4}h2{margin-top:36px;font-size:1.3rem}
+.meta{color:#64748b;font-size:.9rem;border-bottom:1px solid #e2e8f0;padding-bottom:12px;margin-bottom:24px}
+code{background:#eef2ff;padding:2px 6px;border-radius:4px;font-size:.9em}
+table{border-collapse:collapse;width:100%;margin:16px 0}th,td{border:1px solid #e2e8f0;padding:8px 12px;text-align:left;font-size:.95rem}
+th{background:#eef2ff}.back{color:#64748b;text-decoration:none;font-size:.9rem}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "MCP 生态周报：Agent Skills 成为协议扩展、无状态规范正式落地、OpenAI 开放 ChatGPT 插件 SDK（2026年10月4日）",
+  "datePublished": "2026-10-04",
+  "author": {"@type": "Organization", "name": "HermesBee Team"},
+  "publisher": {"@type": "Organization", "name": "HermesBee", "url": "https://hermesbee.com"}
+}
+</script>
+<link rel="alternate" hreflang="en" href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-10-04">
+<link rel="alternate" hreflang="zh" href="https://hermesbee.com/zh/blog/weekly-mcp-roundup-2026-10-04">
+<link rel="alternate" hreflang="x-default" href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-10-04">
+</head>
+<body>
+<a class="back" href="https://hermesbee.com/zh/">← HermesBee 首页</a>
+<h1>MCP 生态周报：Agent Skills 成为协议扩展、无状态规范正式落地、OpenAI 开放 ChatGPT 插件 SDK（2026年10月4日）</h1>
+<div class="meta">作者 <strong>HermesBee Team</strong> · 开发者工具 · 2026年10月4日 · 6 分钟阅读</div>
+
+<p>本周的 MCP 由两件协议级事件和一次厂商开放定义。其一，<strong>Agent Skills 扩展（SEP-2640）</strong>合并为 Final，把 <code>skill://</code> 资源与 <code>skills/list</code> / <code>skills/get</code> 接口正式写进标准；其二，2026-09-28 <strong>无状态架构</strong>由 Agentic AI Foundation 正式定稿——这正是 7 月版规范预告的那一步；其三，<strong>OpenAI 发布了官方 ChatGPT MCP 插件 SDK</strong>。与此同时，供给端仍在复利：公共服务器<strong>超过 19831 个</strong>，SDK 月下载约 <strong>9700 万次</strong>。</p>
+
+<h2>Agent Skills 变成协议扩展</h2>
+<p>SEP-2640（"Skills Extension"）于 2026-09-13 合并为 Final，是 2026-07-28 版本之后第一个落地的 SEP。它规定了 MCP 服务器如何把 Agent Skills 作为一等资源暴露：</p>
+<ul>
+<li>用 <code>skill://</code> URI 约定寻址单个技能；</li>
+<li>两个必需方法 <code>skills/list</code> 与 <code>skills/get</code>，负责发现与读取；</li>
+<li>可选的 <code>resources/directory/read</code>，支持目录式访问；</li>
+<li>扩展标识符 <code>io.modelcontextprotocol.skills</code>。</li>
+</ul>
+<p>在此之前，"skill"一直是各家 harness 的私有功能：同一个文件夹，一个客户端会加载，另一个视而不见。SEP-2640 把它变成一个可移植格式，带着标准的发现与读取接口——MCP Inspector 甚至提前四天在 2.6.0 里支持了它。对维护本地技能库的人来说，结论很直接：你已经在用的那份结构，从此可以被任何合规服务器寻址；而市场里缺的那一环，已经从"格式"变成了"分发"。</p>
+
+<h2>无状态规范正式落地</h2>
+<p>2026-09-28，Linux 基金会下的定向基金 Agentic AI Foundation 发布了 MCP 史上最大的一次更新。无状态架构就此定稿：<strong>没有握手、没有 <code>Mcp-Session-Id</code>、没有黏性路由</strong>。OAuth 签发者（<code>iss</code>）校验成为强制项，协议特性开始适用正式的 12 个月弃用政策，<strong>MCP Apps</strong> 与 <strong>MCP Tasks</strong> 从扩展草案转正为官方扩展。官方 Go SDK v1.8.0 同时加固了资源耗尽防护——JSON 嵌套深度、SSE 事件大小、stdio 帧长、OAuth DCR 响应全部设限。</p>
+<p>含义：凡是按旧会话假设写的 MCP 产品，传输层都要按"modern（2026-07-28+）"模型重写。好处也很具体——无状态服务器可以直接跑在 Cloudflare Worker 上，既压低托管成本，也去掉了让第三方 MCP 托管一直别扭的黏性会话路由问题。</p>
+
+<h2>OpenAI 开放 ChatGPT 插件 SDK</h2>
+<p><strong>openai/mcp-extensions</strong>（Apache-2.0）是让 MCP 服务器在 ChatGPT 里"像原生功能一样"的官方做法：</p>
+<ul>
+<li>侧边栏入口——你的工具拥有自己的面板；</li>
+<li>针对特定文件类型的自定义查看器；</li>
+<li>输入框里的 @ 提及；</li>
+<li>富表单（图片选择、表单收集），让 Agent 能要求结构化输入。</li>
+</ul>
+<p>npm 包 <code>@openai/mcp-extensions</code> 已发布 <strong>v0.1.0</strong>（PyPI 侧也有），仓库本周越过约 719★ 且在持续推送。但它很早期——0.1.0 的 API 一定会变，插件的审核门槛也尚未公开。务实的做法是先把现有某一个服务器包成一个 demo 壳，再谈复用；它真正的价值是：在既有的 MCP 目录之外，多出一条分发入口。</p>
+
+<h2>变现仍然是难点</h2>
+<p>一个有用的事实核对：MCP 协议本身<strong>没有计费层</strong>（官方文档明说），所以每个付费服务器都在协议外自己接一层，于是四种模型并行、没有一家主导。</p>
+<table>
+<tr><th>模型</th><th>例子</th><th>形态</th></tr>
+<tr><td>按次</td><td>AgenticMarket</td><td>每次 $0.03–$0.50</td></tr>
+<tr><td>平台托管订阅</td><td>MCPize</td><td>平台抽成</td></tr>
+<tr><td>按事件</td><td>Apify PPE</td><td>$0.05/地点 · $0.002/评论 · $0.01/AI 提取</td></tr>
+<tr><td>执行配额</td><td>MCPBundles</td><td>每月 25 次免费</td></tr>
+</table>
+<p>2026 年的一线记录给出的现实天花板是<strong>每月 $500–$10,000+</strong>，公开的成功案例大多落在 <strong>$500–$3,000</strong>。三份诚实复盘里反复出现同三条规则：免费额度不要按"调用次数"给（要和真实成本挂钩，因为 Agent 几秒就能烧掉人类一个月的量）；把"购买决策"（人，按月）和"消耗决策"（Agent，按额度）分开；以及把最贵的那个工具单独定价，否则 Agent 会专门盯着它刷。</p>
+
+<h2>安全与治理</h2>
+<p>MCP 安全工作组发布了 <strong>threat model v1.0</strong>——工具输出里的提示注入、供应链风险、权限提升——现已被规范作为非规范附录引用。RFC-0041 提议为工具调用标准化一个错误响应信封（<code>code</code> / <code>message</code> / <code>retryable</code>）。客户端侧，Claude Desktop 0.9.4 把"逐服务器工具确认"做成了标准功能：每次确认、仅写操作确认、或从不确认。若你漏看了上周的 <a href="https://hermesbee.com/blog/mcp-server-security-guide-2026">MCP 服务器安全指南</a>，简短版结论没变——锁版本、收窄文件系统授权、永远不要相信工具描述。</p>
+
+<h2>仍空着的几个供给位</h2>
+<ul>
+<li><strong>技能分发层</strong>——SEP-2640 给了接口，但"技能界的 npm"还没人做。</li>
+<li><strong>应用商店运营 MCP</strong>——magaza-mcp 覆盖 App Store Connect 与 Google Play，却只有约 87★ 且仅土耳其语。</li>
+<li><strong>本地优先的 Agent 可观测性</strong>——agent-console（约 795★）逐会话记录 token、缓存与成本，但它是写给作者自己的，不是写给买家的。</li>
+<li><strong>AI 文档 lint</strong>——seiso（约 173★，Rust，crates.io / npm / PyPI 三发）证明了"检查 AI 写的 Markdown 是否符合约定"这个需求是真实的。</li>
+</ul>
+
+<h2>我们如何评估 MCP 服务器</h2>
+<p>标准没变，而且本周又把它钉实了一次：能不能搞定最难的 30%——反爬墙与动态页（见 <a href="https://hermesbee.com/blog/how-to-bypass-cloudflare-web-scraping-2026">Cloudflare 绕过指南</a>）？是否本地运行、一次性买断，而不是每次调用计费？返回结构化数据还是原始 HTML——原始 HTML 是每次调用都要付的"上下文税"（见 <a href="https://hermesbee.com/blog/best-mcp-servers-for-web-scraping-2026">MCP 抓取服务器指南</a>）？以及在碰你的数据之前，能不能过一遍安全审查？上一期见 <a href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-09-27">9 月 27 日 MCP 周报</a>。</p>
+
+<h2>HermesBee 的判断</h2>
+<p>本周三条头条里有两条和我们的路线同向。无状态利好轻量的自托管服务器，而不是托管中间件；Skills 扩展则让本地技能库变得可移植，而不是被客户端锁死。所以我们继续把 <a href="https://hermesbee.com/products/unified-scraper-mcp">Unified Scraper MCP</a>、<a href="https://hermesbee.com/products/cf-bypass-browser-mcp">CF Bypass Browser MCP</a>、<a href="https://hermesbee.com/products/llm-scraper-mcp">LLM Scraper MCP</a> 及全部<a href="https://hermesbee.com/products/">产品</a>做成本地、买断、可审计的工具——无账号、无云依赖、无按次计费。当规范自己开始标准化"发现"与"交付"时，我们当初选的架构就不再是一种偏好，而开始成为默认形态。</p>
+
+<h2>总结</h2>
+<p>本周 MCP：Agent Skills 经 SEP-2640 成为协议扩展（<code>skill://</code> 与 <code>skills/list</code>）；无状态架构于 2026-09-28 定稿，配套 12 个月弃用政策，MCP Apps / Tasks 转为官方扩展；OpenAI 以 v0.1.0 发布 ChatGPT 插件 SDK；变现问题仍未解——没有计费层，四种模型并行。我们每周发布一篇这样的周报。</p>
+
+<div class="meta" style="border:0;margin-top:32px">© 2026 HermesBee · <a href="https://hermesbee.com/zh/">首页</a> · <a href="https://hermesbee.com/products/">产品</a> · <a href="https://github.com/dawn-jg">GitHub</a> · <a href="https://hermesbee.com/blog/weekly-mcp-roundup-2026-10-04">English</a></div>
+</body>
+</html>
